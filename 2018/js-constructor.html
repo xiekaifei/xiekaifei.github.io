@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="&amp;emsp;&amp;emsp;t今天详细了解了一下JavaScript中构造函数和原型模式的相关知识，做了一个总结，以便日后做一个参考。 构造函数&amp;emsp;&amp;emsp;构造函数可以用来创建特定类型的对象。先来看一个构造函数： 123456789101112function Person(name, age) &amp;#123;    this.name = name    this.age = age">
+<meta name="description" content="&amp;emsp;&amp;emsp;今天详细了解了一下JavaScript中构造函数和原型模式的相关知识，做了一个总结，以便日后做一个参考。 构造函数&amp;emsp;&amp;emsp;构造函数可以用来创建特定类型的对象。先来看一个构造函数： 123456789101112function Person(name, age) &amp;#123;    this.name = name    this.age = age">
 <meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript中的构造函数及原型模式">
 <meta property="og:url" content="http://blog.xiekaifei.com/2018/js-constructor.html">
 <meta property="og:site_name" content="谢凯飞的博客">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;t今天详细了解了一下JavaScript中构造函数和原型模式的相关知识，做了一个总结，以便日后做一个参考。 构造函数&amp;emsp;&amp;emsp;构造函数可以用来创建特定类型的对象。先来看一个构造函数： 123456789101112function Person(name, age) &amp;#123;    this.name = name    this.age = age">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;今天详细了解了一下JavaScript中构造函数和原型模式的相关知识，做了一个总结，以便日后做一个参考。 构造函数&amp;emsp;&amp;emsp;构造函数可以用来创建特定类型的对象。先来看一个构造函数： 123456789101112function Person(name, age) &amp;#123;    this.name = name    this.age = age">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-02T09:01:39.603Z">
+<meta property="og:updated_time" content="2019-01-02T09:02:30.064Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript中的构造函数及原型模式">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;t今天详细了解了一下JavaScript中构造函数和原型模式的相关知识，做了一个总结，以便日后做一个参考。 构造函数&amp;emsp;&amp;emsp;构造函数可以用来创建特定类型的对象。先来看一个构造函数： 123456789101112function Person(name, age) &amp;#123;    this.name = name    this.age = age">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;今天详细了解了一下JavaScript中构造函数和原型模式的相关知识，做了一个总结，以便日后做一个参考。 构造函数&amp;emsp;&amp;emsp;构造函数可以用来创建特定类型的对象。先来看一个构造函数： 123456789101112function Person(name, age) &amp;#123;    this.name = name    this.age = age">
 
 
 
@@ -394,7 +394,7 @@
       
 
       
-        <p>&emsp;&emsp;t今天详细了解了一下JavaScript中构造函数和原型模式的相关知识，做了一个总结，以便日后做一个参考。</p>
+        <p>&emsp;&emsp;今天详细了解了一下JavaScript中构造函数和原型模式的相关知识，做了一个总结，以便日后做一个参考。</p>
 <h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2><p>&emsp;&emsp;构造函数可以用来创建特定类型的对象。先来看一个构造函数：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name</span><br><span class="line">    <span class="keyword">this</span>.age = age</span><br><span class="line">    <span class="keyword">this</span>.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> xm = <span class="keyword">new</span> Person(<span class="string">"小明"</span>, <span class="number">20</span>)</span><br><span class="line">xm.name	<span class="comment">//小明</span></span><br><span class="line">xm.age	<span class="comment">//20</span></span><br><span class="line">xm.sayName()	<span class="comment">//控制台输出小明的名字</span></span><br></pre></td></tr></table></figure>
 <a id="more"></a>
