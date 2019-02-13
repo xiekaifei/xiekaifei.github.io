@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="javascript,">
+  <meta name="keywords" content="Vue.js,">
 
 
 
@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="&amp;emsp;&amp;emsp;今天详细了解了一下JavaScript中构造函数和原型模式的相关知识，做了一个总结，以便日后做一个参考。 构造函数&amp;emsp;&amp;emsp;构造函数可以用来创建特定类型的对象。先来看一个构造函数： 123456789101112function Person(name, age) &amp;#123;    this.name = name    this.age = age">
-<meta name="keywords" content="javascript">
+<meta name="description" content="&amp;emsp;&amp;emsp;vue实例有一个完整的生命周期，先上一段vuejs官网对vue实例生命周期的解释：  每个 Vue 实例在被创建时都要经过一系列的初始化过程——例如，需要设置数据监听、编译模板、将实例挂载到 DOM 并在数据变化时更新 DOM 等。  &amp;emsp;&amp;emsp;同时，在这个过程中，会运行一些叫做生命周期钩子的函数，这给了用户在不同阶段添加自己的代码的机会。">
+<meta name="keywords" content="Vue.js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript中的构造函数及原型模式">
-<meta property="og:url" content="https://blog.xiekaifei.com/2018/js-constructor.html">
+<meta property="og:title" content="Vue.js实例生命周期">
+<meta property="og:url" content="https://blog.xiekaifei.com/2019/vue.js-lifecycle.html">
 <meta property="og:site_name" content="谢凯飞的博客">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;今天详细了解了一下JavaScript中构造函数和原型模式的相关知识，做了一个总结，以便日后做一个参考。 构造函数&amp;emsp;&amp;emsp;构造函数可以用来创建特定类型的对象。先来看一个构造函数： 123456789101112function Person(name, age) &amp;#123;    this.name = name    this.age = age">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;vue实例有一个完整的生命周期，先上一段vuejs官网对vue实例生命周期的解释：  每个 Vue 实例在被创建时都要经过一系列的初始化过程——例如，需要设置数据监听、编译模板、将实例挂载到 DOM 并在数据变化时更新 DOM 等。  &amp;emsp;&amp;emsp;同时，在这个过程中，会运行一些叫做生命周期钩子的函数，这给了用户在不同阶段添加自己的代码的机会。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-05T14:39:32.878Z">
+<meta property="og:image" content="https://cdn.xiekaifei.com/image/2019/blog/jishu/lifecycle.png">
+<meta property="og:updated_time" content="2019-02-13T06:49:51.610Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript中的构造函数及原型模式">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;今天详细了解了一下JavaScript中构造函数和原型模式的相关知识，做了一个总结，以便日后做一个参考。 构造函数&amp;emsp;&amp;emsp;构造函数可以用来创建特定类型的对象。先来看一个构造函数： 123456789101112function Person(name, age) &amp;#123;    this.name = name    this.age = age">
+<meta name="twitter:title" content="Vue.js实例生命周期">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;vue实例有一个完整的生命周期，先上一段vuejs官网对vue实例生命周期的解释：  每个 Vue 实例在被创建时都要经过一系列的初始化过程——例如，需要设置数据监听、编译模板、将实例挂载到 DOM 并在数据变化时更新 DOM 等。  &amp;emsp;&amp;emsp;同时，在这个过程中，会运行一些叫做生命周期钩子的函数，这给了用户在不同阶段添加自己的代码的机会。">
+<meta name="twitter:image" content="https://cdn.xiekaifei.com/image/2019/blog/jishu/lifecycle.png">
 
 
 
@@ -120,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://blog.xiekaifei.com/2018/js-constructor.html">
+  <link rel="canonical" href="https://blog.xiekaifei.com/2019/vue.js-lifecycle.html">
 
 
 
 
 
-  <title>JavaScript中的构造函数及原型模式 | 谢凯飞的博客</title>
+  <title>Vue.js实例生命周期 | 谢凯飞的博客</title>
   
 
 
@@ -305,7 +307,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.xiekaifei.com/2018/js-constructor.html">
+    <link itemprop="mainEntityOfPage" href="https://blog.xiekaifei.com/2019/vue.js-lifecycle.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kevin Xie">
@@ -322,7 +324,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JavaScript中的构造函数及原型模式</h1>
+          <h1 class="post-title" itemprop="name headline">Vue.js实例生命周期</h1>
         
 
         <div class="post-meta">
@@ -334,8 +336,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-19T11:55:57+08:00">
-                2018-12-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-13T14:43:55+08:00">
+                2019-02-13
               </time>
             
 
@@ -368,8 +370,8 @@
                 
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/技术/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
+                  <a href="/categories/技术/Vue-js/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue.js</span>
                   </a>
                 </span>
 
@@ -405,19 +407,16 @@
       
 
       
-        <p>&emsp;&emsp;今天详细了解了一下JavaScript中构造函数和原型模式的相关知识，做了一个总结，以便日后做一个参考。</p>
-<h2 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h2><p>&emsp;&emsp;构造函数可以用来创建特定类型的对象。先来看一个构造函数：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name</span><br><span class="line">    <span class="keyword">this</span>.age = age</span><br><span class="line">    <span class="keyword">this</span>.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> xm = <span class="keyword">new</span> Person(<span class="string">"小明"</span>, <span class="number">20</span>)</span><br><span class="line">xm.name	<span class="comment">//小明</span></span><br><span class="line">xm.age	<span class="comment">//20</span></span><br><span class="line">xm.sayName()	<span class="comment">//控制台输出小明的名字</span></span><br></pre></td></tr></table></figure>
+        <p>&emsp;&emsp;vue实例有一个完整的生命周期，先上一段vuejs官网对vue实例生命周期的解释：</p>
+<blockquote>
+<p>每个 Vue 实例在被创建时都要经过一系列的初始化过程——例如，需要设置数据监听、编译模板、将实例挂载到 DOM 并在数据变化时更新 DOM 等。</p>
+</blockquote>
+<p>&emsp;&emsp;同时，在这个过程中，会运行一些叫做<strong>生命周期钩子</strong>的函数，这给了用户在不同阶段添加自己的代码的机会。</p>
 <a id="more"></a>
-<p>&emsp;&emsp;声明构造函数按照惯例通常以一个大写字母来开头，构造函数的新实例用new操作符创建。任何函数用new操作符来调用就是构造函数，而构造函数不通过new操作符调用也就和普通函数没什么两样。</p>
-<p>&emsp;&emsp;使用构造函数的缺点是每个方法都需要在每个实例上重新创建一遍。看下面代码：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xf = <span class="keyword">new</span> Person(<span class="string">"小芳"</span>, <span class="number">20</span>)</span><br><span class="line"><span class="built_in">console</span>.log(xm.sayName === xf.sayName)	<span class="comment">//false</span></span><br></pre></td></tr></table></figure>
-<p>&emsp;&emsp;我在这里新建了一个名为xf的实例，这时xm和xf都有一个sayName方法，但这两个方法如果去比较的话却是不一样的。这就说明两个方法是独立的，每个方法都会为其分配一定的内存用来存放，这样显然是浪费资源的。这时就需要提到另一种方法，原型模式。</p>
-<h2 id="原型模式"><a href="#原型模式" class="headerlink" title="原型模式"></a>原型模式</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//构造函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//原型模式</span></span><br><span class="line">Person.prototype.age = <span class="number">20</span></span><br><span class="line">Person.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> xm = <span class="keyword">new</span> Person(<span class="string">"小明"</span>)</span><br><span class="line"><span class="keyword">var</span> xf = <span class="keyword">new</span> Person(<span class="string">"小芳"</span>)</span><br><span class="line"><span class="built_in">console</span>.log(xm.sayName === xf.sayName)	<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
-<p>&emsp;&emsp;上面我使用了构造函数和原型模式混合的方法，其中name属性是构造函数创建的，age属性和sayName方法是用原型模式（prototype属性）创建的。原型模式创建的两个方法均为所有实例共享，所以在最后比较两个实例的sayName方法时返回了true，表示两者是调用的同一个sayName方法。</p>
-<p>&emsp;&emsp;只要创建了一个新函数，就会为该函数创建一个<strong>prototype</strong>属性，这个属性指向函数的原型对象。在默认情况下，所有的原型对象都会自动获得一个<strong>constructor</strong>(构造函数)属性，这个属性包含一个指向prototype属性所在函数的指针，也就是指向构造函数。在上面的例子里Person.prototype.constructor指向构造函数Person。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">xf.age = <span class="number">25</span>	<span class="comment">//重写了小芳的年龄</span></span><br><span class="line">xf.age	<span class="comment">//25</span></span><br><span class="line">xm.age	<span class="comment">//20</span></span><br><span class="line"><span class="comment">//重写已经存在于原型的值后，用该实例访问该属性会返回重写后的值，这种情况会把原型中的该值屏蔽掉，但是不会影响其他实例调用原型中的属性。</span></span><br><span class="line"><span class="comment">//如果需要删除实例属性，可以使用"delete"操作符完全删除实例属性。</span></span><br><span class="line"><span class="keyword">delete</span> xf.age</span><br><span class="line">xf.age	<span class="comment">//20</span></span><br></pre></td></tr></table></figure>
-<h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h2><p>&emsp;&emsp;也就是说，当访问实例的属性或方法时，首先会按照名称查找实例中有没有存在的属性或方法，有的话则屏蔽原型内的同名属性或方法（原型里有的话），直接调用实例中的。如果没有，则向上查找该实例的原型，原型里有的话就调用，都没有的话就返回undefined。这个步骤是沿着原型链查找的，也就涉及到了原型链的概念。创建了自定义的构造函数之后，其原型对象默认只会取得constructor属性，至于其他方法，则都是从Object继承而来的。<br>&emsp;&emsp;这么来理解的话，刚刚创建的xm实例的原型链是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xm → Person.prototype → Object.prototype → null</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://cdn.xiekaifei.com/image/2019/blog/jishu/lifecycle.png" alt="vue实例生命周期图"></p>
+<p>&emsp;&emsp;上面这张图是vuejs官网<a href="https://cn.vuejs.org/v2/guide/instance.html" target="_blank" rel="noopener">vue实例章节</a>中给出的vue实例生命周期图示，下面我来逐项解释图中的每一步当中生命周期钩子函数的用法。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> test = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="string">'#app'</span>,</span><br><span class="line">    data: &#123;</span><br><span class="line">        message: <span class="string">'Hello'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">//结合上面的生命周期图来看，首先是第一步创建一个vue对象new Vue(),然后vue实例进行</span></span><br><span class="line">    <span class="comment">//基础的初始化(Init Events &amp; Lifecycle)之后，就会进入到beforeCreate函数，这时</span></span><br><span class="line">    <span class="comment">//控制台会输出“undefined beforeCreate"，这是因为此时vue还没有监控data对象数据的变化，</span></span><br><span class="line">    <span class="comment">//所以this.message会输出“undefined”</span></span><br><span class="line">    beforeCreate: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.message + <span class="string">' beforeCreate'</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">//beforeCreated函数执行完毕后，vue实例会初始化剩下的部分，接着进入到执行created函数，</span></span><br><span class="line">    <span class="comment">//下面的函数会在控制台输出“Hello created”,此时vue实例都已初始化完毕，this.message可以被输出</span></span><br><span class="line">    created: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.message + <span class="string">' created'</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">//created函数执行完毕后，会询问实例中是否有"el"选项，本test实例中有el实例，接着会询问是否有</span></span><br><span class="line">    <span class="comment">//"template"选项，本实例中没有，所以会走右侧分支，会把当前el的整体内容，当做模板。</span></span><br><span class="line">    <span class="comment">//那么此时的模板，就是当前HTML文件内，id为"app"标签的所有内容。如果实例中有"template"，</span></span><br><span class="line">    <span class="comment">//模板即为"template"属性中的内容。</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//接着往下走到了beforeMount函数，下面的函数会在控制台输出"Hello beforeMount"，此时</span></span><br><span class="line">    <span class="comment">//页面还没有将编译出的HTML文件渲染到页面上，beforeMount函数正是此时执行的函数。</span></span><br><span class="line">    beforeMount: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.message + <span class="string">' beforeMount'</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">//到了mounted函数执行的时候，此时模板已经挂在完成，HTML内容已经被渲染到了页面上。</span></span><br><span class="line">    mounted: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.message + <span class="string">' mounted'</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    beforeDestroy: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.message + <span class="string">' beforeDestroy'</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    destroyed: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.message + <span class="string">' destroyed'</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">//beforeDestroy和destroyed分别是在实例销毁之前和实例销毁之后执行的函数，</span></span><br><span class="line">    <span class="comment">//此时如果我们在控制台使用"test.$destroy()"方法来销毁该实例的话，控制台会输出</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//Hello beforeDestroy</span></span><br><span class="line">    <span class="comment">//Hello destroyed</span></span><br><span class="line">    <span class="comment">//undefined</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//说明beforeDestroy()和destroyed()两个函数分别先后得到了执行，同时销毁了test实例</span></span><br><span class="line"></span><br><span class="line">    beforeUpdate: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.message + <span class="string">' beforeUpdate'</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    updated: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.message + <span class="string">' updated'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//beforeUpdate和updated函数分别是当数据改变时，会在改变前和改变后分别执行的两个函数</span></span><br><span class="line">    <span class="comment">//此时如果我们在控制台执行"test.message = 'Hi'"，控制台会输出</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//Hi beforeUpdate</span></span><br><span class="line">    <span class="comment">//Hi updated</span></span><br><span class="line">    <span class="comment">//"Hi"</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//说明beforeUPdate()和updated()两个函数分别在数据改变前后得到了执行</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;生命周期函数就是vue实例在某一个时间点会自动执行的函数，我们可以通过在vue实例运行过程中的不同时间点来嵌入不同的函数，以此来实现相应的功能。</p>
 
       
     </div>
@@ -435,7 +434,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/javascript/" rel="tag"># javascript</a>
+            <a href="/tags/Vue-js/" rel="tag"># Vue.js</a>
           
         </div>
       
@@ -448,8 +447,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/wp-plugin.html" rel="next" title="更自由的WordPress小工具插件！">
-                <i class="fa fa-chevron-left"></i> 更自由的WordPress小工具插件！
+              <a href="/2019/gohome.html" rel="next" title="2019春运回家路">
+                <i class="fa fa-chevron-left"></i> 2019春运回家路
               </a>
             
           </div>
@@ -457,10 +456,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/js-inheritance.html" rel="prev" title="JavaScript继承">
-                JavaScript继承 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -512,17 +507,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -600,22 +586,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#构造函数"><span class="nav-number">1.</span> <span class="nav-text">构造函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原型模式"><span class="nav-number">2.</span> <span class="nav-text">原型模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原型链"><span class="nav-number">3.</span> <span class="nav-text">原型链</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
