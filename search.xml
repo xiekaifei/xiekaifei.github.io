@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Mac OS下使用默认终端ssh连接服务器]]></title>
     <url>%2F2019%2Fmac_ssh.html</url>
-    <content type="text"><![CDATA[&emsp;&emsp;之前在Windows环境下都是用PuTTY这款软件来连接和保存远程服务器地址，而在Mac OS下可以使用默认的终端(terminal)直接连接和保存，非常方便。 1.直接连接&emsp;&emsp;首先打开Mac下的终端，输入：”ssh -p 端口号 服务器用户名@ip“，例如： 1ssh -p 22 root@192.168.1.8 &emsp;&emsp;然后终端会让你输入”yes”或”no”来询问你是否连接，输入”yes”后，再输入服务器该账户下的密码，回车，最后连接成功。 2.保存服务器别名连接&emsp;&emsp;第一种方法可以直接连接，但是服务器一多，没人记得住所有的连接信息，所以就需要提前把连接信息保存起来并取一个别名，方便以后登录。 &emsp;&emsp;第一步还是先打开终端，使用vim命令编辑”~/.ssh”路径下的”config”文件。 12345678910#服务器1Host 服务器别名 HostName ip地址 Port 22 User 用户名#服务器2Host 服务器别名 HostName ip地址 Port 22 User 用户名 &emsp;&emsp;添加好连接信息后，保存，终端下输入”ssh 服务器别名”，输入密码连接即可。]]></content>
+    <content type="text"><![CDATA[&emsp;&emsp;之前在Windows环境下都是用PuTTY这款软件来连接和保存远程服务器地址的，而在Mac OS下可以使用默认的终端(terminal)直接连接和保存，非常方便。 1.直接连接&emsp;&emsp;首先打开Mac下的终端，输入：”ssh -p 端口号 服务器用户名@ip“，例如： 1ssh -p 22 root@192.168.1.8 &emsp;&emsp;然后终端会让你输入”yes”或”no”来询问你是否连接，输入”yes”后，再输入服务器该账户下的密码，回车，最后连接成功。 2.保存服务器别名连接&emsp;&emsp;第一种方法可以直接连接，但是服务器一多，没人记得住所有的连接信息，所以就需要提前把连接信息保存起来并取一个别名，方便以后登录。 &emsp;&emsp;第一步还是先打开终端，使用vim命令编辑”~/.ssh”路径下的”config”文件。 12345678910#服务器1Host 服务器别名 HostName ip地址 Port 22 User 用户名#服务器2Host 服务器别名 HostName ip地址 Port 22 User 用户名 &emsp;&emsp;添加好连接信息后，保存，终端下输入”ssh 服务器别名”，输入密码连接即可。]]></content>
       <categories>
         <category>技术</category>
         <category>Mac OS</category>
@@ -11,6 +11,7 @@
       <tags>
         <tag>Mac OS</tag>
         <tag>Mac</tag>
+        <tag>ssh</tag>
       </tags>
   </entry>
   <entry>
