@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Hexo博客系统常用命令]]></title>
     <url>%2F2019%2Fhexo-command.html</url>
-    <content type="text"><![CDATA[&emsp;&emsp;我的博客使用的是Hexo框架，可以很方便的使用一些命令编辑博文，发布文章或者本地预览等操作。但是每次写文章的时候，都会忘记一部分命令（主要原因博客写的太少…）导致每次都需要google查询这些操作的命令。这次干脆总结一下常用的命令，方便下次使用。 命令 操作 hexo new title 新建一篇文章。（如果标题包含空格的话，需要使用引号括起来。）省略了layout参数 hexo generate（可简写为hexo g） 生成静态文件，可加参数-d，生成静态文件后部署网站 hexo clean 清除缓存文件 (db.json) 和已生成的静态文件 (public) hexo server（可简写为hexo s） 启动本地服务器 hexo deploy （可简写为hexo d） 部署网站，可加参数-g，部署之前预先生成静态文件 hexo version 显示 Hexo 版本 &emsp;&emsp;以上就是hexo最常用的命令，文章编辑完成准备发布的时候，可直接使用以下命令，一次搞定： 1hexo g -d // 生成静态文件并部署网站 &emsp;&emsp;如果想一次使用多条命令，也可以用”&amp;&amp;”连字符来连接多条命令。比如文章编辑好想先在本地预览效果： 1hexo g &amp;&amp; hexo s // 生成静态文件后，启动本地服务器 [更多Hexo 指令](]]></content>
+    <content type="text"><![CDATA[&emsp;&emsp;我的博客使用的是Hexo框架，可以很方便的使用一些命令编辑博文，发布文章或者本地预览等操作。但是每次写文章的时候，都会忘记一部分命令（主要原因博客写的太少…）导致每次都需要google查询这些操作的命令。这次干脆总结一下常用的命令，方便下次使用。 命令 操作 hexo new title 新建一篇文章。（如果标题包含空格的话，需要使用引号括起来。）省略了layout参数 hexo generate（可简写为hexo g） 生成静态文件，可加参数-d，生成静态文件后部署网站 hexo clean 清除缓存文件 (db.json) 和已生成的静态文件 (public) hexo server（可简写为hexo s） 启动本地服务器 hexo deploy （可简写为hexo d） 部署网站，可加参数-g，部署之前预先生成静态文件 hexo version 显示 Hexo 版本 &emsp;&emsp;以上就是hexo最常用的命令，文章编辑完成准备发布的时候，可直接使用以下命令，一次搞定： 1hexo g -d // 生成静态文件并部署网站 &emsp;&emsp;如果想一次使用多条命令，也可以用”&amp;&amp;”连字符来连接多条命令。比如文章编辑好想先在本地预览效果： 1hexo g &amp;&amp; hexo s // 生成静态文件后，启动本地服务器 更多Hexo 指令]]></content>
       <categories>
         <category>技术</category>
         <category>工具</category>
