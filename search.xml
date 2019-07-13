@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Hexo博客系统常用命令]]></title>
+    <url>%2F2019%2Fhexo-command.html</url>
+    <content type="text"><![CDATA[&emsp;&emsp;我的博客使用的是Hexo框架，可以很方便的使用一些命令编辑博文，发布文章或者本地预览等操作。但是每次写文章的时候，都会忘记一部分命令（主要原因博客写的太少…）导致需要google查询这些操作的命令。这次干脆总结一下常用的命令，方便下次使用。 命令 操作 hexo new \ 新建一篇文章。（如果标题包含空格的话，需要使用引号括起来。）省略了layout参数 hexo generate（可简写为hexo g） 生成静态文件 hexo clean 清除缓存文件 (db.json) 和已生成的静态文件 (public) hexo server（可简写为hexo s） 启动本地服务器 hexo deploy （可简写为hexo d） 部署网站，可加参数-g，部署之前预先生成静态文件 hexo version 显示 Hexo 版本 &emsp;&emsp;以上就是hexo最常用的命令，文章编辑完成准备发布的时候，可直接使用”&amp;&amp;”连字符，一次搞定： 1hexo clean &amp;&amp; hexo d -g // 清空缓存静态文件+预先生成静态文件，之后部署网站]]></content>
+      <categories>
+        <category>技术</category>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[vim常用编辑快捷键]]></title>
     <url>%2F2019%2Fvim-edit.html</url>
     <content type="text"><![CDATA[&emsp;&emsp;在使用终端的时候，免不了会使用vi/vim编辑器来编辑文件。下面罗列一些编辑时的常用快捷键，可以提高使用效率。完整版的vim使用教程见最底部的引用链接。 按键 操作 h或左箭头键 光标向左移动一个字符 j或下箭头键 光标向下移动一个字符 k或向上箭头键 光标向上移动一个字符 l或向右箭头键 光标向右移动一个字符 行数后跟移动按键组合键，如30j 光标向下移动30行 Ctrl + f 屏幕向下移动一页 Ctrl + b 屏幕向上移动一页 + 光标移动到非空格符的下一行 - 光标移动到非空格符的上一行 n后跟space键 n表示数字，表示光标向右移动n个字符 0或Home键 光标移动到这一行最前面的字符处 $或End键 光标移动到这一行最后面的字符处 H 光标移动到这个屏幕的最上方那一行的第一个字符 M 光标移动到这个屏幕的中央那一行的第一个字符 L 光标移动到这个屏幕的最下方那一行的第一个字符 G 移动到这个档案的最后一行(常用) nG n 为数字。移动到这个档案的第 n 行。例如 20G 则会移动到这个档案的第 20 行(可配合 :set nu) gg 移动到这个档案的第一行，相当于 1G 啊！ (常用) n后跟Enter键 n 为数字。光标向下移动 n 行(常用) 完整快捷键列表见vi/vim使用教程]]></content>
