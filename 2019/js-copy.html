@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="谢凯飞的博客">
 <meta property="og:description" content="&amp;emsp;&amp;emsp;js里的数据类型分为基本数据类型和引用数据类型，基本数据类型有undefined, boolean, number, string, null，而引用数据类型就是Object。两种类型在赋值上面是有一些区别的。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-19T06:01:04.756Z">
+<meta property="og:updated_time" content="2019-07-19T06:28:26.596Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript的赋值、浅拷贝和深拷贝">
 <meta name="twitter:description" content="&amp;emsp;&amp;emsp;js里的数据类型分为基本数据类型和引用数据类型，基本数据类型有undefined, boolean, number, string, null，而引用数据类型就是Object。两种类型在赋值上面是有一些区别的。">
@@ -408,7 +408,7 @@
 <p>&emsp;&emsp;这时修改原数据c的值，副本数据d也一起被修改了。这是什么原因呢？原来是因为浅拷贝操作只能复制一层对象的属性，并不包括对象里的引用数据类型的值，所以当修改原数据c里的数组的值后，浅拷贝的副本数据d的数组值也就一起被改变了。如果要完全独立拷贝副本数据，就需要用到深拷贝的方法了。</p>
 <h2 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h2><p>&emsp;&emsp;深拷贝的一种方法是利用<code>JSON.stringify()</code>方法，先将原对象转化为json格式，再用<code>JSON.parse()</code>方法将转化后的json数据转回js对象的方式，进行深拷贝。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 还是重新创建一个a对象</span></span><br><span class="line"><span class="keyword">var</span> a = &#123;</span><br><span class="line">  arr: [<span class="number">1</span>, [<span class="number">2</span>, <span class="number">3</span>]]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 这时来封装一个深拷贝函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepCopy</span>(<span class="params">source</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(source))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b = deepCopy(a)	<span class="comment">// 将深拷贝后的值赋给b对象（副本对象）</span></span><br><span class="line">a.arr[<span class="number">1</span>] = [<span class="string">'二'</span>, <span class="string">'三'</span>]	<span class="comment">// 修改原数据内层引用数据类型的值</span></span><br><span class="line"><span class="built_in">console</span>.log(b)	<span class="comment">// 输出[1, [2, 3]]。并不会影响拷贝后副本对象b</span></span><br></pre></td></tr></table></figure>
-<p>&emsp;&emsp;这样，我们就可以用深拷贝的方法拷贝引用数据类型的值，随意修改原数据或副本数据的其中一个，而不用担心另一个也会被随之修改了。</p>
+<p>&emsp;&emsp;这样，我们就可以用深拷贝的方法拷贝引用数据类型的值，随意修改原数据或副本数据的其中一个，而不用担心另一个也会被随之修改了。还有一种递归深拷贝的方法。解决思路是先用<code>for...in...</code>的方法遍历愿数组，检测每次遍历的值是否为引用数据类型，是的话再次调用自身递归循环遍历，不是的话直接添加。需要注意的是两种方法都不支持值为<code>Function</code>或<code>正则</code>等格式的值，需要寻找其它的解决方案。不过一般在业务中用上面提到的两种方法基本上是足够使用的。</p>
 
       
     </div>
