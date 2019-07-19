@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="&amp;emsp;&amp;emsp;js里的数据类型分为基本数据类型和引用数据类型，基本数据类型有undefined, boolean, number, string, null，而引用数据类型就是Object。两种类型在赋值上面是有一些区别的。 赋值基本数据类型&amp;emsp;&amp;emsp;基本数据类型的赋值操作是直接拷贝一份原数据的副本，赋值后改变原数据的值并不会影响到副本数据的值，反之也不会相互影响。">
+<meta name="description" content="&amp;emsp;&amp;emsp;js里的数据类型分为基本数据类型和引用数据类型，基本数据类型有undefined, boolean, number, string, null，而引用数据类型就是Object。两种类型在赋值上面是有一些区别的。">
 <meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript的赋值、浅拷贝和深拷贝">
 <meta property="og:url" content="https://blog.xiekaifei.com/2019/js-copy.html">
 <meta property="og:site_name" content="谢凯飞的博客">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;js里的数据类型分为基本数据类型和引用数据类型，基本数据类型有undefined, boolean, number, string, null，而引用数据类型就是Object。两种类型在赋值上面是有一些区别的。 赋值基本数据类型&amp;emsp;&amp;emsp;基本数据类型的赋值操作是直接拷贝一份原数据的副本，赋值后改变原数据的值并不会影响到副本数据的值，反之也不会相互影响。">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;js里的数据类型分为基本数据类型和引用数据类型，基本数据类型有undefined, boolean, number, string, null，而引用数据类型就是Object。两种类型在赋值上面是有一些区别的。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-19T05:40:14.961Z">
+<meta property="og:updated_time" content="2019-07-19T05:42:46.682Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript的赋值、浅拷贝和深拷贝">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;js里的数据类型分为基本数据类型和引用数据类型，基本数据类型有undefined, boolean, number, string, null，而引用数据类型就是Object。两种类型在赋值上面是有一些区别的。 赋值基本数据类型&amp;emsp;&amp;emsp;基本数据类型的赋值操作是直接拷贝一份原数据的副本，赋值后改变原数据的值并不会影响到副本数据的值，反之也不会相互影响。">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;js里的数据类型分为基本数据类型和引用数据类型，基本数据类型有undefined, boolean, number, string, null，而引用数据类型就是Object。两种类型在赋值上面是有一些区别的。">
 
 
 
@@ -396,8 +396,8 @@
 
       
         <p>&emsp;&emsp;js里的数据类型分为基本数据类型和引用数据类型，基本数据类型有<code>undefined</code>, <code>boolean</code>, <code>number</code>, <code>string</code>, <code>null</code>，而引用数据类型就是<code>Object</code>。两种类型在赋值上面是有一些区别的。</p>
-<h2 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h2><h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><p>&emsp;&emsp;基本数据类型的赋值操作是直接拷贝一份原数据的副本，赋值后改变原数据的值并不会影响到副本数据的值，反之也不会相互影响。</p>
 <a id="more"></a>
+<h2 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h2><h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><p>&emsp;&emsp;基本数据类型的赋值操作是直接拷贝一份原数据的副本，赋值后改变原数据的值并不会影响到副本数据的值，反之也不会相互影响。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span></span><br><span class="line"><span class="keyword">var</span> b = a</span><br><span class="line">a = <span class="number">2</span></span><br><span class="line"><span class="built_in">console</span>.log(b)	<span class="comment">// 改变原数据a的值，并不会影响副本数据b的值，b输出1</span></span><br></pre></td></tr></table></figure>
 <h3 id="引用数据类型"><a href="#引用数据类型" class="headerlink" title="引用数据类型"></a>引用数据类型</h3><p>&emsp;&emsp;而引用数据就不同了，赋值操作后改变原数据和副本数据任何一个数据的值都会影响另一个数据的值。这是因为在将一个引用数据的值赋值给副本数据后，副本数据保存的是和原引用数据相同（以下简称原数据）的指针，该指针和原数据指向同样的内存地址。其中任何一方修改这个指针的值，内存地址对应存储空间上的值发生改变后，另一方的指针指向的位置不变，所以对应指向的值也就发生了相同的改变。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123;</span><br><span class="line">  num: <span class="number">10</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> b = a</span><br><span class="line">b.num = <span class="number">20</span></span><br><span class="line"><span class="built_in">console</span>.log(a.num)	<span class="comment">// 改变副本数据b.num的值，会影响到原数据a.num的值，反之也是，a.num输出20</span></span><br></pre></td></tr></table></figure>
