@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="&amp;emsp;&amp;emsp;js里的数据类型分为基本数据类型和引用数据类型，基本数据类型有undefined, boolean, number, string, null，而引用数据类型就是Object。两种类型在赋值上面是有一些区别的。">
+<meta name="description" content="&amp;emsp;&amp;emsp;js里的数据类型分为基本数据类型和引用数据类型，基本数据类型有undefined, boolean, number, string, null, Symbol(ES6中新增)，而引用数据类型就是Object。两种类型在赋值上面是有一些区别的。">
 <meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript的赋值、浅拷贝和深拷贝">
 <meta property="og:url" content="https://blog.xiekaifei.com/2019/js-copy.html">
 <meta property="og:site_name" content="谢凯飞的博客">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;js里的数据类型分为基本数据类型和引用数据类型，基本数据类型有undefined, boolean, number, string, null，而引用数据类型就是Object。两种类型在赋值上面是有一些区别的。">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;js里的数据类型分为基本数据类型和引用数据类型，基本数据类型有undefined, boolean, number, string, null, Symbol(ES6中新增)，而引用数据类型就是Object。两种类型在赋值上面是有一些区别的。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-19T07:40:37.657Z">
+<meta property="og:updated_time" content="2019-08-09T03:12:44.334Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript的赋值、浅拷贝和深拷贝">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;js里的数据类型分为基本数据类型和引用数据类型，基本数据类型有undefined, boolean, number, string, null，而引用数据类型就是Object。两种类型在赋值上面是有一些区别的。">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;js里的数据类型分为基本数据类型和引用数据类型，基本数据类型有undefined, boolean, number, string, null, Symbol(ES6中新增)，而引用数据类型就是Object。两种类型在赋值上面是有一些区别的。">
 
 
 
@@ -395,7 +395,7 @@
       
 
       
-        <p>&emsp;&emsp;js里的数据类型分为基本数据类型和引用数据类型，基本数据类型有<code>undefined</code>, <code>boolean</code>, <code>number</code>, <code>string</code>, <code>null</code>，而引用数据类型就是<code>Object</code>。两种类型在赋值上面是有一些区别的。</p>
+        <p>&emsp;&emsp;js里的数据类型分为基本数据类型和引用数据类型，基本数据类型有<code>undefined</code>, <code>boolean</code>, <code>number</code>, <code>string</code>, <code>null</code>, <code>Symbol</code>(ES6中新增)，而引用数据类型就是<code>Object</code>。两种类型在赋值上面是有一些区别的。</p>
 <a id="more"></a>
 <h2 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h2><h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><p>&emsp;&emsp;基本数据类型的赋值操作是直接拷贝一份原数据的副本，赋值后改变原数据的值并不会影响到副本数据的值，反之也不会相互影响。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span></span><br><span class="line"><span class="keyword">var</span> b = a</span><br><span class="line">a = <span class="number">2</span></span><br><span class="line"><span class="built_in">console</span>.log(b)	<span class="comment">// 改变原数据a的值，并不会影响副本数据b的值，b输出1</span></span><br></pre></td></tr></table></figure>
