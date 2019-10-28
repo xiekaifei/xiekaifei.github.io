@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="javascript,">
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="谢凯飞的博客">
-<meta name="keywords" content="谢凯飞,谢凯飞的博客,Kevin Xie,blog.xiekaifei.com">
-<meta property="og:type" content="website">
-<meta property="og:title" content="谢凯飞的博客">
-<meta property="og:url" content="https://blog.xiekaifei.com/tags/Mac-OS/index.html">
+<meta name="description" content="&amp;emsp;&amp;emsp;最近接了几个面试，个别出色的面试官在面试技术部分的时候总是很考察被试者的原生js能力的，而业务逻辑写多了就会逐渐淡忘掉最基础同时也是最重要的js知识，结果我不出所料的挂掉了面试。所以，工作的同时多复习原生js知识是非常重要的。今天就来聊一下js中__proto__和prototype。">
+<meta name="keywords" content="javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript中的__proto__与prototype">
+<meta property="og:url" content="https://blog.xiekaifei.com/2019/js-prototype.html">
 <meta property="og:site_name" content="谢凯飞的博客">
-<meta property="og:description" content="谢凯飞的博客">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;最近接了几个面试，个别出色的面试官在面试技术部分的时候总是很考察被试者的原生js能力的，而业务逻辑写多了就会逐渐淡忘掉最基础同时也是最重要的js知识，结果我不出所料的挂掉了面试。所以，工作的同时多复习原生js知识是非常重要的。今天就来聊一下js中__proto__和prototype。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-10-28T16:24:06.038Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="谢凯飞的博客">
-<meta name="twitter:description" content="谢凯飞的博客">
+<meta name="twitter:title" content="JavaScript中的__proto__与prototype">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;最近接了几个面试，个别出色的面试官在面试技术部分的时候总是很考察被试者的原生js能力的，而业务逻辑写多了就会逐渐淡忘掉最基础同时也是最重要的js知识，结果我不出所料的挂掉了面试。所以，工作的同时多复习原生js知识是非常重要的。今天就来聊一下js中__proto__和prototype。">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://blog.xiekaifei.com/tags/Mac-OS/">
+  <link rel="canonical" href="https://blog.xiekaifei.com/2019/js-prototype.html">
 
 
 
 
 
-  <title>标签: Mac OS | 谢凯飞的博客</title>
+  <title>JavaScript中的__proto__与prototype | 谢凯飞的博客</title>
   
 
 
@@ -154,7 +155,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -280,52 +281,188 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>Mac OS<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.xiekaifei.com/2019/js-prototype.html">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kevin Xie">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://cdn.xiekaifei.com/image/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="谢凯飞的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/mac_ssh.html" itemprop="url">
-              
-                <span itemprop="name">Mac OS下使用自带终端ssh连接服务器</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">JavaScript中的__proto__与prototype</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-05T18:28:35+08:00" content="2019-04-05">
-          04-05
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-29T00:14:05+08:00">
+                2019-10-29
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>&emsp;&emsp;最近接了几个面试，个别出色的面试官在面试技术部分的时候总是很考察被试者的原生js能力的，而业务逻辑写多了就会逐渐淡忘掉最基础同时也是最重要的js知识，结果我不出所料的挂掉了面试。所以，工作的同时多复习原生js知识是非常重要的。今天就来聊一下js中__proto__和prototype。</p>
+<a id="more"></a>
+<h2 id="prototype"><a href="#prototype" class="headerlink" title="prototype"></a>prototype</h2><p>&emsp;&emsp;prototype属性即js的原型属性，是为了给所有实例添加共享属性和共享方法的属性。使用方法可见<a href="https://blog.xiekaifei.com/2018/js-constructor.html">这篇文章</a>中的“原型模式”部分。</p>
+<p>&emsp;&emsp;prototype这个属性指向一个包含所有共享属性和共享方法的对象，我们称之为原型对象。同时这个原型对象也有一个叫做”constructor”的属性，这个属性指回的是原构造函数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = <span class="string">'xkf'</span></span><br><span class="line">  <span class="keyword">this</span>.age = <span class="number">18</span></span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(Person.prototype)	<span class="comment">// 会打印出sayName, constructor, __proto__</span></span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;上面的代码先是创建了一个名为”Person”的构造函数，然后给这个方法的原型属性（prototype）内添加了一个所有实例共享的”sayName”方法，最后在控制台打印出了该构造函数的”prototype”属性。可以看到，prototype内包含之前添加的sayName方法，接着有constructor属性，这个属性指回原构造函数也就是它自己”Person”。最后还有一个__proto__。</p>
+<h2 id="proto"><a href="#proto" class="headerlink" title="__proto__"></a>__proto__</h2><p>&emsp;&emsp;js的每个实例对象中会有__proto__这样一个私有属性，有些人把这个属性称之为“隐式原型”，这个属性指向构造该对象的构造函数的原型属性（prototype）。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = <span class="string">'xkf'</span></span><br><span class="line">  <span class="keyword">this</span>.age = <span class="number">18</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person()</span><br><span class="line"><span class="built_in">console</span>.log(p.__proto__ === Person.prototype)	<span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;上面的代码先是创建了一个名为”Person”的构造函数，然后基于”Person”创建了它的实例”p”。这个时候如果直接打印p的话会看到，p里面除了有继承自构造函数Person中的属性”name”和”age”之外，还有一个私有属性（隐式原型）__proto__，而它指向的就是构造该对象的构造函数（Person）的原型，所以两者在最后比较的时候会返回”true”。</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/js-copy.html" rel="next" title="JavaScript的赋值、浅拷贝和深拷贝">
+                <i class="fa fa-chevron-left"></i> JavaScript的赋值、浅拷贝和深拷贝
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -333,6 +470,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -353,8 +494,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -438,6 +588,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#prototype"><span class="nav-number">1.</span> <span class="nav-text">prototype</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#proto"><span class="nav-number">2.</span> <span class="nav-text">__proto__</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -566,6 +732,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
