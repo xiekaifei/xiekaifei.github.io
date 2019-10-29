@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="&amp;emsp;&amp;emsp;最近接了几个面试，个别出色的面试官在面试技术部分的时候总是很考察被试者的原生js能力，而业务逻辑写多了就会逐渐淡忘掉最基础同时也是最重要的js知识，结果我不出所料的挂掉了面试。所以，工作的同时多复习原生js知识是非常重要的。今天就来聊一下js中__proto__和prototype。">
+<meta name="description" content="&amp;emsp;&amp;emsp;最近接了几个面试，个别出色的面试官在面试技术部分的时候总是很考察被试者的原生js能力，而业务逻辑写多了就会逐渐淡忘掉最基础同时也是最重要的js知识。所以，工作的同时多复习原生js知识是非常重要的。今天就来聊一下js中__proto__和prototype。">
 <meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript中的__proto__与prototype">
 <meta property="og:url" content="https://blog.xiekaifei.com/2019/js-prototype.html">
 <meta property="og:site_name" content="谢凯飞的博客">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;最近接了几个面试，个别出色的面试官在面试技术部分的时候总是很考察被试者的原生js能力，而业务逻辑写多了就会逐渐淡忘掉最基础同时也是最重要的js知识，结果我不出所料的挂掉了面试。所以，工作的同时多复习原生js知识是非常重要的。今天就来聊一下js中__proto__和prototype。">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;最近接了几个面试，个别出色的面试官在面试技术部分的时候总是很考察被试者的原生js能力，而业务逻辑写多了就会逐渐淡忘掉最基础同时也是最重要的js知识。所以，工作的同时多复习原生js知识是非常重要的。今天就来聊一下js中__proto__和prototype。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-28T16:27:27.061Z">
+<meta property="og:updated_time" content="2019-10-29T02:37:22.075Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript中的__proto__与prototype">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;最近接了几个面试，个别出色的面试官在面试技术部分的时候总是很考察被试者的原生js能力，而业务逻辑写多了就会逐渐淡忘掉最基础同时也是最重要的js知识，结果我不出所料的挂掉了面试。所以，工作的同时多复习原生js知识是非常重要的。今天就来聊一下js中__proto__和prototype。">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;最近接了几个面试，个别出色的面试官在面试技术部分的时候总是很考察被试者的原生js能力，而业务逻辑写多了就会逐渐淡忘掉最基础同时也是最重要的js知识。所以，工作的同时多复习原生js知识是非常重要的。今天就来聊一下js中__proto__和prototype。">
 
 
 
@@ -395,7 +395,7 @@
       
 
       
-        <p>&emsp;&emsp;最近接了几个面试，个别出色的面试官在面试技术部分的时候总是很考察被试者的原生js能力，而业务逻辑写多了就会逐渐淡忘掉最基础同时也是最重要的js知识，结果我不出所料的挂掉了面试。所以，工作的同时多复习原生js知识是非常重要的。今天就来聊一下js中__proto__和prototype。</p>
+        <p>&emsp;&emsp;最近接了几个面试，个别出色的面试官在面试技术部分的时候总是很考察被试者的原生js能力，而业务逻辑写多了就会逐渐淡忘掉最基础同时也是最重要的js知识。所以，工作的同时多复习原生js知识是非常重要的。今天就来聊一下js中__proto__和prototype。</p>
 <a id="more"></a>
 <h2 id="prototype"><a href="#prototype" class="headerlink" title="prototype"></a>prototype</h2><p>&emsp;&emsp;prototype属性即js的原型属性，是为了给所有实例添加共享属性和共享方法的属性。使用方法可见<a href="https://blog.xiekaifei.com/2018/js-constructor.html">这篇文章</a>中的“原型模式”部分。</p>
 <p>&emsp;&emsp;prototype这个属性指向一个包含所有共享属性和共享方法的对象，我们称之为原型对象。同时这个原型对象也有一个叫做”constructor”的属性，这个属性指回的是原构造函数。</p>
