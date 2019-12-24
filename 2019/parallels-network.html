@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Vue.js,">
+  <meta name="keywords" content="虚拟机,Parallels,网络,">
 
 
 
@@ -79,20 +79,23 @@
 
 
 
-<meta name="description" content="&amp;emsp;&amp;emsp;vue实例有一个完整的生命周期，先上一段vue.js官网对vue实例生命周期的解释：  每个 Vue 实例在被创建时都要经过一系列的初始化过程——例如，需要设置数据监听、编译模板、将实例挂载到 DOM 并在数据变化时更新 DOM 等。  &amp;emsp;&amp;emsp;同时，在这个过程中，会运行一些叫做生命周期钩子的函数，这给了用户在不同阶段添加自己的代码的机会。">
-<meta name="keywords" content="Vue.js">
+<meta name="description" content="&amp;emsp;&amp;emsp;最近我在Parallels里安装了一台ubuntu的虚拟机，因为平常都是用宿主机ssh远程到虚拟机上使用的，所以在配置虚拟机网络这一块就首先选择了桥接模式。Parallels里的桥接模式下，虚拟机可以和宿主机通信，可以和与宿主机同一局域网内且同一网段的其它设备通信，多个虚拟机之间也可以相互通信，也可以连接互联网，等于为虚拟机新分配了一个局域网地址，一般正常使用的话，我都是采">
+<meta name="keywords" content="虚拟机,Parallels,网络">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue.js实例的生命周期">
-<meta property="og:url" content="https://blog.xiekaifei.com/2019/vue.js-lifecycle.html">
+<meta property="og:title" content="Parallels配置虚拟机网络（宿主机ip不定，虚拟机ip固定）">
+<meta property="og:url" content="https://blog.xiekaifei.com/2019/parallels-network.html">
 <meta property="og:site_name" content="谢凯飞的博客">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;vue实例有一个完整的生命周期，先上一段vue.js官网对vue实例生命周期的解释：  每个 Vue 实例在被创建时都要经过一系列的初始化过程——例如，需要设置数据监听、编译模板、将实例挂载到 DOM 并在数据变化时更新 DOM 等。  &amp;emsp;&amp;emsp;同时，在这个过程中，会运行一些叫做生命周期钩子的函数，这给了用户在不同阶段添加自己的代码的机会。">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;最近我在Parallels里安装了一台ubuntu的虚拟机，因为平常都是用宿主机ssh远程到虚拟机上使用的，所以在配置虚拟机网络这一块就首先选择了桥接模式。Parallels里的桥接模式下，虚拟机可以和宿主机通信，可以和与宿主机同一局域网内且同一网段的其它设备通信，多个虚拟机之间也可以相互通信，也可以连接互联网，等于为虚拟机新分配了一个局域网地址，一般正常使用的话，我都是采">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://cdn.xiekaifei.com/image/2019/blog/jishu/lifecycle.png">
-<meta property="og:updated_time" content="2019-07-13T06:05:34.616Z">
+<meta property="og:image" content="https://cdn.xiekaifei.com/image/2019/blog/jishu/2019-12-2410.26.46.png">
+<meta property="og:image" content="https://cdn.xiekaifei.com/image/2019/blog/jishu/2019-12-2410.47.35.png">
+<meta property="og:image" content="https://cdn.xiekaifei.com/image/2019/blog/jishu/2019-12-2410.32.48.png">
+<meta property="og:image" content="https://cdn.xiekaifei.com/image/2019/blog/jishu/2019-12-2410.56.44.png">
+<meta property="og:updated_time" content="2019-12-24T03:09:52.597Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vue.js实例的生命周期">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;vue实例有一个完整的生命周期，先上一段vue.js官网对vue实例生命周期的解释：  每个 Vue 实例在被创建时都要经过一系列的初始化过程——例如，需要设置数据监听、编译模板、将实例挂载到 DOM 并在数据变化时更新 DOM 等。  &amp;emsp;&amp;emsp;同时，在这个过程中，会运行一些叫做生命周期钩子的函数，这给了用户在不同阶段添加自己的代码的机会。">
-<meta name="twitter:image" content="https://cdn.xiekaifei.com/image/2019/blog/jishu/lifecycle.png">
+<meta name="twitter:title" content="Parallels配置虚拟机网络（宿主机ip不定，虚拟机ip固定）">
+<meta name="twitter:description" content="&amp;emsp;&amp;emsp;最近我在Parallels里安装了一台ubuntu的虚拟机，因为平常都是用宿主机ssh远程到虚拟机上使用的，所以在配置虚拟机网络这一块就首先选择了桥接模式。Parallels里的桥接模式下，虚拟机可以和宿主机通信，可以和与宿主机同一局域网内且同一网段的其它设备通信，多个虚拟机之间也可以相互通信，也可以连接互联网，等于为虚拟机新分配了一个局域网地址，一般正常使用的话，我都是采">
+<meta name="twitter:image" content="https://cdn.xiekaifei.com/image/2019/blog/jishu/2019-12-2410.26.46.png">
 
 
 
@@ -122,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="https://blog.xiekaifei.com/2019/vue.js-lifecycle.html">
+  <link rel="canonical" href="https://blog.xiekaifei.com/2019/parallels-network.html">
 
 
 
 
 
-  <title>Vue.js实例的生命周期 | 谢凯飞的博客</title>
+  <title>Parallels配置虚拟机网络（宿主机ip不定，虚拟机ip固定） | 谢凯飞的博客</title>
   
 
 
@@ -297,7 +300,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.xiekaifei.com/2019/vue.js-lifecycle.html">
+    <link itemprop="mainEntityOfPage" href="https://blog.xiekaifei.com/2019/parallels-network.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kevin Xie">
@@ -314,7 +317,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Vue.js实例的生命周期</h1>
+          <h1 class="post-title" itemprop="name headline">Parallels配置虚拟机网络（宿主机ip不定，虚拟机ip固定）</h1>
         
 
         <div class="post-meta">
@@ -326,8 +329,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-13T14:43:55+08:00">
-                2019-02-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-24T09:40:28+08:00">
+                2019-12-24
               </time>
             
 
@@ -360,8 +363,8 @@
                 
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/技术/Vue-js/" itemprop="url" rel="index">
-                    <span itemprop="name">Vue.js</span>
+                  <a href="/categories/技术/虚拟机/" itemprop="url" rel="index">
+                    <span itemprop="name">虚拟机</span>
                   </a>
                 </span>
 
@@ -397,16 +400,30 @@
       
 
       
-        <p>&emsp;&emsp;vue实例有一个完整的生命周期，先上一段vue.js官网对vue实例生命周期的解释：</p>
-<blockquote>
-<p>每个 Vue 实例在被创建时都要经过一系列的初始化过程——例如，需要设置数据监听、编译模板、将实例挂载到 DOM 并在数据变化时更新 DOM 等。</p>
-</blockquote>
-<p>&emsp;&emsp;同时，在这个过程中，会运行一些叫做<strong>生命周期钩子</strong>的函数，这给了用户在不同阶段添加自己的代码的机会。</p>
+        <p>&emsp;&emsp;最近我在Parallels里安装了一台ubuntu的虚拟机，因为平常都是用宿主机ssh远程到虚拟机上使用的，所以在配置虚拟机网络这一块就首先选择了桥接模式。Parallels里的桥接模式下，<strong>虚拟机可以和宿主机通信，可以和与宿主机同一局域网内且同一网段的其它设备通信，多个虚拟机之间也可以相互通信，也可以连接互联网</strong>，等于为虚拟机新分配了一个局域网地址，一般正常使用的话，我都是采用这种模式。但是这种模式下有一个问题，因为我用的是笔记本电脑，经常是在家和公司之间或者其它地方使用。这样当我的笔记本（宿主机）网络环境变了以后，我的虚拟机ip地址也会改变。虽然可以在虚拟机内设置固定ip，但宿主机的网段一旦改变，之前虚拟机设置的固定ip如果和宿主机不处于同一网段下的话，还是无法实现通信。举个栗子：</p>
 <a id="more"></a>
-<p><img src="https://cdn.xiekaifei.com/image/2019/blog/jishu/lifecycle.png" alt="vue实例生命周期图"></p>
-<p>&emsp;&emsp;上面这张图是vuejs官网<a href="https://cn.vuejs.org/v2/guide/instance.html" target="_blank" rel="noopener">vue实例章节</a>中给出的vue实例生命周期图示，下面我来逐项解释图中的每一步当中生命周期钩子函数的用法。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> test = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="string">'#app'</span>,</span><br><span class="line">    data: &#123;</span><br><span class="line">        message: <span class="string">'Hello'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">/*   结合上面的生命周期图来看，首先是第一步创建一个vue对象new Vue(),然后vue实例进行</span></span><br><span class="line"><span class="comment">    基础的初始化操作(Init Events &amp; Lifecycle)之后，就会进入到beforeCreate函数，这时</span></span><br><span class="line"><span class="comment">    控制台会输出“undefined beforeCreate"，这是因为此时vue还没有监控data对象数据的变化，</span></span><br><span class="line"><span class="comment">    所以this.message会输出“undefined”   */</span></span><br><span class="line">    beforeCreate: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.message + <span class="string">' beforeCreate'</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">/*   beforeCreated函数执行完毕后，vue实例会初始化剩下的部分，接着执行created函数，</span></span><br><span class="line"><span class="comment">    下面的函数会在控制台输出“Hello created”,此时vue实例都已初始化完毕，this.message可以被输出   */</span></span><br><span class="line">    created: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.message + <span class="string">' created'</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">/*   created函数执行完毕后，会询问实例中是否有"el"选项，本test实例中有el实例，接着会询问是否有</span></span><br><span class="line"><span class="comment">    "template"模板，本实例中没有定义，所以会走No分支，会把当前el的整体内容当做模板。</span></span><br><span class="line"><span class="comment">    那么此时的模板，就是当前HTML文件内，id为"app"标签的所有内容。如果实例中有"template"，</span></span><br><span class="line"><span class="comment">    模板即为"template"属性中的内容。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    接着往下走到了beforeMount函数，下面的函数会在控制台输出"Hello beforeMount"，此时</span></span><br><span class="line"><span class="comment">    页面还没有将编译出的HTML文件渲染到页面上，beforeMount函数正是此时执行的函数。   */</span></span><br><span class="line">    beforeMount: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.message + <span class="string">' beforeMount'</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 到了mounted函数执行的时候，此时模板已经挂载完成，HTML内容已经被渲染到了页面上。</span></span><br><span class="line">    mounted: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.message + <span class="string">' mounted'</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    beforeDestroy: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.message + <span class="string">' beforeDestroy'</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    destroyed: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.message + <span class="string">' destroyed'</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">/*   beforeDestroy和destroyed分别是在实例销毁之前和实例销毁之后执行的函数，</span></span><br><span class="line"><span class="comment">    此时如果我们在控制台使用"test.$destroy()"方法来销毁该实例的话，控制台会输出</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    Hello beforeDestroy</span></span><br><span class="line"><span class="comment">    Hello destroyed</span></span><br><span class="line"><span class="comment">    undefined</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    说明beforeDestroy()和destroyed()两个函数分别先后得到了执行，同时销毁了test实例   */</span></span><br><span class="line"></span><br><span class="line">    beforeUpdate: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.message + <span class="string">' beforeUpdate'</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    updated: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.message + <span class="string">' updated'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/*   beforeUpdate和updated函数分别是当数据改变时，会在改变前和改变后分别执行的两个函数，</span></span><br><span class="line"><span class="comment">    此时如果我们在控制台执行"test.message = 'Hi'"，控制台会输出</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    Hi beforeUpdate</span></span><br><span class="line"><span class="comment">    Hi updated</span></span><br><span class="line"><span class="comment">    "Hi"</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    说明beforeUPdate()和updated()两个函数分别在数据改变前后得到了执行   */</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>&emsp;&emsp;生命周期函数就是vue实例在某一个时间点会自动执行的函数，我们可以通过在vue实例运行过程中的不同时间点来嵌入不同的函数，以此来实现相应的功能。</p>
+<blockquote>
+<p>比如在公司的时候，宿主机被分配到的ip地址是 <strong>192.168.xxx.3</strong><br>这时如果采用桥接模式，虚拟机被分配到的ip地址是 <strong>192.168.xxx.4</strong> ，这时是没问题的。<br>可是如果回了家，宿主机的被分配到的ip地址是 <strong>192.168.yyy.3</strong></p>
+</blockquote>
+<p>&emsp;&emsp;这种时候要么虚拟机不固定ip，网段也变为了yyy，我每次开机都要先查看虚拟机的ip地址，然后才能远程连接，这样太麻烦了。固定ip的话，因为宿主机的网段会变，而且不固定，又无法实现通信。所以这种模式显然不适合宿主机ip不固定的情况。</p>
+<p>&emsp;&emsp;我先来整理一下我的需求：</p>
+<ol>
+<li>宿主机和虚拟机之间可以正常通信。</li>
+<li>多个虚拟机之间可以正常通信。</li>
+<li>宿主机同一局域网下且网段相同的设备可以和虚拟机之间实现通信。</li>
+<li>虚拟机可以正常连接互联网。</li>
+</ol>
+<p>&emsp;&emsp;经过一番谷歌大法后，终于找到了解决方案。</p>
+<p>&emsp;&emsp;首先在Parallels的“偏好设置”–“网络”中，勾选<strong>在系统偏好设置中显示</strong>和<strong>启用IPv4 DHCP</strong>，设置好起始地址和结束地址，这里可以重新设置一个网段（当然也可以点击做左边网卡列表的+号新加一块网卡来设置）。勾选了在系统偏好设置中显示这个选项以后，在你的mac中的“系统偏好设置”–“网络”里就可以看到这块网卡，里面有本机的ip地址。</p>
+<p><img src="https://cdn.xiekaifei.com/image/2019/blog/jishu/2019-12-2410.26.46.png" alt="Parallels网络偏好设置"></p>
+<p>&emsp;&emsp;然后添加端口转发。</p>
+<p><img src="https://cdn.xiekaifei.com/image/2019/blog/jishu/2019-12-2410.47.35.png" alt="Parallels端口转发"></p>
+<p>&emsp;&emsp;最后把虚拟机的网络配置为<strong>共享网络</strong>。</p>
+<p><img src="https://cdn.xiekaifei.com/image/2019/blog/jishu/2019-12-2410.32.48.png" alt="Parallels设置虚拟机网络为共享模式"></p>
+<p>&emsp;&emsp;这里解释一下我们都干了什么。首先我们添加了一个全新的192.168.8.xxx的网段，并把虚拟机的网络配置为了共享网络模式。<strong>这种模式等于宿主机新加了一块虚拟网卡给虚拟机使用。宿主机的网卡可以实现和同局域网下且同一网段的其它设备通信，同时宿主机的虚拟网卡也可以实现宿主机与虚拟机之间通信</strong>。我们还添加了端口转发，这一项设置是为了让和宿主机处于同一局域网下且同一网段的其它设备与虚拟机产生通信。直接通信是不行的，因为这些设备与虚拟机不处于同一网段（虚拟机处于新添加的192.168.8.xxx网段下），所以刚才设置的端口转发就派上了用场。上图设置了访问宿主机的<strong>ip+65532</strong>端口号，自动转发给我的名为“Ubuntu 18.04”的虚拟机的22端口，这样就可以通过ssh来直接远程我的Linux虚拟机。</p>
+<p>&emsp;&emsp;最后再把虚拟机的ip固定一下，这样每次ssh连接虚拟机的时候就可以使用同一个ip地址了。</p>
+<p>&emsp;&emsp;刚才我们转发到的是虚拟机的22端口，当然如果想让虚拟机充当web服务器的角色的话，也可以再添加一个80端口，就可以实现局域网内的web访问了。（宿主机可以直接访问虚拟机的ip地址，和宿主机处于同一局域网且同一网段的其它设备无法直接访问，需要访问宿主机的ip地址+转发前的端口号）</p>
+<p><img src="https://cdn.xiekaifei.com/image/2019/blog/jishu/2019-12-2410.56.44.png" alt="转发访问虚拟机80端口"></p>
 
       
     </div>
@@ -424,7 +441,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Vue-js/" rel="tag"># Vue.js</a>
+            <a href="/tags/虚拟机/" rel="tag"># 虚拟机</a>
+          
+            <a href="/tags/Parallels/" rel="tag"># Parallels</a>
+          
+            <a href="/tags/网络/" rel="tag"># 网络</a>
           
         </div>
       
@@ -437,8 +458,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/gohome.html" rel="next" title="2019春运回家路">
-                <i class="fa fa-chevron-left"></i> 2019春运回家路
+              <a href="/2019/js-promise.html" rel="next" title="JavaScript里的Promise">
+                <i class="fa fa-chevron-left"></i> JavaScript里的Promise
               </a>
             
           </div>
@@ -446,10 +467,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/mac_ssh.html" rel="prev" title="Mac OS下使用自带终端ssh连接服务器">
-                Mac OS下使用自带终端ssh连接服务器 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
