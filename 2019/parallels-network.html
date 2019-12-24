@@ -91,7 +91,7 @@
 <meta property="og:image" content="https://cdn.xiekaifei.com/image/2019/blog/jishu/2019-12-2410.47.35.png">
 <meta property="og:image" content="https://cdn.xiekaifei.com/image/2019/blog/jishu/2019-12-2410.32.48.png">
 <meta property="og:image" content="https://cdn.xiekaifei.com/image/2019/blog/jishu/2019-12-2410.56.44.png">
-<meta property="og:updated_time" content="2019-12-24T03:12:32.468Z">
+<meta property="og:updated_time" content="2019-12-24T09:28:52.136Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Parallels配置虚拟机网络（宿主机ip不固定，虚拟机ip固定）">
 <meta name="twitter:description" content="&amp;emsp;&amp;emsp;最近我在Parallels里安装了一台ubuntu的虚拟机，因为平常都是用宿主机ssh远程到虚拟机上使用的，所以在配置虚拟机网络这一块就首先选择了桥接模式。Parallels里的桥接模式下，虚拟机可以和宿主机通信，可以和与宿主机同一局域网内且同一网段的其它设备通信，多个虚拟机之间也可以相互通信，也可以连接互联网，等于为虚拟机新分配了一个局域网地址，一般正常使用的话，我都是采">
@@ -405,7 +405,7 @@
 <blockquote>
 <p>比如在公司的时候，宿主机被分配到的ip地址是 <strong>192.168.xxx.3</strong><br>这时如果采用桥接模式，虚拟机被分配到的ip地址是 <strong>192.168.xxx.4</strong> ，这时是没问题的。<br>可是如果回了家，宿主机的被分配到的ip地址是 <strong>192.168.yyy.3</strong></p>
 </blockquote>
-<p>&emsp;&emsp;这种时候要么虚拟机不固定ip，网段也变为了yyy，我每次开机都要先查看虚拟机的ip地址，然后才能远程连接，这样太麻烦了。固定ip的话，因为宿主机的网段会变，而且不固定，又无法实现通信。所以这种模式显然不适合宿主机ip不固定的情况。</p>
+<p>&emsp;&emsp;这种时候要么虚拟机不固定ip，网段也变为了yyy，我每次开机都需要先查看虚拟机的ip地址，然后才能远程连接，这样太麻烦了。固定ip的话，因为宿主机的网段会变，而且不固定，又无法实现通信。所以这种模式显然不适合宿主机ip不固定的情况。</p>
 <p>&emsp;&emsp;我先来整理一下我的需求：</p>
 <ol>
 <li>宿主机和虚拟机之间可以正常通信。</li>
