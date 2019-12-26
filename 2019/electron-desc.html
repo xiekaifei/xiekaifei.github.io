@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="谢凯飞的博客">
 <meta property="og:description" content="&amp;emsp;&amp;emsp;Electron是一个能让你使用前端技术（JavaScript, HTML, CSS和Node.js）构建跨平台的桌面应用的框架。最初被GitHub开发，2013年4月11日以Atom Shell为名起步，被用来实现自家出品的编辑器Atom，2014年5月16日开源，2015年4月17日改名为Electron。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-26T01:32:29.189Z">
+<meta property="og:updated_time" content="2019-12-26T01:38:03.475Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Electron介绍（理论篇）">
 <meta name="twitter:description" content="&amp;emsp;&amp;emsp;Electron是一个能让你使用前端技术（JavaScript, HTML, CSS和Node.js）构建跨平台的桌面应用的框架。最初被GitHub开发，2013年4月11日以Atom Shell为名起步，被用来实现自家出品的编辑器Atom，2014年5月16日开源，2015年4月17日改名为Electron。">
@@ -398,10 +398,10 @@
         <p>&emsp;&emsp;Electron是一个能让你使用前端技术（JavaScript, HTML, CSS和Node.js）构建跨平台的桌面应用的框架。最初被GitHub开发，2013年4月11日以Atom Shell为名起步，被用来实现自家出品的编辑器Atom，2014年5月16日开源，2015年4月17日改名为Electron。</p>
 <a id="more"></a>
 <h2 id="基于Electron实现的产品"><a href="#基于Electron实现的产品" class="headerlink" title="基于Electron实现的产品"></a>基于Electron实现的产品</h2><p>&emsp;&emsp;VsCode, Atom等。</p>
-<h2 id="lectron组成"><a href="#lectron组成" class="headerlink" title="lectron组成"></a>lectron组成</h2><p>&emsp;&emsp;Electron主要由Node.js、Chromium和封装好的系统API三大部分组成。</p>
+<h2 id="Electron组成"><a href="#Electron组成" class="headerlink" title="Electron组成"></a>Electron组成</h2><p>&emsp;&emsp;Electron主要由Node.js、Chromium和封装好的系统API三大部分组成。</p>
 <p>&emsp;&emsp;在Electron构建的程序里，Chromium负责页面渲染进程，Node.js负责程序的逻辑部分，开发中可以使用所有Node.js的原生API，也可以使用npm平台上的所有模块。使用Electron的API可以实现如通知、自定义Windows任务栏/MacOS Dock、最近文档等操作系统原生功能。</p>
 <h2 id="Electron进程"><a href="#Electron进程" class="headerlink" title="Electron进程"></a>Electron进程</h2><p>&emsp;&emsp;Electron有两种进程，分别是主进程和渲染进程。</p>
-<p>&emsp;&emsp;主进程有且只有一个，负责调用Electron的API实现系统功能，控制应用的生命周期，创建单独的渲染进程来加载web页面。</p>
+<p>&emsp;&emsp;主进程只能有一个，负责调用Electron的API实现系统功能，控制应用的生命周期，创建单独的渲染进程来加载web页面等。</p>
 <p>&emsp;&emsp;每个单独的web页面都运行在属于它自己的渲染进程中，是相互独立的。这意味着某一个渲染进程崩溃了，并不会影响到其它的渲染进程。渲染进程负责渲染页面和处理相应的页面交互。有一点需要注意的是，渲染进程并不能直接调用与 GUI 相关的原生 API （比如操作系统菜单、创建新窗口等），因为渲染进程等于是使用的Chromium来展示web页面，在web页面中，直接操作原生的 GUI 资源是非常危险的，而且容易造成资源泄露。如果想要在渲染进程内使用GUI操作，可以与主进程产生通讯，请求主进程调用相应的API来操作。</p>
 <h2 id="Electron优缺点"><a href="#Electron优缺点" class="headerlink" title="Electron优缺点"></a>Electron优缺点</h2><h3 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h3><ul>
 <li><p>快速构建跨平台（Windows、MacOs、Linux）的桌面级应用</p>
@@ -613,7 +613,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基于Electron实现的产品"><span class="nav-number">1.</span> <span class="nav-text">基于Electron实现的产品</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lectron组成"><span class="nav-number">2.</span> <span class="nav-text">lectron组成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Electron进程"><span class="nav-number">3.</span> <span class="nav-text">Electron进程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Electron优缺点"><span class="nav-number">4.</span> <span class="nav-text">Electron优缺点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#优点："><span class="nav-number">4.1.</span> <span class="nav-text">优点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缺点："><span class="nav-number">4.2.</span> <span class="nav-text">缺点：</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基于Electron实现的产品"><span class="nav-number">1.</span> <span class="nav-text">基于Electron实现的产品</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Electron组成"><span class="nav-number">2.</span> <span class="nav-text">Electron组成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Electron进程"><span class="nav-number">3.</span> <span class="nav-text">Electron进程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Electron优缺点"><span class="nav-number">4.</span> <span class="nav-text">Electron优缺点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#优点："><span class="nav-number">4.1.</span> <span class="nav-text">优点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缺点："><span class="nav-number">4.2.</span> <span class="nav-text">缺点：</span></a></li></ol></li></ol></div>
             
 
           </div>
