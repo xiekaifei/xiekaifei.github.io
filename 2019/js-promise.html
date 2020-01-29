@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="谢凯飞的博客">
 <meta property="og:description" content="&amp;emsp;&amp;emsp;JavaScript在ES6版本中新增了Promise对象。 概述 Promise 对象是一个代理对象（代理一个值），被代理的值在Promise对象创建时可能是未知的。它允许你为异步操作的成功和失败分别绑定相应的处理方法（handlers）。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-09T07:38:30.453Z">
+<meta property="og:updated_time" content="2020-01-29T12:47:25.433Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript里的Promise">
 <meta name="twitter:description" content="&amp;emsp;&amp;emsp;JavaScript在ES6版本中新增了Promise对象。 概述 Promise 对象是一个代理对象（代理一个值），被代理的值在Promise对象创建时可能是未知的。它允许你为异步操作的成功和失败分别绑定相应的处理方法（handlers）。">
@@ -404,8 +404,8 @@
 <p>&emsp;&emsp;<code>Promise</code>其实就是一个对异步操作结果的封装。一个<code>Promise</code>有三种状态：</p>
 <ul>
 <li>Pending: 初始状态，既不是成功，也不是失败状态。</li>
-<li>Fulfilled: 意味着操作成功完成。</li>
-<li>rejected: 意味着操作失败。</li>
+<li>Fulfilled: 表示操作成功完成。</li>
+<li>rejected: 表示操作失败。</li>
 </ul>
 <p>&emsp;&emsp;<code>Promise</code>翻译为保证，承诺的意思。这意味着一个<code>Promise</code>一旦有了结果，就不会再发生改变。Pending是初始状态，此时表明还没有获取到结果。一旦状态从<code>Pending</code>改变为<code>Fulfilled</code>或<code>rejected</code>后，状态便不会再发生改变。</p>
 <p>&emsp;&emsp;在之前的ES5时代，我们通常会用回调函数来处理异步操作的结果。</p>
