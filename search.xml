@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Node.js中的events模块]]></title>
+    <url>%2F2020%2Fnode-events.html</url>
+    <content type="text"><![CDATA[&emsp;&emsp;在Node.js（以下简称node）中，有一个events模块，中文名称是“事件触发器”。node的一大特点就是事件驱动。在node里，很多行为都会触发相应的事件，而所有能触发事件的对象都是events模块类的实例，它们都有添加事件的能力。 on()&emsp;&emsp;先看代码： 123456789101112131415const events = require('events')class MyEvent extends events &#123; &#125;const myevent = new MyEvent()// 注册监听器myevent.on('event1', function (a) &#123; console.log('event' + a)&#125;)// 使用ES6箭头函数注册监听器myevent.on('event2', (a) =&gt; &#123; console.log('event' + a)&#125;)// emit()触发事件myevent.emit('event1', 1)myevent.emit('event2', 2) &emsp;&emsp;上面的代码使用了一个MyEvent类继承了events类，使MyEvent类的实例有了注册事件监听器的能力。然后调用了on()函数，注册了两个监听器。on()函数可以接收两个参数，第一个参数是事件名称，第二个参数是一个函数，为触发事件时执行的方法，函数的参数为触发事件时要传给监听器的参数，可以没有或有若干个。我注册了两个监听器，其中第二个监听器的第二个函数参数是采用ES6的箭头的写法。两者的区别是箭头函数没有this，而普通函数的this关键字指向监听器所绑定类的实例，在上面的代码里也就是myevent。 &emsp;&emsp;添加好监听器后，用emit()触发事件，后面的参数就是添加监听器时，函数内传递的参数。 &emsp;&emsp;在node环境下运行上面的代码，就会输出： 12event1event2 &emsp;&emsp;上面的方法其实继承的是events模块的EventEmitter类，所以我们直接用如下方法也可以。 1234567const EventEmitter = require('events').EventEmitterconst myevent = new EventEmitter()myevent.on('event', () =&gt; &#123; console.log('event') // event&#125;)myevent.emit('event') once()&emsp;&emsp;除了用on()函数添加监听器，还可以用once()添加仅可以被触发一次的事件。 1234567891011const events = require('events')class MyEvent extends events &#123; &#125;const myevent = new MyEvent()myevent.once('event', () =&gt; &#123; console.log('event')&#125;)myevent.emit('event')// 用once()添加的触发器只会被触发一次，下面的语句不会被执行。myevent.emit('event') setMaxListeners(n)&emsp;&emsp;默认情况下，如果为特定事件添加了超过 10 个监听器，则 EventEmitter 会打印一个警告。 这有助于发现内存泄露。使用setMaxlisteners()方法，可以调整这个限制。参数为一个数字，即次数，参数为0表示不限次数。 12345678910111213const events = require('events')class MyEvent extends events &#123; &#125;const myevent = new MyEvent()myevent.setMaxListeners(11) // 修改事件监听器为数量11// 给event事件添加11个监听器for (let i = 0; i &lt;= 10; i++) &#123; myevent.on('event', () =&gt; &#123; console.log(`event$&#123;i + 1&#125;`) &#125;)&#125;myevent.emit('event') &emsp;&emsp;上面的代码使用setMaxListeners()方法设置了myevent可以添加11个监听器（超过控制台会打印警告）。]]></content>
+      <categories>
+        <category>技术</category>
+        <category>Node.js</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+        <tag>Node.js</tag>
+        <tag>node</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Electron介绍（理论篇）]]></title>
     <url>%2F2019%2Felectron-desc.html</url>
     <content type="text"><![CDATA[&emsp;&emsp;Electron是一个能让你使用前端技术（JavaScript, HTML, CSS和Node.js）构建跨平台的桌面应用的框架。最初被GitHub开发，2013年4月11日以Atom Shell为名起步，2014年5月16日开源，2015年4月17日改名为Electron。 基于Electron实现的产品&emsp;&emsp;VsCode, Atom等。 Electron组成&emsp;&emsp;Electron主要由Node.js、Chromium和封装好的系统API三大部分组成。 &emsp;&emsp;在Electron构建的程序里，Chromium负责页面渲染进程，Node.js负责程序的逻辑部分，开发中可以使用所有Node.js的原生API，也可以使用npm平台上的所有模块。使用Electron的API可以实现如通知、自定义Windows任务栏/MacOS Dock、最近文档等操作系统原生功能。 Electron进程&emsp;&emsp;Electron有两种进程，分别是主进程和渲染进程。 &emsp;&emsp;主进程只能有一个，负责调用Electron的API实现系统功能，控制应用的生命周期，创建单独的渲染进程来加载web页面等。 &emsp;&emsp;每个单独的web页面都运行在属于它自己的渲染进程中，是相互独立的。这意味着某一个渲染进程崩溃了，并不会影响到其它的渲染进程。渲染进程负责渲染页面和处理相应的页面交互。有一点需要注意的是，渲染进程并不能直接调用与 GUI 相关的原生 API （比如操作系统菜单、创建新窗口等），因为渲染进程等于是使用的Chromium来展示web页面，在web页面中，直接操作原生的 GUI 资源是非常危险的，而且容易造成资源泄露。如果想要在渲染进程内使用GUI操作，可以与主进程产生通讯，请求主进程调用相应的API来操作。 Electron优缺点优点： 快速构建跨平台（Windows、MacOs、Linux）的桌面级应用 因为使用Node.js开发，所以npm平台下的包都可以使用，提升开发效率，避免重复造轮子 有很多现成的UI框架可以使用 缺点： 安装包体积略大（打包了Chromium） 性能不如原生应用]]></content>
