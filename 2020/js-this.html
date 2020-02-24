@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="谢凯飞的博客">
 <meta property="og:description" content="&amp;emsp;&amp;emsp;关于箭头函数里的this这个问题一直很模糊，之前看了很多教程虽然知道了其行为，但是具体实现规则一直不太清晰。今天为了彻底搞懂这个问题，查了很多资料，感觉查到的很多例子不是很能清晰的描述这种行为。所以今天特地自己写一遍文章来说明一下。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-02-24T14:37:36.010Z">
+<meta property="og:updated_time" content="2020-02-24T14:39:14.256Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="箭头函数里的this到底指向谁？">
 <meta name="twitter:description" content="&amp;emsp;&amp;emsp;关于箭头函数里的this这个问题一直很模糊，之前看了很多教程虽然知道了其行为，但是具体实现规则一直不太清晰。今天为了彻底搞懂这个问题，查了很多资料，感觉查到的很多例子不是很能清晰的描述这种行为。所以今天特地自己写一遍文章来说明一下。">
@@ -415,7 +415,7 @@
 <p>&emsp;&emsp;使用<code>call()</code>、<code>apply()</code>、<code>bind()</code>等方法可以手动改变普通函数里this的指向，在本文里就不详细叙述了。</p>
 <h2 id="箭头函数里的this"><a href="#箭头函数里的this" class="headerlink" title="箭头函数里的this"></a>箭头函数里的this</h2><p>先说结论：</p>
 <ul>
-<li>箭头函数不会创建自己的<code>this，它只会从自己的作用域链的上一层继承this</code>（此结论出自<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/Arrow_functions" target="_blank" rel="noopener">MDN - 箭头函数</a>）</li>
+<li>箭头函数不会创建自己的<code>this，它只会从自己的作用域链的上一层继承this</code>（结论出自<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/Arrow_functions" target="_blank" rel="noopener">MDN - 箭头函数</a>）</li>
 <li>使用call()、apply()、bind()等方法并不会修改箭头函数内的this</li>
 <li>箭头函数的this是在创建时就已经确定了</li>
 </ul>
