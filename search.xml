@@ -462,6 +462,7 @@
 </tr>
 </tbody>
 </table>
+<a id="more"></a>
 <h1 id="什么是设计模式"><a href="#什么是设计模式" class="headerlink" title="什么是设计模式"></a>什么是设计模式</h1><blockquote>
 <p>在软件工程中，<strong>设计模式（design pattern）是对软件设计中普遍存在（反复出现）的各种问题，所提出的解决方案。</strong>这个术语是由埃里希·伽玛（Erich Gamma）等人在1990年代从建筑设计领域引入到计算机科学的。</p>
 </blockquote>
