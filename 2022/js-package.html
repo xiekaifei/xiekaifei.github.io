@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next mist" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="JavaScript,前端,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="包的英语单词：Package，针对编程来说，更具象的名字叫「软件包」。代表了一组特定功能的源码集合。软件包可以是一个单独的源码文件，也可以是一个包含很多文件和目录的文件夹。具体如何呈现，就要看这个软件包提供了什么样的功能。 软件包就是有人对一些具有重复性的功能问题做出了针对性的解决方案。我们在软件开发的过程中有了相应的功能需求时，除了自己写，也可以选择直接使用这些有功能针对性的软件包。这除了可以节">
+<meta name="keywords" content="JavaScript,前端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端包管理工具">
+<meta property="og:url" content="https://blog.xiekaifei.com/2022/js-package.html">
+<meta property="og:site_name" content="谢凯飞的博客">
+<meta property="og:description" content="包的英语单词：Package，针对编程来说，更具象的名字叫「软件包」。代表了一组特定功能的源码集合。软件包可以是一个单独的源码文件，也可以是一个包含很多文件和目录的文件夹。具体如何呈现，就要看这个软件包提供了什么样的功能。 软件包就是有人对一些具有重复性的功能问题做出了针对性的解决方案。我们在软件开发的过程中有了相应的功能需求时，除了自己写，也可以选择直接使用这些有功能针对性的软件包。这除了可以节">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://cdn.xiekaifei.com/image/blog/2022/node-modules-structure-8ab301ddaed3b7530858b233f5b3be57.jpg">
+<meta property="og:updated_time" content="2023-07-02T09:56:38.003Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端包管理工具">
+<meta name="twitter:description" content="包的英语单词：Package，针对编程来说，更具象的名字叫「软件包」。代表了一组特定功能的源码集合。软件包可以是一个单独的源码文件，也可以是一个包含很多文件和目录的文件夹。具体如何呈现，就要看这个软件包提供了什么样的功能。 软件包就是有人对一些具有重复性的功能问题做出了针对性的解决方案。我们在软件开发的过程中有了相应的功能需求时，除了自己写，也可以选择直接使用这些有功能针对性的软件包。这除了可以节">
+<meta name="twitter:image" content="https://cdn.xiekaifei.com/image/blog/2022/node-modules-structure-8ab301ddaed3b7530858b233f5b3be57.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://blog.xiekaifei.com/2022/js-package.html">
+
+
+
+
+
+  <title>前端包管理工具 | 谢凯飞的博客</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f824212f964fe1dcdbfd0c78349270a1";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">谢凯飞的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">blog.xiekaifei.com</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.xiekaifei.com/2022/js-package.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kaifei Xie">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://cdn.xiekaifei.com/image/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="谢凯飞的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">前端包管理工具</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-08-02T17:34:15+08:00">
+                2022-08-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>包的英语单词：Package，针对编程来说，更具象的名字叫「软件包」。代表了一组特定功能的源码集合。软件包可以是一个单独的源码文件，也可以是一个包含很多文件和目录的文件夹。具体如何呈现，就要看这个软件包提供了什么样的功能。</p>
+<p>软件包就是有人对一些具有重复性的功能问题做出了针对性的解决方案。我们在软件开发的过程中有了相应的功能需求时，除了自己写，也可以选择直接使用这些有功能针对性的软件包。这除了可以节省自己大量的精力和时间，也能让自己少踩一些坑。</p>
+<p>在软件开发过程中<strong>使用包不是必须的，但却是一项最佳的工程化实践。</strong></p>
+<a id="more"></a>
+<h1 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h1><h2 id="npm是什么？"><a href="#npm是什么？" class="headerlink" title="npm是什么？"></a>npm是什么？</h2><blockquote>
+<p>npm （node package manager）为你和你的团队打开了连接整个 JavaScript 天才世界的一扇大门。它是世界上最大的软件注册表，每星期大约有 30 亿次的下载量，包含超过 600000 个 <em>包（package）</em>（即，代码模块）。来自各大洲的开源软件开发者使用 npm 互相分享和借鉴。包的结构使您能够轻松跟踪依赖项和版本。</p>
+</blockquote>
+<p>npm 由三个独立的部分组成：</p>
+<ul>
+<li>网站</li>
+<li>注册表（registry）</li>
+<li>命令行工具（CLI）</li>
+</ul>
+<p><a href="https://www.npmjs.com/" target="_blank" rel="noopener"><em>网站</em></a> 是开发者查找包（package）、设置参数以及管理 npm 使用体验的主要途径。</p>
+<p><em>注册表</em> 是一个巨大的数据库，保存了每个包（package）的信息。</p>
+<p><em>CLI</em> 通过命令行或终端运行。开发者通过 CLI 与 npm 打交道。</p>
+<h2 id="npm安装包"><a href="#npm安装包" class="headerlink" title="npm安装包"></a>npm安装包</h2><p>有两种方式用来安装 npm 包：本地安装和全局安装。至于选择哪种方式来安装，取决于我们如何使用这个包。</p>
+<ul>
+<li>如果你自己的模块依赖于某个包，并通过 Node.js 的 <strong><code>require</code></strong> 加载，那么你应该选择本地安装，这种方式也是 <strong><code>npm install</code></strong> 命令的默认行为。</li>
+<li>如果你想将包作为一个命令行工具，（比如 grunt CLI），那么你应该选择全局安装。</li>
+</ul>
+<p>可以使用以下命令安装一个包：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install &lt;package_name&gt;</span><br></pre></td></tr></table></figure>
+<p>上述命令执行之后将会在当前的目录下创建一个 <strong><code>node_modules</code></strong> 的目录（如果不存在的话），然后将下载的包保存到这个目录下。</p>
+<p>如果需要将包安装到全局，你应该使用以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g &lt;package_name&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h2><p>项目的 <em>package.json</em> 文件是配置和描述如何与程序交互和运行的中心。npm CLI用它来识别你的项目并了解如何处理项目的依赖关系。<em>package.json</em> 文件使 npm 可以启动你的项目、运行脚本、安装依赖项、发布到 NPM 注册表以及许多其他有用的任务。</p>
+<p>你的项目还必须包含 <em>package.json</em> ，然后才能从 NPM 安装软件包。</p>
+<p>package.json 位于项目的根目录下。</p>
+<h2 id="包的版本号规则"><a href="#包的版本号规则" class="headerlink" title="包的版本号规则"></a>包的版本号规则</h2><p>npm 包的版本号遵循以下规则：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">主版本号.次版本号.修补版本号</span><br><span class="line">major.minor.patch</span><br></pre></td></tr></table></figure>
+<ul>
+<li>major：新的架构调整，不兼容老版本</li>
+<li>minor：新增功能，兼容老版本</li>
+<li>patch：修复bug，兼容老版本</li>
+</ul>
+<p><code>version</code></p>
+<p>仅接受指定的版本</p>
+<p><code>~version</code></p>
+<p>大概匹配兼容某个版本</p>
+<p>如果minor版本号指定了，那么minor版本号不变，而patch版本号任意</p>
+<p>如果minor和patch版本号未指定，那么minor和patch版本号任意</p>
+<p>如：~1.1.2，表示&gt;=1.1.2 &lt;1.2.0，可以是1.1.2，1.1.3，1.1.4，…，1.1.n</p>
+<p>如：~1.1，表示&gt;=1.1.0 &lt;1.2.0，可以是同上</p>
+<p>如：~1，表示&gt;=1.0.0 &lt;2.0.0，可以是1.0.0，1.0.1，1.0.2，…，1.0.n，1.1.n，1.2.n，…，1.n.n</p>
+<p><code>^version</code></p>
+<p>兼容某个版本</p>
+<p>版本号中最左边的非0数字的右侧可以任意</p>
+<p>如果缺少某个版本号，则这个版本号的位置可以任意 如：^1.1.2 ，表示&gt;=1.1.2 &lt;2.0.0，可以是1.1.2，1.1.3，…，1.1.n，1.2.n，…，1.n.n</p>
+<p>如：^0.2.3 ，表示&gt;=0.2.3 &lt;0.3.0，可以是0.2.3，0.2.4，…，0.2.n</p>
+<p>如：^0.0，表示 &gt;=0.0.0 &lt;0.1.0，可以是0.0.0，0.0.1，…，0.0.n</p>
+<p><code>l**atest**</code></p>
+<p>安装的永远是最新发布的版本</p>
+<p><code>&gt;version</code></p>
+<p>必须大于某个版本</p>
+<p><code>&gt;=version</code></p>
+<p>可大于或等于某个版本</p>
+<p><code>&lt;version</code></p>
+<p>必须小于某个版本</p>
+<p><code>&lt;=version</code></p>
+<p>可以小于或等于某个版本</p>
+<p><code>x</code></p>
+<p>x的位置表示任意版本 如：1.2.x，表示可以1.2.0，1.2.1，…，1.2.n</p>
+<p><code>*</code></p>
+<p>任意版本，””也表示任意版本</p>
+<p><code>version1 - version2</code></p>
+<p>大于等于version1，小于等于version2</p>
+<p><code>range1 || range2</code></p>
+<p>满足range1或者满足range2，可以多个范围</p>
+<p>如：&lt;1.0.0 || &gt;=2.3.1 &lt;2.4.5 || &gt;=2.5.2 ，表示满足这三个范围都可以</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"dependencies"</span>: &#123;</span><br><span class="line">    <span class="string">"foo"</span>: <span class="string">"1.0.0 - 2.9999.9999"</span>,</span><br><span class="line">    <span class="string">"bar"</span>: <span class="string">"&gt;=1.0.2 &lt;2.1.2"</span>,</span><br><span class="line">    <span class="string">"baz"</span>: <span class="string">"&gt;1.0.2 &lt;=2.3.4"</span>,</span><br><span class="line">    <span class="string">"boo"</span>: <span class="string">"2.0.1"</span>,</span><br><span class="line">    <span class="string">"qux"</span>: <span class="string">"&lt;1.0.0 || &gt;=2.3.1 &lt;2.4.5 || &gt;=2.5.2 &lt;3.0.0"</span>,</span><br><span class="line">    <span class="string">"asd"</span>: <span class="string">"http://asdf.com/asdf.tar.gz"</span>,</span><br><span class="line">    <span class="string">"til"</span>: <span class="string">"~1.2"</span>,</span><br><span class="line">    <span class="string">"elf"</span>: <span class="string">"~1.2.3"</span>,</span><br><span class="line">    <span class="string">"two"</span>: <span class="string">"2.x"</span>,</span><br><span class="line">    <span class="string">"thr"</span>: <span class="string">"3.3.x"</span>,</span><br><span class="line">    <span class="string">"lat"</span>: <span class="string">"latest"</span>,</span><br><span class="line">    <span class="string">"dyl"</span>: <span class="string">"file:../dyl"</span> <span class="comment">// 本地路径</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="package-lock-json"><a href="#package-lock-json" class="headerlink" title="package-lock.json"></a>package-lock.json</h2><p>当我们执行 <code>npm install</code> 命令时，会自动在项目的根目录创建一个 <code>package-lock.json</code> 文件，该文件可以理解成对结合了逻辑树（package.json里面定义的依赖关系树）和物理树（node_modules文件夹下的结构）的一个快照，里面有明确的各依赖版本号，实际安装的结构，也有逻辑树的结构。</p>
+<p>该文件用于描述依赖树的详细情况，以保证可以重复安装完全相同的依赖项。并允许npm跳过先前安装包的重复元数据解析来优化安装过程。</p>
+<p>我们无法直接还原项目某一时刻的所有依赖项（node_modules），但通过 <code>package.json</code> 和 <code>package-lock.json</code> 文件，可以推导出项目某一时刻的所有依赖项并完全还原。</p>
+<p>要完全按照 <code>package-lock.json</code> 文件里的定义安装依赖项，可以使用 <code>[npm ci](https://docs.npmjs.com/cli/v9/commands/npm-ci)</code> 命令。</p>
+<h1 id="yarn"><a href="#yarn" class="headerlink" title="yarn"></a>yarn</h1><p><code>yarn</code> 与 <code>npm</code> 类似，都是包管理工具。<a href="https://classic.yarnpkg.com/en/" target="_blank" rel="noopener">yarn</a> 中宣传的点是：</p>
+<ul>
+<li>快速：yarn会缓存下载过的每一个包，这样就不用再次下载了。同时会并行执行安装任务，以达到更快的速度。</li>
+<li>安全：yarn会校验每个已安装包的完整性，再执行它的代码。</li>
+<li>可靠：lock锁机制，保证在一个系统上运行的安装在其它任何系统上都能以完全相同的方式运行。</li>
+</ul>
+<h2 id="yarn-lock"><a href="#yarn-lock" class="headerlink" title="yarn.lock"></a>yarn.lock</h2><p><code>yarn</code> 也有与 <code>npm</code> 类似的lock锁机制，这些信息存放在 <code>yarn.lock</code> 文件下。该文件会把项目下所有依赖项以及依赖项的依赖扁平化的展示出来，对于同包不同版本且规则相容的字段会放在同一级结构中。</p>
+<p>像 <code>npm ci</code> 命令一样使用 <code>yarn</code> ：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yarn install --frozen-lockfile</span><br></pre></td></tr></table></figure>
+<h1 id="nvm"><a href="#nvm" class="headerlink" title="nvm"></a>nvm</h1><p><a href="https://github.com/nvm-sh/nvm" target="_blank" rel="noopener">nvm</a> (Node Version Manager)，即 <code>node</code> 版本管理工具，可以在同一台设备上安装和切换多个 <code>node</code> 版本，解决 <code>node</code> 各种版本存在不兼容的现象。</p>
+<h2 id="nvm常用命令"><a href="#nvm常用命令" class="headerlink" title="nvm常用命令"></a>nvm常用命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装指定 node 版本</span></span><br><span class="line">$ nvm install &lt;version&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看本地 node 版本</span></span><br><span class="line">$ nvm ls</span><br><span class="line"><span class="comment"># 或</span></span><br><span class="line">$ nvm list</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看远程 node 版本</span></span><br><span class="line">$ nvm ls-remote</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用指定 node 版本</span></span><br><span class="line">$ nvm use &lt;version&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置默认 node 版本</span></span><br><span class="line">$ nvm <span class="built_in">alias</span> default &lt;version&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 卸载指定 node 版本</span></span><br><span class="line">$ nvm uninstall &lt;version&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="npx"><a href="#npx" class="headerlink" title="npx"></a>npx</h1><p><code>npm</code> 从5.2版本开始，增加了 <code>npx</code> 命令，所以可以直接使用 <code>npx</code> 命令。如果不能使用，可以手动安装一下。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g npx</span><br></pre></td></tr></table></figure>
+<h2 id="调用项目安装的模块"><a href="#调用项目安装的模块" class="headerlink" title="调用项目安装的模块"></a>调用项目安装的模块</h2><p>npx 想要解决的主要问题，就是调用项目内部安装的模块。比如，项目内安装了测试工具 <code>Mocha</code> ，一般来说，想要调用它只能在项目脚本和 <code>package.json</code> 的 <code>script</code> 字段里面，如果想在命令行下调用，必须像下面这样。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 项目的根目录下执行</span></span><br><span class="line">$ node-modules/.bin/mocha --version</span><br></pre></td></tr></table></figure>
+<p>npx 就是想解决这个问题，让项目内部安装的模块用起来更方便，只要像下面这样调用就行了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npx mocha --version</span><br></pre></td></tr></table></figure>
+<p>npx 的原理很简单，就是运行的时候，会到 <code>node_modules/.bin</code> 路径和环境变量 <code>$PATH</code> 里面，检查命令是否存在。</p>
+<h2 id="避免全局安装模块"><a href="#避免全局安装模块" class="headerlink" title="避免全局安装模块"></a>避免全局安装模块</h2><p>除了调用项目内部的模块，npx 还能避免全局安装的模块（可以指定版本号）。比如 <code>create-react-app</code> 这个模块就是全局安装，npx 可以运行它，而且不进行全局安装。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npx create-react-app my-react-app</span><br></pre></td></tr></table></figure>
+<p>上面代码运行时，npx 将 <code>create-react-app</code> 下载到一个临时目录（只要 npx 后面的模块无法在本地发现，就会下载同名模块），使用以后再删除，以后再使用该命令时重新下载。</p>
+<h2 id="no-install-参数和-ignore-existing-参数"><a href="#no-install-参数和-ignore-existing-参数" class="headerlink" title="--no-install 参数和--ignore-existing 参数"></a><strong><code>--no-install</code> 参数和<code>--ignore-existing</code> 参数</strong></h2><p>如果想让 npx 强制使用本地模块，不下载远程模块，可以使用 <code>—no-install</code> 参数，如果本地不存在该模块，就会报错。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npx --no-install http-server</span><br></pre></td></tr></table></figure>
+<p>反过来，如果忽略本地的同名模块，强制安装使用远程模块，可以使用 <code>--ignore-existing</code> 参数。比如，本地已经全局安装了 <code>create-react-app</code> ，但还是想使用远程模块，就用这个参数。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npx --ignore-existing create-react-app my-react-app</span><br></pre></td></tr></table></figure>
+<h2 id="使用不同版本的-node"><a href="#使用不同版本的-node" class="headerlink" title="使用不同版本的 node"></a>使用不同版本的 node</h2><p>利用 npx 可以下载模块这个特点，可以指定某个版本的 Node 运行脚本。它的窍门就是使用 npm 的 node模块。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npx node@0.12.8 -v</span><br></pre></td></tr></table></figure>
+<p>上面命令会使用 0.12.8 版本的 Node 执行脚本。原理是从 npm 下载这个版本的 node，使用后再删掉。</p>
+<p>某些场景下，这个方法用来切换 Node 版本，要比 nvm 那样的版本管理器方便一些。</p>
+<h2 id="指定参数"><a href="#指定参数" class="headerlink" title="指定参数"></a>指定参数</h2><p><code>-p</code> 参数参数用于指定 npx 所要安装的模块，可以在需要安装多个模块的场景时使用。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npx -p lolcatjs -p cowsay [<span class="built_in">command</span>]</span><br></pre></td></tr></table></figure>
+<p>npx部分转载自 <a href="https://www.ruanyifeng.com/blog/2019/02/npx.html" target="_blank" rel="noopener">npx 使用教程 - 阮一峰的网络日志</a>。</p>
+<h1 id="pnpm"><a href="#pnpm" class="headerlink" title="pnpm"></a>pnpm</h1><p>当使用 npm 或 Yarn 时，如果你有 100 个项目使用了某个依赖（dependency），就会有 100 份该依赖的副本保存在硬盘上。 而在使用 <a href="https://pnpm.io/zh/" target="_blank" rel="noopener"><code>pnpm</code></a> 时，依赖会被存储在内容可寻址的存储中，所以：</p>
+<ol>
+<li>如果你用到了某依赖项的不同版本，只会将不同版本间有差异的文件添加到仓库。 例如，如果某个包有100个文件，而它的新版本只改变了其中1个文件。那么 <code>pnpm update</code> 时只会向存储中心额外添加1个新文件，而不会因为仅仅一个文件的改变复制整新版本包的内容。</li>
+<li>所有文件都会存储在硬盘上的某一位置。 当软件包被被安装时，包里的文件会硬链接到这一位置，而不会占用额外的磁盘空间。 这允许你跨项目地共享同一版本的依赖。</li>
+</ol>
+<p>因此，您在磁盘上节省了大量空间，这与项目和依赖项的数量成正比，并且安装速度要快得多！</p>
+<h2 id="创建非扁平化的-node-modules-文件夹"><a href="#创建非扁平化的-node-modules-文件夹" class="headerlink" title="创建非扁平化的 node_modules 文件夹"></a><strong>创建非扁平化的 node_modules 文件夹</strong></h2><p><img src="https://cdn.xiekaifei.com/image/blog/2022/node-modules-structure-8ab301ddaed3b7530858b233f5b3be57.jpg" alt="node-modules-structure-8ab301ddaed3b7530858b233f5b3be57.jpg"></p>
+<h2 id="Lockfile"><a href="#Lockfile" class="headerlink" title="Lockfile"></a>Lockfile</h2><p>您应该始终提交 <a href="https://pnpm.io/zh/git#lockfile" target="_blank" rel="noopener">Lockfile</a>（ <code>pnpm</code> 生成的 <code>pnpm-lock.yaml</code> 文件）。 这是出于多种原因，主要是：</p>
+<ul>
+<li>在 CI 和生产环境中能够更快地完成安装，因为解析依赖的过程可以被跳过。</li>
+<li>开发，测试和生产环境之间强制执行一致的安装和解析方案，这意味着测试和生产中使用的包将与您开发项目时完全相同。</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+            <a href="/tags/前端/" rel="tag"># 前端</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/js-this.html" rel="next" title="箭头函数里的this到底指向谁？">
+                <i class="fa fa-chevron-left"></i> 箭头函数里的this到底指向谁？
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2023/js-design-patterns.html" rel="prev" title="JavaScript设计模式">
+                JavaScript设计模式 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://cdn.xiekaifei.com/image/avatar.jpg" alt="Kaifei Xie">
+            
+              <p class="site-author-name" itemprop="name">Kaifei Xie</p>
+              <p class="site-description motion-element" itemprop="description">谢凯飞的博客</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:xkf@xiekaifei.com" target="_blank" title="E-mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#npm"><span class="nav-number">1.</span> <span class="nav-text">npm</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#npm是什么？"><span class="nav-number">1.1.</span> <span class="nav-text">npm是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm安装包"><span class="nav-number">1.2.</span> <span class="nav-text">npm安装包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#package-json"><span class="nav-number">1.3.</span> <span class="nav-text">package.json</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#包的版本号规则"><span class="nav-number">1.4.</span> <span class="nav-text">包的版本号规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#package-lock-json"><span class="nav-number">1.5.</span> <span class="nav-text">package-lock.json</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#yarn"><span class="nav-number">2.</span> <span class="nav-text">yarn</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#yarn-lock"><span class="nav-number">2.1.</span> <span class="nav-text">yarn.lock</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nvm"><span class="nav-number">3.</span> <span class="nav-text">nvm</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nvm常用命令"><span class="nav-number">3.1.</span> <span class="nav-text">nvm常用命令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#npx"><span class="nav-number">4.</span> <span class="nav-text">npx</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#调用项目安装的模块"><span class="nav-number">4.1.</span> <span class="nav-text">调用项目安装的模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#避免全局安装模块"><span class="nav-number">4.2.</span> <span class="nav-text">避免全局安装模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#no-install-参数和-ignore-existing-参数"><span class="nav-number">4.3.</span> <span class="nav-text">--no-install 参数和--ignore-existing 参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用不同版本的-node"><span class="nav-number">4.4.</span> <span class="nav-text">使用不同版本的 node</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指定参数"><span class="nav-number">4.5.</span> <span class="nav-text">指定参数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pnpm"><span class="nav-number">5.</span> <span class="nav-text">pnpm</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建非扁平化的-node-modules-文件夹"><span class="nav-number">5.1.</span> <span class="nav-text">创建非扁平化的 node_modules 文件夹</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lockfile"><span class="nav-number">5.2.</span> <span class="nav-text">Lockfile</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kaifei Xie</span>
+
+  
+</div>
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

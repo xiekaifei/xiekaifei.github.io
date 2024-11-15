@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next mist" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="JavaScript,设计模式,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="一、利用唯一文件类型说明符限制上传文件类型唯一文件类型说明符，表示在 file 类型的 input 元素中用户可以选择的文件类型。每个唯一文件类型说明符可以采用下列形式之一：  一个以英文句号（“.”）开头的合法的不区分大小写的文件名扩展名。例如：.jpg、.pdf 或 .doc 。 一个不带扩展名的 MIME 类型字符串。 字符串 audio/*，表示“任何音频文件”。 字符串 video/*，">
+<meta name="keywords" content="JavaScript,设计模式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript验证文件格式">
+<meta property="og:url" content="https://blog.xiekaifei.com/2023/js-file-type.html">
+<meta property="og:site_name" content="谢凯飞的博客">
+<meta property="og:description" content="一、利用唯一文件类型说明符限制上传文件类型唯一文件类型说明符，表示在 file 类型的 input 元素中用户可以选择的文件类型。每个唯一文件类型说明符可以采用下列形式之一：  一个以英文句号（“.”）开头的合法的不区分大小写的文件名扩展名。例如：.jpg、.pdf 或 .doc 。 一个不带扩展名的 MIME 类型字符串。 字符串 audio/*，表示“任何音频文件”。 字符串 video/*，">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://cdn.xiekaifei.com/image/blog/2023/input-windows.png">
+<meta property="og:updated_time" content="2023-07-18T08:48:12.022Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript验证文件格式">
+<meta name="twitter:description" content="一、利用唯一文件类型说明符限制上传文件类型唯一文件类型说明符，表示在 file 类型的 input 元素中用户可以选择的文件类型。每个唯一文件类型说明符可以采用下列形式之一：  一个以英文句号（“.”）开头的合法的不区分大小写的文件名扩展名。例如：.jpg、.pdf 或 .doc 。 一个不带扩展名的 MIME 类型字符串。 字符串 audio/*，表示“任何音频文件”。 字符串 video/*，">
+<meta name="twitter:image" content="https://cdn.xiekaifei.com/image/blog/2023/input-windows.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://blog.xiekaifei.com/2023/js-file-type.html">
+
+
+
+
+
+  <title>JavaScript验证文件格式 | 谢凯飞的博客</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?f824212f964fe1dcdbfd0c78349270a1";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">谢凯飞的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">blog.xiekaifei.com</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.xiekaifei.com/2023/js-file-type.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kaifei Xie">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://cdn.xiekaifei.com/image/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="谢凯飞的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">JavaScript验证文件格式</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2023-06-30T17:11:02+08:00">
+                2023-06-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="一、利用唯一文件类型说明符限制上传文件类型"><a href="#一、利用唯一文件类型说明符限制上传文件类型" class="headerlink" title="一、利用唯一文件类型说明符限制上传文件类型"></a>一、利用唯一文件类型说明符限制上传文件类型</h2><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/input/file#%E5%94%AF%E4%B8%80%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E8%AF%B4%E6%98%8E%E7%AC%A6" target="_blank" rel="noopener">唯一文件类型说明符</a>，表示在 file 类型的 input 元素中用户可以选择的文件类型。每个唯一文件类型说明符可以采用下列形式之一：</p>
+<ul>
+<li>一个以英文句号（“.”）开头的合法的不区分大小写的文件名扩展名。例如：<code>.jpg</code>、<code>.pdf</code> 或 <code>.doc</code> 。</li>
+<li>一个不带扩展名的 MIME 类型字符串。</li>
+<li>字符串 <code>audio/*</code>，表示“任何音频文件”。</li>
+<li>字符串 <code>video/*</code>，表示“任何视频文件”。</li>
+<li>字符串 <code>image/*</code>，表示“任何图片文件”。</li>
+</ul>
+<p><code>accept</code> 属性的值是包含一个或多个（用逗号分隔）唯一文件类型说明符的字符串。例如，一个文件选择器需要能被表示成一张图片的内容，包括标准的图片格式和 PDF 文件，大概是这样的：</p>
+<a id="more"></a>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">accept</span>=<span class="string">"image/*,.pdf"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这种方式，在 Mac OS 系统中表现为：不被允许的文件类型在上传文件框中呈现为灰色不可选状态，无法选中上传。在 Windows 系统中表现为：上传文件框中只展示可被上传的文件类型。而这个限制在 Windows 系统中可以被轻松绕过（选择上传文件框右下角的 All Files 选项）。</p>
+<p><img src="https://cdn.xiekaifei.com/image/blog/2023/input-windows.png" alt="input-windows.png"></p>
+<h2 id="二、利用-MIME-类型验证文件类型"><a href="#二、利用-MIME-类型验证文件类型" class="headerlink" title="二、利用 MIME 类型验证文件类型"></a>二、利用 MIME 类型验证文件类型</h2><p><strong><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Basics_of_HTTP/MIME_types" target="_blank" rel="noopener">媒体类型</a></strong>（通常称为 <strong>Multipurpose Internet Mail Extensions</strong> 或 <strong>MIME</strong> 类型）是一种标准，用来表示文档、文件或字节流的性质和格式。</p>
+<p>通用结构（语法）：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type/subtype</span><br></pre></td></tr></table></figure>
+<p><strong><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types" target="_blank" rel="noopener">常见 MIME 类型列表</a></strong></p>
+<p>我们可以在用户上传文件后，从 File 对象的 <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/File/type" target="_blank" rel="noopener">type</a> 字段拿到文件的 MIME 类型，来验证文件类型是否合法，这种方式可以规避掉唯一文件类型说明符限制上传文件类型被 Windows 系统绕过的缺点。</p>
+<p>例如，我们来验证用户上传 <code>.png</code> 类型的图片：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> input = <span class="built_in">document</span>.querySelector(<span class="string">'input'</span>)</span><br><span class="line">input.addEventListener(<span class="string">'change'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [file] = input.files</span><br><span class="line">  <span class="keyword">if</span> (file.type !== <span class="string">'image/jpeg'</span>) &#123;</span><br><span class="line">    alert(<span class="string">'请上传 .png 文件'</span>)</span><br><span class="line">    input.value = <span class="string">''</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>这种方式同样也有缺点。用户可以修改文件的后缀名来实现修改文件 MIME 类型的方法，绕开检查，这种方式相对来说安全性也不是很高。</p>
+<h2 id="三、利用文件-Magic-number-验证文件类型"><a href="#三、利用文件-Magic-number-验证文件类型" class="headerlink" title="三、利用文件 Magic number 验证文件类型"></a>三、利用文件 Magic number 验证文件类型</h2><p><strong><a href="https://en.wikipedia.org/wiki/Magic_number_%28programming%29#In_files" target="_blank" rel="noopener">Magic number</a></strong> ，又称之为 <strong>魔术数字</strong> 。在文件中，魔术数字指：</p>
+<blockquote>
+<p>在特定文件格式中加入固定数值和固定字符串，然后便可以通过检查文件是否包含这些数据来快速地识别文件格式。</p>
+</blockquote>
+<blockquote>
+<p>例如：GIF文件开头会包含GIF89a（47 49 46 38 39 61）或GIF87a（47 49 46 38 37 61）这两种字符串。</p>
+</blockquote>
+<p>我们可以利用这个特性，通过读取并比对文件头部的 Macic number 来验证文件的格式，大多数文件类型都能做到在同一种文件类型下的不同文件，它的 Magic number 一致，但是也有例外如：<code>.csv</code> 、<code>.json</code> 格式的文件。</p>
+<p><strong>并非所有类型的文件都有 Magic number ，所以这也不是 100％可靠的方式。</strong></p>
+<p>还是上传文件的场景，我们在拿到用户上传的文件后，可以利用 <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader" target="_blank" rel="noopener">FileReader</a> 接口提供的 <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader/readAsArrayBuffer" target="_blank" rel="noopener">readAsArrayBuffer</a> 方法来读取文件的内容，这会返回一个 <code>ArrayBuffer</code> 对象以表示所读取文件的数据，我们将这个 ArrayBuffer 对象转换成16进制的字符串，去和对应类型的 Magic number 做比对，即可分辨出用户上传的文件是否为目标类型。</p>
+<p>各文件类型的 Magic number 示例可以在<a href="https://en.wikipedia.org/wiki/Magic_number_%28programming%29#In_files" target="_blank" rel="noopener">这里</a>查看到。</p>
+<p>下面我们拆解流程来一步步看。首先定义一个 <code>ArrayBuffer</code> 对象转16进制的方法：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * ArrayBuffer对象转16进制字符串</span></span><br><span class="line"><span class="comment"> * @param &#123;ArrayBuffer&#125; arrayBuffer</span></span><br><span class="line"><span class="comment"> * @return &#123;String&#125; 转换后的16进制字符串</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">arrayBufferToHex</span>(<span class="params">arrayBuffer</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Array</span>.prototype.map.call(</span><br><span class="line">    <span class="keyword">new</span> <span class="built_in">Uint8Array</span>(arrayBuffer),</span><br><span class="line">    <span class="function"><span class="keyword">function</span> (<span class="params">bit</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> (<span class="string">'00'</span> + bit.toString(<span class="number">16</span>)).slice(<span class="number">-2</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  ).join(<span class="string">''</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后，我们模拟一个 <code>&lt;input type=&quot;file&quot; /&gt;</code> 上传标签拿到用户上传文件后并获取文件类型 Magic number 的过程：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> input = <span class="built_in">document</span>.querySelector(<span class="string">'input'</span>)</span><br><span class="line">input.addEventListener(<span class="string">'change'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [file] = input.files</span><br><span class="line">  <span class="keyword">const</span> reader = <span class="keyword">new</span> FileReader()</span><br><span class="line">  reader.onloadend = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> result = arrayBufferToHex(reader.result)</span><br><span class="line">    <span class="built_in">console</span>.log(result) <span class="comment">// 最终拿到的文件 Magic number: 89504e470d0a1a0a</span></span><br><span class="line">  &#125;</span><br><span class="line">	<span class="comment">// 这里我们假设用户上传的是 .png 格式的文件，只取文件前8字节的数据</span></span><br><span class="line">  reader.readAsArrayBuffer(file.slice(<span class="number">0</span>, <span class="number">8</span>))</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>这里需要注意，通常文件类型 Magic number 会标识在文件的最前面（具体类型查看<a href="https://en.wikipedia.org/wiki/Magic_number_%28programming%29#In_files" target="_blank" rel="noopener">维基百科示例</a>），例如 <code>.png</code> 格式的文件，示例里描述说该类型的文件以8字节的签名文件开始（89 50 4E 47 0D 0A 1A 0A），以此标识为 <code>.png</code> 格式。所以，如果要验证这种类型的文件，我们只需要利用 <code>File</code> 接口的 <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/File#%E6%96%B9%E6%B3%95" target="_blank" rel="noopener"><code>slice</code></a> 方法提取文件前8字节的数据做转换判断即可，而无需将整个文件都参与到验证中来，这样在处理较大文件时会节省很多性能消耗。</p>
+<p>最后，我们只需要将最后转换好的16进制 Magic number 与 <code>.png</code> 格式文件对应的 Magic number 比对即可。</p>
+<p>在实际使用中，我们可以把验证具体类型文件的需求封装成具体的方法，应用在项目中即可。我们来封装一个 <code>isPdf</code> 方法，来验证用户上传的文件是否为 pdf 格式。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * ArrayBuffer对象转16进制字符串</span></span><br><span class="line"><span class="comment"> * @param &#123;ArrayBuffer&#125; arrayBuffer</span></span><br><span class="line"><span class="comment"> * @return &#123;String&#125; 转换后的16进制字符串</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">arrayBufferToHex</span>(<span class="params">arrayBuffer</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Array</span>.prototype.map.call(</span><br><span class="line">    <span class="keyword">new</span> <span class="built_in">Uint8Array</span>(arrayBuffer),</span><br><span class="line">    <span class="function"><span class="keyword">function</span> (<span class="params">bit</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> (<span class="string">'00'</span> + bit.toString(<span class="number">16</span>)).slice(<span class="number">-2</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  ).join(<span class="string">''</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">isPdf</span>(<span class="params">file</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> reader = <span class="keyword">new</span> FileReader()</span><br><span class="line">    reader.onloadend = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">const</span> fileMagicNumber = arrayBufferToHex(reader.result)</span><br><span class="line">      resolve(fileMagicNumber === <span class="string">'25504446'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    reader.onerror = reject</span><br><span class="line">    reader.readAsArrayBuffer(file.slice(<span class="number">0</span>, <span class="number">4</span>)) <span class="comment">// pdf类型的文件只需要4个字节内容即可判断</span></span><br><span class="line">  &#125;) </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> input = <span class="built_in">document</span>.querySelector(<span class="string">'input'</span>)</span><br><span class="line">input.addEventListener(<span class="string">'change'</span>, <span class="keyword">async</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [file] = input.files</span><br><span class="line">  <span class="keyword">const</span> result = <span class="keyword">await</span> isPdf(file)</span><br><span class="line">  <span class="keyword">if</span> (!result) &#123;</span><br><span class="line">    alert(<span class="string">'请上传 pdf 文件'</span>)</span><br><span class="line">    input.value = <span class="string">''</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+            <a href="/tags/设计模式/" rel="tag"># 设计模式</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2023/js-design-patterns.html" rel="next" title="JavaScript设计模式">
+                <i class="fa fa-chevron-left"></i> JavaScript设计模式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://cdn.xiekaifei.com/image/avatar.jpg" alt="Kaifei Xie">
+            
+              <p class="site-author-name" itemprop="name">Kaifei Xie</p>
+              <p class="site-description motion-element" itemprop="description">谢凯飞的博客</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:xkf@xiekaifei.com" target="_blank" title="E-mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、利用唯一文件类型说明符限制上传文件类型"><span class="nav-number">1.</span> <span class="nav-text">一、利用唯一文件类型说明符限制上传文件类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、利用-MIME-类型验证文件类型"><span class="nav-number">2.</span> <span class="nav-text">二、利用 MIME 类型验证文件类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、利用文件-Magic-number-验证文件类型"><span class="nav-number">3.</span> <span class="nav-text">三、利用文件 Magic number 验证文件类型</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kaifei Xie</span>
+
+  
+</div>
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
