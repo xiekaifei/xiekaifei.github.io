@@ -85,12 +85,12 @@
 <meta property="og:site_name" content="谢凯飞的博客">
 <meta property="og:description" content="包的英语单词：Package，针对编程来说，更具象的名字叫「软件包」。代表了一组特定功能的源码集合。软件包可以是一个单独的源码文件，也可以是一个包含很多文件和目录的文件夹。具体如何呈现，就要看这个软件包提供了什么样的功能。 软件包就是有人对一些具有重复性的功能问题做出了针对性的解决方案。我们在软件开发的过程中有了相应的功能需求时，除了自己写，也可以选择直接使用这些有功能针对性的软件包。这除了可以节">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://cdn.xiekaifei.com/image/blog/2022/node-modules-structure-8ab301ddaed3b7530858b233f5b3be57.jpg">
-<meta property="og:updated_time" content="2023-07-06T07:07:56.177Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiekaifei/oss-public/master/image/blog/2022/node-modules-structure-8ab301ddaed3b7530858b233f5b3be57.jpg">
+<meta property="og:updated_time" content="2024-12-06T02:25:20.462Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端包管理工具">
 <meta name="twitter:description" content="包的英语单词：Package，针对编程来说，更具象的名字叫「软件包」。代表了一组特定功能的源码集合。软件包可以是一个单独的源码文件，也可以是一个包含很多文件和目录的文件夹。具体如何呈现，就要看这个软件包提供了什么样的功能。 软件包就是有人对一些具有重复性的功能问题做出了针对性的解决方案。我们在软件开发的过程中有了相应的功能需求时，除了自己写，也可以选择直接使用这些有功能针对性的软件包。这除了可以节">
-<meta name="twitter:image" content="https://cdn.xiekaifei.com/image/blog/2022/node-modules-structure-8ab301ddaed3b7530858b233f5b3be57.jpg">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/xiekaifei/oss-public/master/image/blog/2022/node-modules-structure-8ab301ddaed3b7530858b233f5b3be57.jpg">
 
 
 
@@ -300,7 +300,7 @@
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kaifei Xie">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://cdn.xiekaifei.com/image/avatar.jpg">
+      <meta itemprop="image" content="https://raw.githubusercontent.com/xiekaifei/oss-public/master/image/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
@@ -508,7 +508,7 @@
 <li>所有文件都会存储在硬盘上的某一位置。 当软件包被被安装时，包里的文件会硬链接到这一位置，而不会占用额外的磁盘空间。 这允许你跨项目地共享同一版本的依赖。</li>
 </ol>
 <p>因此，您在磁盘上节省了大量空间，这与项目和依赖项的数量成正比，并且安装速度要快得多！</p>
-<h2 id="创建非扁平化的-node-modules-文件夹"><a href="#创建非扁平化的-node-modules-文件夹" class="headerlink" title="创建非扁平化的 node_modules 文件夹"></a><strong>创建非扁平化的 node_modules 文件夹</strong></h2><p><img src="https://cdn.xiekaifei.com/image/blog/2022/node-modules-structure-8ab301ddaed3b7530858b233f5b3be57.jpg" alt="node-modules-structure-8ab301ddaed3b7530858b233f5b3be57.jpg"></p>
+<h2 id="创建非扁平化的-node-modules-文件夹"><a href="#创建非扁平化的-node-modules-文件夹" class="headerlink" title="创建非扁平化的 node_modules 文件夹"></a><strong>创建非扁平化的 node_modules 文件夹</strong></h2><p><img src="https://raw.githubusercontent.com/xiekaifei/oss-public/master/image/blog/2022/node-modules-structure-8ab301ddaed3b7530858b233f5b3be57.jpg" alt="node-modules-structure-8ab301ddaed3b7530858b233f5b3be57.jpg"></p>
 <h2 id="Lockfile"><a href="#Lockfile" class="headerlink" title="Lockfile"></a>Lockfile</h2><p>您应该始终提交 <a href="https://pnpm.io/zh/git#lockfile" target="_blank" rel="noopener">Lockfile</a>（ <code>pnpm</code> 生成的 <code>pnpm-lock.yaml</code> 文件）。 这是出于多种原因，主要是：</p>
 <ul>
 <li>在 CI 和生产环境中能够更快地完成安装，因为解析依赖的过程可以被跳过。</li>
@@ -624,7 +624,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="https://cdn.xiekaifei.com/image/avatar.jpg" alt="Kaifei Xie">
+              <img class="site-author-image" itemprop="image" src="https://raw.githubusercontent.com/xiekaifei/oss-public/master/image/avatar.jpg" alt="Kaifei Xie">
             
               <p class="site-author-name" itemprop="name">Kaifei Xie</p>
               <p class="site-description motion-element" itemprop="description">谢凯飞的博客</p>
@@ -732,9 +732,6 @@
 </div>
 
 
-<div style="width:300px;" class="footer-inner">
-    <a target="_blank" href="https://beian.miit.gov.cn/" style="display:inline-block; text-decoration:none; color:#939393;">冀ICP备17036592号-1</a>
-</div>
 
 
 
