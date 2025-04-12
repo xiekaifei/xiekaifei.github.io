@@ -66,7 +66,7 @@
 
 
 
-  <meta name="keywords" content="前端,JavaScript,">
+  <meta name="keywords" content="JavaScript,前端,">
 
 
 
@@ -78,19 +78,19 @@
 
 
 <meta name="description" content="包的英语单词：Package，针对编程来说，更具象的名字叫「软件包」。代表了一组特定功能的源码集合。软件包可以是一个单独的源码文件，也可以是一个包含很多文件和目录的文件夹。具体如何呈现，就要看这个软件包提供了什么样的功能。 软件包就是有人对一些具有重复性的功能问题做出了针对性的解决方案。我们在软件开发的过程中有了相应的功能需求时，除了自己写，也可以选择直接使用这些有功能针对性的软件包。这除了可以节">
-<meta name="keywords" content="前端,JavaScript">
+<meta name="keywords" content="JavaScript,前端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端包管理工具">
 <meta property="og:url" content="https://blog.xiekaifei.com/2022/js-package.html">
-<meta property="og:site_name" content="谢凯飞的博客">
+<meta property="og:site_name" content="Kaifei&#39;s Blog">
 <meta property="og:description" content="包的英语单词：Package，针对编程来说，更具象的名字叫「软件包」。代表了一组特定功能的源码集合。软件包可以是一个单独的源码文件，也可以是一个包含很多文件和目录的文件夹。具体如何呈现，就要看这个软件包提供了什么样的功能。 软件包就是有人对一些具有重复性的功能问题做出了针对性的解决方案。我们在软件开发的过程中有了相应的功能需求时，除了自己写，也可以选择直接使用这些有功能针对性的软件包。这除了可以节">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://cdn.xiekaifei.com/image/blog/2022/node-modules-structure-8ab301ddaed3b7530858b233f5b3be57.jpg">
-<meta property="og:updated_time" content="2023-07-02T09:56:38.003Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiekaifei/oss-public/master/image/blog/2022/node-modules-structure-8ab301ddaed3b7530858b233f5b3be57.jpg">
+<meta property="og:updated_time" content="2025-04-12T13:39:23.661Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端包管理工具">
 <meta name="twitter:description" content="包的英语单词：Package，针对编程来说，更具象的名字叫「软件包」。代表了一组特定功能的源码集合。软件包可以是一个单独的源码文件，也可以是一个包含很多文件和目录的文件夹。具体如何呈现，就要看这个软件包提供了什么样的功能。 软件包就是有人对一些具有重复性的功能问题做出了针对性的解决方案。我们在软件开发的过程中有了相应的功能需求时，除了自己写，也可以选择直接使用这些有功能针对性的软件包。这除了可以节">
-<meta name="twitter:image" content="https://cdn.xiekaifei.com/image/blog/2022/node-modules-structure-8ab301ddaed3b7530858b233f5b3be57.jpg">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/xiekaifei/oss-public/master/image/blog/2022/node-modules-structure-8ab301ddaed3b7530858b233f5b3be57.jpg">
 
 
 
@@ -126,7 +126,7 @@
 
 
 
-  <title>前端包管理工具 | 谢凯飞的博客</title>
+  <title>前端包管理工具 | Kaifei's Blog</title>
   
 
 
@@ -166,7 +166,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">谢凯飞的博客</span>
+        <span class="site-title">Kaifei's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -300,11 +300,11 @@
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kaifei Xie">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://cdn.xiekaifei.com/image/avatar.jpg">
+      <meta itemprop="image" content="https://raw.githubusercontent.com/xiekaifei/oss-public/master/image/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="谢凯飞的博客">
+      <meta itemprop="name" content="Kaifei's Blog">
     </span>
 
     
@@ -508,7 +508,7 @@
 <li>所有文件都会存储在硬盘上的某一位置。 当软件包被被安装时，包里的文件会硬链接到这一位置，而不会占用额外的磁盘空间。 这允许你跨项目地共享同一版本的依赖。</li>
 </ol>
 <p>因此，您在磁盘上节省了大量空间，这与项目和依赖项的数量成正比，并且安装速度要快得多！</p>
-<h2 id="创建非扁平化的-node-modules-文件夹"><a href="#创建非扁平化的-node-modules-文件夹" class="headerlink" title="创建非扁平化的 node_modules 文件夹"></a><strong>创建非扁平化的 node_modules 文件夹</strong></h2><p><img src="https://cdn.xiekaifei.com/image/blog/2022/node-modules-structure-8ab301ddaed3b7530858b233f5b3be57.jpg" alt="node-modules-structure-8ab301ddaed3b7530858b233f5b3be57.jpg"></p>
+<h2 id="创建非扁平化的-node-modules-文件夹"><a href="#创建非扁平化的-node-modules-文件夹" class="headerlink" title="创建非扁平化的 node_modules 文件夹"></a><strong>创建非扁平化的 node_modules 文件夹</strong></h2><p><img src="https://raw.githubusercontent.com/xiekaifei/oss-public/master/image/blog/2022/node-modules-structure-8ab301ddaed3b7530858b233f5b3be57.jpg" alt="node-modules-structure-8ab301ddaed3b7530858b233f5b3be57.jpg"></p>
 <h2 id="Lockfile"><a href="#Lockfile" class="headerlink" title="Lockfile"></a>Lockfile</h2><p>您应该始终提交 <a href="https://pnpm.io/zh/git#lockfile" target="_blank" rel="noopener">Lockfile</a>（ <code>pnpm</code> 生成的 <code>pnpm-lock.yaml</code> 文件）。 这是出于多种原因，主要是：</p>
 <ul>
 <li>在 CI 和生产环境中能够更快地完成安装，因为解析依赖的过程可以被跳过。</li>
@@ -531,9 +531,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/前端/" rel="tag"># 前端</a>
-          
             <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+            <a href="/tags/前端/" rel="tag"># 前端</a>
           
         </div>
       
@@ -624,10 +624,10 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="https://cdn.xiekaifei.com/image/avatar.jpg" alt="Kaifei Xie">
+              <img class="site-author-image" itemprop="image" src="https://raw.githubusercontent.com/xiekaifei/oss-public/master/image/avatar.jpg" alt="Kaifei Xie">
             
               <p class="site-author-name" itemprop="name">Kaifei Xie</p>
-              <p class="site-description motion-element" itemprop="description">谢凯飞的博客</p>
+              <p class="site-description motion-element" itemprop="description">Kaifei's Blog</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -722,7 +722,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2024</span>
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2025</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

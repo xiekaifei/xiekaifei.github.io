@@ -82,15 +82,15 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vue.js实例的生命周期">
 <meta property="og:url" content="https://blog.xiekaifei.com/2019/vue.js-lifecycle.html">
-<meta property="og:site_name" content="谢凯飞的博客">
+<meta property="og:site_name" content="Kaifei&#39;s Blog">
 <meta property="og:description" content="&amp;emsp;&amp;emsp;vue实例有一个完整的生命周期，先上一段vue.js官网对vue实例生命周期的解释：  每个 Vue 实例在被创建时都要经过一系列的初始化过程——例如，需要设置数据监听、编译模板、将实例挂载到 DOM 并在数据变化时更新 DOM 等。  &amp;emsp;&amp;emsp;同时，在这个过程中，会运行一些叫做生命周期钩子的函数，这给了用户在不同阶段添加自己的代码的机会。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://cdn.xiekaifei.com/image/blog/2019/lifecycle.png">
-<meta property="og:updated_time" content="2023-07-18T08:47:13.282Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiekaifei/oss-public/master/image/blog/2019/lifecycle.png">
+<meta property="og:updated_time" content="2025-04-12T13:39:23.660Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue.js实例的生命周期">
 <meta name="twitter:description" content="&amp;emsp;&amp;emsp;vue实例有一个完整的生命周期，先上一段vue.js官网对vue实例生命周期的解释：  每个 Vue 实例在被创建时都要经过一系列的初始化过程——例如，需要设置数据监听、编译模板、将实例挂载到 DOM 并在数据变化时更新 DOM 等。  &amp;emsp;&amp;emsp;同时，在这个过程中，会运行一些叫做生命周期钩子的函数，这给了用户在不同阶段添加自己的代码的机会。">
-<meta name="twitter:image" content="https://cdn.xiekaifei.com/image/blog/2019/lifecycle.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/xiekaifei/oss-public/master/image/blog/2019/lifecycle.png">
 
 
 
@@ -126,7 +126,7 @@
 
 
 
-  <title>Vue.js实例的生命周期 | 谢凯飞的博客</title>
+  <title>Vue.js实例的生命周期 | Kaifei's Blog</title>
   
 
 
@@ -166,7 +166,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">谢凯飞的博客</span>
+        <span class="site-title">Kaifei's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -300,11 +300,11 @@
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kaifei Xie">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://cdn.xiekaifei.com/image/avatar.jpg">
+      <meta itemprop="image" content="https://raw.githubusercontent.com/xiekaifei/oss-public/master/image/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="谢凯飞的博客">
+      <meta itemprop="name" content="Kaifei's Blog">
     </span>
 
     
@@ -401,7 +401,7 @@
 </blockquote>
 <p>&emsp;&emsp;同时，在这个过程中，会运行一些叫做<strong>生命周期钩子</strong>的函数，这给了用户在不同阶段添加自己的代码的机会。</p>
 <a id="more"></a>
-<p><img src="https://cdn.xiekaifei.com/image/blog/2019/lifecycle.png" alt="vue实例生命周期图"></p>
+<p><img src="https://raw.githubusercontent.com/xiekaifei/oss-public/master/image/blog/2019/lifecycle.png" alt="vue实例生命周期图"></p>
 <p>&emsp;&emsp;上面这张图是vuejs官网<a href="https://v2.cn.vuejs.org/v2/guide/instance.html#%E5%AE%9E%E4%BE%8B%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90" target="_blank" rel="noopener">vue实例章节</a>中给出的vue实例生命周期图示，下面我来逐项解释图中的每一步当中生命周期钩子函数的用法。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> test = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="string">'#app'</span>,</span><br><span class="line">    data: &#123;</span><br><span class="line">        message: <span class="string">'Hello'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">/*   结合上面的生命周期图来看，首先是第一步创建一个vue对象new Vue(),然后vue实例进行</span></span><br><span class="line"><span class="comment">    基础的初始化操作(Init Events &amp; Lifecycle)之后，就会进入到beforeCreate函数，这时</span></span><br><span class="line"><span class="comment">    控制台会输出“undefined beforeCreate"，这是因为此时vue还没有监控data对象数据的变化，</span></span><br><span class="line"><span class="comment">    所以this.message会输出“undefined”   */</span></span><br><span class="line">    beforeCreate: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.message + <span class="string">' beforeCreate'</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">/*   beforeCreated函数执行完毕后，vue实例会初始化剩下的部分，接着执行created函数，</span></span><br><span class="line"><span class="comment">    下面的函数会在控制台输出“Hello created”,此时vue实例都已初始化完毕，this.message可以被输出   */</span></span><br><span class="line">    created: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.message + <span class="string">' created'</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">/*   created函数执行完毕后，会询问实例中是否有"el"选项，本test实例中有el实例，接着会询问是否有</span></span><br><span class="line"><span class="comment">    "template"模板，本实例中没有定义，所以会走No分支，会把当前el的整体内容当做模板。</span></span><br><span class="line"><span class="comment">    那么此时的模板，就是当前HTML文件内，id为"app"标签的所有内容。如果实例中有"template"，</span></span><br><span class="line"><span class="comment">    模板即为"template"属性中的内容。</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    接着往下走到了beforeMount函数，下面的函数会在控制台输出"Hello beforeMount"，此时</span></span><br><span class="line"><span class="comment">    页面还没有将编译出的HTML文件渲染到页面上，beforeMount函数正是此时执行的函数。   */</span></span><br><span class="line">    beforeMount: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.message + <span class="string">' beforeMount'</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 到了mounted函数执行的时候，此时模板已经挂载完成，HTML内容已经被渲染到了页面上。</span></span><br><span class="line">    mounted: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.message + <span class="string">' mounted'</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    beforeDestroy: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.message + <span class="string">' beforeDestroy'</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    destroyed: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.message + <span class="string">' destroyed'</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">/*   beforeDestroy和destroyed分别是在实例销毁之前和实例销毁之后执行的函数，</span></span><br><span class="line"><span class="comment">    此时如果我们在控制台使用"test.$destroy()"方法来销毁该实例的话，控制台会输出</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    Hello beforeDestroy</span></span><br><span class="line"><span class="comment">    Hello destroyed</span></span><br><span class="line"><span class="comment">    undefined</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    说明beforeDestroy()和destroyed()两个函数分别先后得到了执行，同时销毁了test实例   */</span></span><br><span class="line"></span><br><span class="line">    beforeUpdate: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.message + <span class="string">' beforeUpdate'</span>)</span><br><span class="line">    &#125;,</span><br><span class="line">    updated: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.message + <span class="string">' updated'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/*   beforeUpdate和updated函数分别是当数据改变时，会在 DOM 更新前和更新后分别执行的两个函数，</span></span><br><span class="line"><span class="comment">    此时如果我们在控制台执行"test.message = 'Hi'"，控制台会输出</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    Hi beforeUpdate</span></span><br><span class="line"><span class="comment">    Hi updated</span></span><br><span class="line"><span class="comment">    "Hi"</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    说明beforeUPdate()和updated()两个函数分别在数据改变前后得到了执行   */</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p>&emsp;&emsp;生命周期函数就是vue实例在某一个时间点会自动执行的函数，我们可以通过在vue实例运行过程中的不同时间点来嵌入不同的函数，以此来实现相应的功能。</p>
@@ -504,10 +504,10 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="https://cdn.xiekaifei.com/image/avatar.jpg" alt="Kaifei Xie">
+              <img class="site-author-image" itemprop="image" src="https://raw.githubusercontent.com/xiekaifei/oss-public/master/image/avatar.jpg" alt="Kaifei Xie">
             
               <p class="site-author-name" itemprop="name">Kaifei Xie</p>
-              <p class="site-description motion-element" itemprop="description">谢凯飞的博客</p>
+              <p class="site-description motion-element" itemprop="description">Kaifei's Blog</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -586,7 +586,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2024</span>
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2025</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

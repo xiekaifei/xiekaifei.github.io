@@ -82,18 +82,18 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="Parallels配置虚拟机网络（宿主机ip不固定，虚拟机ip固定）">
 <meta property="og:url" content="https://blog.xiekaifei.com/2019/parallels-network.html">
-<meta property="og:site_name" content="谢凯飞的博客">
+<meta property="og:site_name" content="Kaifei&#39;s Blog">
 <meta property="og:description" content="&amp;emsp;&amp;emsp;最近我在Parallels里安装了一台ubuntu的虚拟机，因为平常都是用宿主机ssh远程到虚拟机上使用的，所以在配置虚拟机网络这一块就首先选择了桥接模式。Parallels里的桥接模式下，虚拟机可以和宿主机通信，可以和与宿主机同一局域网内且同一网段的其它设备通信，多个虚拟机之间也可以相互通信，也可以连接互联网，等于为虚拟机新分配了一个局域网地址，一般正常使用的话，我都是采">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://cdn.xiekaifei.com/image/blog/2019/2019-12-2410.26.46.png">
-<meta property="og:image" content="https://cdn.xiekaifei.com/image/blog/2019/2019-12-2410.47.35.png">
-<meta property="og:image" content="https://cdn.xiekaifei.com/image/blog/2019/2019-12-2410.32.48.png">
-<meta property="og:image" content="https://cdn.xiekaifei.com/image/blog/2019/2019-12-2410.56.44.png">
-<meta property="og:updated_time" content="2023-06-30T15:13:48.611Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiekaifei/oss-public/master/image/blog/2019/2019-12-2410.26.46.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiekaifei/oss-public/master/image/blog/2019/2019-12-2410.47.35.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiekaifei/oss-public/master/image/blog/2019/2019-12-2410.32.48.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xiekaifei/oss-public/master/image/blog/2019/2019-12-2410.56.44.png">
+<meta property="og:updated_time" content="2025-04-12T13:39:23.660Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Parallels配置虚拟机网络（宿主机ip不固定，虚拟机ip固定）">
 <meta name="twitter:description" content="&amp;emsp;&amp;emsp;最近我在Parallels里安装了一台ubuntu的虚拟机，因为平常都是用宿主机ssh远程到虚拟机上使用的，所以在配置虚拟机网络这一块就首先选择了桥接模式。Parallels里的桥接模式下，虚拟机可以和宿主机通信，可以和与宿主机同一局域网内且同一网段的其它设备通信，多个虚拟机之间也可以相互通信，也可以连接互联网，等于为虚拟机新分配了一个局域网地址，一般正常使用的话，我都是采">
-<meta name="twitter:image" content="https://cdn.xiekaifei.com/image/blog/2019/2019-12-2410.26.46.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/xiekaifei/oss-public/master/image/blog/2019/2019-12-2410.26.46.png">
 
 
 
@@ -129,7 +129,7 @@
 
 
 
-  <title>Parallels配置虚拟机网络（宿主机ip不固定，虚拟机ip固定） | 谢凯飞的博客</title>
+  <title>Parallels配置虚拟机网络（宿主机ip不固定，虚拟机ip固定） | Kaifei's Blog</title>
   
 
 
@@ -169,7 +169,7 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">谢凯飞的博客</span>
+        <span class="site-title">Kaifei's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -303,11 +303,11 @@
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kaifei Xie">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://cdn.xiekaifei.com/image/avatar.jpg">
+      <meta itemprop="image" content="https://raw.githubusercontent.com/xiekaifei/oss-public/master/image/avatar.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="谢凯飞的博客">
+      <meta itemprop="name" content="Kaifei's Blog">
     </span>
 
     
@@ -413,15 +413,15 @@
 </ol>
 <p>&emsp;&emsp;经过一番谷歌大法后，终于找到了解决方案。</p>
 <p>&emsp;&emsp;首先在Parallels的“偏好设置”–“网络”中，勾选<strong>在系统偏好设置中显示</strong>和<strong>启用IPv4 DHCP</strong>，设置好起始地址和结束地址，这里可以重新设置一个网段（当然也可以点击做左边网卡列表的+号新加一块网卡来设置）。勾选了在系统偏好设置中显示这个选项以后，在你的mac中的“系统偏好设置”–“网络”里就可以看到这块网卡，里面有本机的ip地址。</p>
-<p><img src="https://cdn.xiekaifei.com/image/blog/2019/2019-12-2410.26.46.png" alt="Parallels网络偏好设置"></p>
+<p><img src="https://raw.githubusercontent.com/xiekaifei/oss-public/master/image/blog/2019/2019-12-2410.26.46.png" alt="Parallels网络偏好设置"></p>
 <p>&emsp;&emsp;然后添加端口转发。</p>
-<p><img src="https://cdn.xiekaifei.com/image/blog/2019/2019-12-2410.47.35.png" alt="Parallels端口转发"></p>
+<p><img src="https://raw.githubusercontent.com/xiekaifei/oss-public/master/image/blog/2019/2019-12-2410.47.35.png" alt="Parallels端口转发"></p>
 <p>&emsp;&emsp;最后把虚拟机的网络配置为<strong>共享网络</strong>。</p>
-<p><img src="https://cdn.xiekaifei.com/image/blog/2019/2019-12-2410.32.48.png" alt="Parallels设置虚拟机网络为共享模式"></p>
+<p><img src="https://raw.githubusercontent.com/xiekaifei/oss-public/master/image/blog/2019/2019-12-2410.32.48.png" alt="Parallels设置虚拟机网络为共享模式"></p>
 <p>&emsp;&emsp;这里解释一下我们都干了什么。首先我们添加了一个全新的192.168.8.xxx的网段，并把虚拟机的网络配置为了共享网络模式。<strong>这种模式等于宿主机新加了一块虚拟网卡给虚拟机使用。宿主机的网卡可以实现和同局域网下且同一网段的其它设备通信，同时宿主机的虚拟网卡也可以实现宿主机与虚拟机之间通信</strong>。我们还添加了端口转发，这一项设置是为了让和宿主机处于同一局域网下且同一网段的其它设备与虚拟机产生通信。直接通信是不行的，因为这些设备与虚拟机不处于同一网段（虚拟机处于新添加的192.168.8.xxx网段下），所以刚才设置的端口转发就派上了用场。上图设置了访问宿主机的<strong>ip+65532</strong>端口号，自动转发给我的名为“Ubuntu 18.04”的虚拟机的22端口，这样就可以通过ssh来直接远程我的Linux虚拟机。</p>
 <p>&emsp;&emsp;最后再把虚拟机的ip固定一下，这样每次ssh连接虚拟机的时候就可以使用同一个ip地址了。</p>
 <p>&emsp;&emsp;刚才我们转发到的是虚拟机的22端口，当然如果想让虚拟机充当web服务器的角色的话，也可以再添加一个80端口，就可以实现局域网内的web访问了。（宿主机可以直接访问虚拟机的ip地址，和宿主机处于同一局域网且同一网段的其它设备无法直接访问，需要访问宿主机的ip地址+转发前的端口号）</p>
-<p><img src="https://cdn.xiekaifei.com/image/blog/2019/2019-12-2410.56.44.png" alt="转发访问虚拟机80端口"></p>
+<p><img src="https://raw.githubusercontent.com/xiekaifei/oss-public/master/image/blog/2019/2019-12-2410.56.44.png" alt="转发访问虚拟机80端口"></p>
 
       
     </div>
@@ -525,10 +525,10 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="https://cdn.xiekaifei.com/image/avatar.jpg" alt="Kaifei Xie">
+              <img class="site-author-image" itemprop="image" src="https://raw.githubusercontent.com/xiekaifei/oss-public/master/image/avatar.jpg" alt="Kaifei Xie">
             
               <p class="site-author-name" itemprop="name">Kaifei Xie</p>
-              <p class="site-description motion-element" itemprop="description">谢凯飞的博客</p>
+              <p class="site-description motion-element" itemprop="description">Kaifei's Blog</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -607,7 +607,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2024</span>
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2025</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
