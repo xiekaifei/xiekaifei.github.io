@@ -132,6 +132,8 @@
       mode = valid(event.target.value);
       try { window.localStorage.setItem(key, mode); } catch { /* Keep this page usable. */ }
       apply();
+      close();
+      toggle.focus();
     });
     document.addEventListener('click', event => {
       if (!control.contains(event.target)) close();
