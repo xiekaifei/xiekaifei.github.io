@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 8.1.2">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 8.1.2">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.jpg">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.ico">
@@ -17,7 +18,7 @@
 <link rel="stylesheet" href="/lib/@fortawesome/fontawesome-free/css/all.min.css">
   <link rel="stylesheet" href="/lib/@fancyapps/ui/dist/fancybox/fancybox.css">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"blog.xiekaifei.com","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.29.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"hide","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"base16/tomorrow-night","dark":"base16/tomorrow-night"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"blog.xiekaifei.com","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.29.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"hide","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"base16/tomorrow-night","dark":"base16/tomorrow-night"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
 
     <meta name="description" content="&emsp;&emsp;在使用终端的时候，免不了会使用vi&#x2F;vim编辑器来编辑文件。下面罗列一些编辑时的常用快捷键，可以提高使用效率。完整版的vim使用教程见最底部的引用链接。">
 <meta property="og:type" content="article">
@@ -70,7 +71,90 @@
 
 
 
+<script data-theme-bootstrap>(() => {
+  'use strict';
 
+  const key = 'kaifei-blog-color-mode';
+  const root = document.documentElement;
+  const media = window.matchMedia('(prefers-color-scheme: dark)');
+  const valid = value => ['light', 'dark', 'system'].includes(value) ? value : 'system';
+  let mode = 'system';
+  try { mode = valid(window.localStorage.getItem(key)); } catch { /* Storage is optional. */ }
+
+  const metas = [...document.querySelectorAll('meta[name="theme-color"]')];
+  const colors = {
+    light: metas.find(meta => meta.media?.includes('light'))?.content || metas[0]?.content || '#eee',
+    dark: metas.find(meta => meta.media?.includes('dark'))?.content || '#222'
+  };
+  // One active meta avoids a system-driven entry overriding a manual choice.
+  metas.slice(1).forEach(meta => meta.remove());
+  metas[0]?.removeAttribute('media');
+
+  function apply() {
+    const color = mode === 'system' ? (media.matches ? 'dark' : 'light') : mode;
+    root.dataset.theme = color;
+    root.dataset.themeMode = mode;
+    if (metas[0]) metas[0].content = colors[color];
+    document.querySelectorAll('.theme-switch input').forEach(input => {
+      input.checked = input.value === mode;
+    });
+    const toggle = document.querySelector('.theme-switch-toggle');
+    if (toggle) toggle.title = `外观：${{light: '浅色', dark: '深色', system: '跟随系统'}[mode]}`;
+  }
+
+  apply();
+  media.addEventListener('change', apply);
+  window.addEventListener('storage', event => {
+    if (event.key !== key && event.key !== null) return;
+    // Ignore sessionStorage events; localStorage getters can throw in private contexts.
+    try { if (event.storageArea && event.storageArea !== window.localStorage) return; } catch { return; }
+    mode = valid(event.newValue);
+    apply();
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const control = document.querySelector('.theme-switch');
+    if (!control) return;
+    const toggle = control.querySelector('.theme-switch-toggle');
+    const panel = control.querySelector('.theme-switch-panel');
+    const setOpen = open => {
+      control.classList.toggle('is-open', open);
+      panel.toggleAttribute('inert', !open);
+      panel.setAttribute('aria-hidden', String(!open));
+      toggle.setAttribute('aria-expanded', String(open));
+    };
+    const close = () => setOpen(false);
+    toggle.addEventListener('click', () => {
+      const open = toggle.getAttribute('aria-expanded') !== 'true';
+      setOpen(open);
+      if (open) control.querySelector(`input[value="${mode}"]`).focus();
+    });
+    control.addEventListener('change', event => {
+      if (!event.target.matches('input[name="color-mode"]')) return;
+      mode = valid(event.target.value);
+      try { window.localStorage.setItem(key, mode); } catch { /* Keep this page usable. */ }
+      apply();
+    });
+    document.addEventListener('click', event => {
+      if (!control.contains(event.target)) close();
+    });
+    control.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+        event.preventDefault();
+        close();
+        toggle.focus();
+      }
+    });
+    control.addEventListener('focusout', event => {
+      // Label clicks can briefly leave no focused element before selecting their radio.
+      // Only dismiss for a known outside focus target; outside clicks are handled above.
+      if (event.relatedTarget && !control.contains(event.relatedTarget)) close();
+    });
+    apply();
+    control.hidden = false;
+  });
+})();
+</script>
 
   <meta name="keywords" content="vi/vim,">
 
@@ -146,6 +230,17 @@
       </div>
     </div>
   </div>
+<div class="theme-switch" hidden>
+  <button class="theme-switch-toggle" type="button" aria-label="切换外观" aria-expanded="false" aria-controls="theme-switch-panel" title="切换外观">
+    <i class="fa fa-circle-half-stroke fa-fw" aria-hidden="true"></i><span class="theme-switch-caption">外观</span>
+  </button>
+  <fieldset id="theme-switch-panel" class="theme-switch-panel" aria-hidden="true" inert>
+    <legend>外观模式</legend>
+    <label><input type="radio" name="color-mode" value="light">浅色</label>
+    <label><input type="radio" name="color-mode" value="dark">深色</label>
+    <label><input type="radio" name="color-mode" value="system" checked>跟随系统</label>
+  </fieldset>
+</div>
 
 </header>
         
