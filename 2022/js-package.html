@@ -29,7 +29,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/xiekaifei/oss-public/master/image/blog/2022/node-modules-structure-8ab301ddaed3b7530858b233f5b3be57.jpg">
 <meta property="article:published_time" content="2022-08-02T09:34:15.000Z">
-<meta property="article:modified_time" content="2025-04-12T13:39:23.661Z">
+<meta property="article:modified_time" content="2026-09-26T05:24:45.027Z">
 <meta property="article:author" content="Kaifei Xie">
 <meta property="article:tag" content="JavaScript">
 <meta property="article:tag" content="前端">
@@ -166,7 +166,7 @@
 <link rel="stylesheet" href="/css/ui/demo-pages.css?v=b3d77accac">
 
 
-  <meta name="keywords" content="前端,JavaScript,">
+  <meta name="keywords" content="JavaScript,前端,">
 
 
   <noscript>
@@ -268,7 +268,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#npm"><span class="nav-number">1.</span> <span class="nav-text">npm</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#npm%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">1.1.</span> <span class="nav-text">npm是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm%E5%AE%89%E8%A3%85%E5%8C%85"><span class="nav-number">1.2.</span> <span class="nav-text">npm安装包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#package-json"><span class="nav-number">1.3.</span> <span class="nav-text">package.json</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%85%E7%9A%84%E7%89%88%E6%9C%AC%E5%8F%B7%E8%A7%84%E5%88%99"><span class="nav-number">1.4.</span> <span class="nav-text">包的版本号规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#package-lock-json"><span class="nav-number">1.5.</span> <span class="nav-text">package-lock.json</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#yarn"><span class="nav-number">2.</span> <span class="nav-text">yarn</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#yarn-lock"><span class="nav-number">2.1.</span> <span class="nav-text">yarn.lock</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nvm"><span class="nav-number">3.</span> <span class="nav-text">nvm</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nvm%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">3.1.</span> <span class="nav-text">nvm常用命令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#npx"><span class="nav-number">4.</span> <span class="nav-text">npx</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%83%E7%94%A8%E9%A1%B9%E7%9B%AE%E5%AE%89%E8%A3%85%E7%9A%84%E6%A8%A1%E5%9D%97"><span class="nav-number">4.1.</span> <span class="nav-text">调用项目安装的模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%81%BF%E5%85%8D%E5%85%A8%E5%B1%80%E5%AE%89%E8%A3%85%E6%A8%A1%E5%9D%97"><span class="nav-number">4.2.</span> <span class="nav-text">避免全局安装模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#no-install-%E5%8F%82%E6%95%B0%E5%92%8C-ignore-existing-%E5%8F%82%E6%95%B0"><span class="nav-number">4.3.</span> <span class="nav-text">--no-install 参数和--ignore-existing 参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E4%B8%8D%E5%90%8C%E7%89%88%E6%9C%AC%E7%9A%84-node"><span class="nav-number">4.4.</span> <span class="nav-text">使用不同版本的 node</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E5%AE%9A%E5%8F%82%E6%95%B0"><span class="nav-number">4.5.</span> <span class="nav-text">指定参数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pnpm"><span class="nav-number">5.</span> <span class="nav-text">pnpm</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E9%9D%9E%E6%89%81%E5%B9%B3%E5%8C%96%E7%9A%84-node-modules-%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="nav-number">5.1.</span> <span class="nav-text">创建非扁平化的 node_modules 文件夹</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lockfile"><span class="nav-number">5.2.</span> <span class="nav-text">Lockfile</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#npm"><span class="nav-number">1.</span> <span class="nav-text">npm</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">1.1.</span> <span class="nav-text">npm 是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-%E5%AE%89%E8%A3%85%E5%8C%85"><span class="nav-number">1.2.</span> <span class="nav-text">npm 安装包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#package-json"><span class="nav-number">1.3.</span> <span class="nav-text">package.json</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%85%E7%9A%84%E7%89%88%E6%9C%AC%E5%8F%B7%E8%A7%84%E5%88%99"><span class="nav-number">1.4.</span> <span class="nav-text">包的版本号规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#package-lock-json"><span class="nav-number">1.5.</span> <span class="nav-text">package-lock.json</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#yarn"><span class="nav-number">2.</span> <span class="nav-text">yarn</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#yarn-lock"><span class="nav-number">2.1.</span> <span class="nav-text">yarn.lock</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#nvm"><span class="nav-number">3.</span> <span class="nav-text">nvm</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nvm-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">3.1.</span> <span class="nav-text">nvm 常用命令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#npx"><span class="nav-number">4.</span> <span class="nav-text">npx</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%83%E7%94%A8%E9%A1%B9%E7%9B%AE%E5%AE%89%E8%A3%85%E7%9A%84%E6%A8%A1%E5%9D%97"><span class="nav-number">4.1.</span> <span class="nav-text">调用项目安装的模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%81%BF%E5%85%8D%E5%85%A8%E5%B1%80%E5%AE%89%E8%A3%85%E6%A8%A1%E5%9D%97"><span class="nav-number">4.2.</span> <span class="nav-text">避免全局安装模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#no-install-%E5%8F%82%E6%95%B0%E5%92%8C-ignore-existing-%E5%8F%82%E6%95%B0"><span class="nav-number">4.3.</span> <span class="nav-text">--no-install 参数和 --ignore-existing 参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E4%B8%8D%E5%90%8C%E7%89%88%E6%9C%AC%E7%9A%84-node"><span class="nav-number">4.4.</span> <span class="nav-text">使用不同版本的 node</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E5%AE%9A%E5%8F%82%E6%95%B0"><span class="nav-number">4.5.</span> <span class="nav-text">指定参数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pnpm"><span class="nav-number">5.</span> <span class="nav-text">pnpm</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E9%9D%9E%E6%89%81%E5%B9%B3%E5%8C%96%E7%9A%84-node-modules-%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="nav-number">5.1.</span> <span class="nav-text">创建非扁平化的 node_modules 文件夹</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lockfile"><span class="nav-number">5.2.</span> <span class="nav-text">Lockfile</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -385,8 +385,8 @@
 <p>在软件开发过程中<strong>使用包不是必须的，但却是一项最佳的工程化实践。</strong></p>
 <span id="more"></span>
 
-<h1 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h1><h2 id="npm是什么？"><a href="#npm是什么？" class="headerlink" title="npm是什么？"></a>npm是什么？</h2><blockquote>
-<p>npm （node package manager）为你和你的团队打开了连接整个 JavaScript 天才世界的一扇大门。它是世界上最大的软件注册表，每星期大约有 30 亿次的下载量，包含超过 600000 个 <em>包（package）</em>（即，代码模块）。来自各大洲的开源软件开发者使用 npm 互相分享和借鉴。包的结构使您能够轻松跟踪依赖项和版本。</p>
+<h1 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h1><h2 id="npm-是什么？"><a href="#npm-是什么？" class="headerlink" title="npm 是什么？"></a>npm 是什么？</h2><blockquote>
+<p>npm （node package manager）为你和你的团队打开了连接整个 JavaScript 天才世界的一扇大门。它是世界上最大的软件注册表，每星期大约有 30 亿次的下载量，包含超过 600000 个 <em>包（package）</em>（即，代码模块）。来自各大洲的开源软件开发者使用 npm 互相分享和借鉴。包的结构使您能够轻松跟踪依赖项和版本。</p>
 </blockquote>
 <p>npm 由三个独立的部分组成：</p>
 <ul>
@@ -395,47 +395,47 @@
 <li>命令行工具（CLI）</li>
 </ul>
 <p><a target="_blank" rel="noopener" href="https://www.npmjs.com/"><em>网站</em></a> 是开发者查找包（package）、设置参数以及管理 npm 使用体验的主要途径。</p>
-<p><em>注册表</em> 是一个巨大的数据库，保存了每个包（package）的信息。</p>
+<p><em>注册表</em> 是一个巨大的数据库，保存了每个包（package）的信息。</p>
 <p><em>CLI</em> 通过命令行或终端运行。开发者通过 CLI 与 npm 打交道。</p>
-<h2 id="npm安装包"><a href="#npm安装包" class="headerlink" title="npm安装包"></a>npm安装包</h2><p>有两种方式用来安装 npm 包：本地安装和全局安装。至于选择哪种方式来安装，取决于我们如何使用这个包。</p>
+<h2 id="npm-安装包"><a href="#npm-安装包" class="headerlink" title="npm 安装包"></a>npm 安装包</h2><p>有两种方式用来安装 npm 包：本地安装和全局安装。至于选择哪种方式来安装，取决于我们如何使用这个包。</p>
 <ul>
-<li>如果你自己的模块依赖于某个包，并通过 Node.js 的 <strong><code>require</code></strong> 加载，那么你应该选择本地安装，这种方式也是 <strong><code>npm install</code></strong> 命令的默认行为。</li>
+<li>如果你自己的模块依赖于某个包，并通过 Node.js 的 <strong><code>require</code></strong> 加载，那么你应该选择本地安装，这种方式也是 <strong><code>npm install</code></strong> 命令的默认行为。</li>
 <li>如果你想将包作为一个命令行工具，（比如 grunt CLI），那么你应该选择全局安装。</li>
 </ul>
 <p>可以使用以下命令安装一个包：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install &lt;package_name&gt;</span><br></pre></td></tr></table></figure>
 
-<p>上述命令执行之后将会在当前的目录下创建一个 <strong><code>node_modules</code></strong> 的目录（如果不存在的话），然后将下载的包保存到这个目录下。</p>
+<p>上述命令执行之后将会在当前的目录下创建一个 <strong><code>node_modules</code></strong> 的目录（如果不存在的话），然后将下载的包保存到这个目录下。</p>
 <p>如果需要将包安装到全局，你应该使用以下命令：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g &lt;package_name&gt;</span><br></pre></td></tr></table></figure>
 
-<h2 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h2><p>项目的 <em>package.json</em> 文件是配置和描述如何与程序交互和运行的中心。npm CLI用它来识别你的项目并了解如何处理项目的依赖关系。<em>package.json</em> 文件使 npm 可以启动你的项目、运行脚本、安装依赖项、发布到 NPM 注册表以及许多其他有用的任务。</p>
-<p>你的项目还必须包含 <em>package.json</em> ，然后才能从 NPM 安装软件包。</p>
-<p>package.json 位于项目的根目录下。</p>
+<h2 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a><code>package.json</code></h2><p>项目的 <code>package.json</code> 文件是配置和描述如何与程序交互和运行的中心。npm CLI 用它来识别你的项目并了解如何处理项目的依赖关系。<code>package.json</code> 文件使 npm 可以启动你的项目、运行脚本、安装依赖项、发布到 npm 注册表以及许多其他有用的任务。</p>
+<p>你的项目还必须包含 <code>package.json</code>，然后才能从 npm 安装软件包。</p>
+<p><code>package.json</code> 位于项目的根目录下。</p>
 <h2 id="包的版本号规则"><a href="#包的版本号规则" class="headerlink" title="包的版本号规则"></a>包的版本号规则</h2><p>npm 包的版本号遵循以下规则：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">主版本号.次版本号.修补版本号</span><br><span class="line">major.minor.patch</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">主版本号.次版本号.修补版本号</span><br><span class="line">major.minor.patch</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>major：新的架构调整，不兼容老版本</li>
-<li>minor：新增功能，兼容老版本</li>
-<li>patch：修复bug，兼容老版本</li>
+<li><code>major</code>：新的架构调整，不兼容老版本</li>
+<li><code>minor</code>：新增功能，兼容老版本</li>
+<li><code>patch</code>：修复 bug，兼容老版本</li>
 </ul>
 <p><code>version</code></p>
 <p>仅接受指定的版本</p>
 <p><code>~version</code></p>
 <p>大概匹配兼容某个版本</p>
-<p>如果minor版本号指定了，那么minor版本号不变，而patch版本号任意</p>
-<p>如果minor和patch版本号未指定，那么minor和patch版本号任意</p>
-<p>如：~1.1.2，表示&gt;&#x3D;1.1.2 &lt;1.2.0，可以是1.1.2，1.1.3，1.1.4，…，1.1.n</p>
-<p>如：~1.1，表示&gt;&#x3D;1.1.0 &lt;1.2.0，可以是同上</p>
-<p>如：~1，表示&gt;&#x3D;1.0.0 &lt;2.0.0，可以是1.0.0，1.0.1，1.0.2，…，1.0.n，1.1.n，1.2.n，…，1.n.n</p>
+<p>如果 <code>minor</code> 版本号指定了，那么 <code>minor</code> 版本号不变，而 <code>patch</code> 版本号任意</p>
+<p>如果 <code>minor</code> 和 <code>patch</code> 版本号未指定，那么 <code>minor</code> 和 <code>patch</code> 版本号任意</p>
+<p>如：<code>~1.1.2</code>，表示 <code>&gt;=1.1.2 &lt;1.2.0</code>，可以是 <code>1.1.2</code>，<code>1.1.3</code>，<code>1.1.4</code>，…，<code>1.1.n</code></p>
+<p>如：<code>~1.1</code>，表示 <code>&gt;=1.1.0 &lt;1.2.0</code>，可以是同上</p>
+<p>如：<code>~1</code>，表示 <code>&gt;=1.0.0 &lt;2.0.0</code>，可以是 <code>1.0.0</code>，<code>1.0.1</code>，<code>1.0.2</code>，…，<code>1.0.n</code>，<code>1.1.n</code>，<code>1.2.n</code>，…，<code>1.n.n</code></p>
 <p><code>^version</code></p>
 <p>兼容某个版本</p>
-<p>版本号中最左边的非0数字的右侧可以任意</p>
-<p>如果缺少某个版本号，则这个版本号的位置可以任意 如：^1.1.2 ，表示&gt;&#x3D;1.1.2 &lt;2.0.0，可以是1.1.2，1.1.3，…，1.1.n，1.2.n，…，1.n.n</p>
-<p>如：^0.2.3 ，表示&gt;&#x3D;0.2.3 &lt;0.3.0，可以是0.2.3，0.2.4，…，0.2.n</p>
-<p>如：^0.0，表示 &gt;&#x3D;0.0.0 &lt;0.1.0，可以是0.0.0，0.0.1，…，0.0.n</p>
-<p><code>l**atest**</code></p>
+<p>版本号中最左边的非 0 数字的右侧可以任意</p>
+<p>如果缺少某个版本号，则这个版本号的位置可以任意。如：<code>^1.1.2</code>，表示 <code>&gt;=1.1.2 &lt;2.0.0</code>，可以是 <code>1.1.2</code>，<code>1.1.3</code>，…，<code>1.1.n</code>，<code>1.2.n</code>，…，<code>1.n.n</code></p>
+<p>如：<code>^0.2.3</code>，表示 <code>&gt;=0.2.3 &lt;0.3.0</code>，可以是 <code>0.2.3</code>，<code>0.2.4</code>，…，<code>0.2.n</code></p>
+<p>如：<code>^0.0</code>，表示 <code>&gt;=0.0.0 &lt;0.1.0</code>，可以是 <code>0.0.0</code>，<code>0.0.1</code>，…，<code>0.0.n</code></p>
+<p><code>latest</code></p>
 <p>安装的永远是最新发布的版本</p>
 <p><code>&gt;version</code></p>
 <p>必须大于某个版本</p>
@@ -446,37 +446,37 @@
 <p><code>&lt;=version</code></p>
 <p>可以小于或等于某个版本</p>
 <p><code>x</code></p>
-<p>x的位置表示任意版本 如：1.2.x，表示可以1.2.0，1.2.1，…，1.2.n</p>
+<p><code>x</code> 的位置表示任意版本。如：<code>1.2.x</code>，表示可以 <code>1.2.0</code>，<code>1.2.1</code>，…，<code>1.2.n</code></p>
 <p><code>*</code></p>
-<p>任意版本，””也表示任意版本</p>
+<p>任意版本，<code>&quot;&quot;</code> 也表示任意版本</p>
 <p><code>version1 - version2</code></p>
-<p>大于等于version1，小于等于version2</p>
+<p>大于等于 <code>version1</code>，小于等于 <code>version2</code></p>
 <p><code>range1 || range2</code></p>
-<p>满足range1或者满足range2，可以多个范围</p>
-<p>如：&lt;1.0.0 || &gt;&#x3D;2.3.1 &lt;2.4.5 || &gt;&#x3D;2.5.2 ，表示满足这三个范围都可以</p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;dependencies&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;foo&quot;</span>: <span class="string">&quot;1.0.0 - 2.9999.9999&quot;</span>,</span><br><span class="line">    <span class="string">&quot;bar&quot;</span>: <span class="string">&quot;&gt;=1.0.2 &lt;2.1.2&quot;</span>,</span><br><span class="line">    <span class="string">&quot;baz&quot;</span>: <span class="string">&quot;&gt;1.0.2 &lt;=2.3.4&quot;</span>,</span><br><span class="line">    <span class="string">&quot;boo&quot;</span>: <span class="string">&quot;2.0.1&quot;</span>,</span><br><span class="line">    <span class="string">&quot;qux&quot;</span>: <span class="string">&quot;&lt;1.0.0 || &gt;=2.3.1 &lt;2.4.5 || &gt;=2.5.2 &lt;3.0.0&quot;</span>,</span><br><span class="line">    <span class="string">&quot;asd&quot;</span>: <span class="string">&quot;http://asdf.com/asdf.tar.gz&quot;</span>,</span><br><span class="line">    <span class="string">&quot;til&quot;</span>: <span class="string">&quot;~1.2&quot;</span>,</span><br><span class="line">    <span class="string">&quot;elf&quot;</span>: <span class="string">&quot;~1.2.3&quot;</span>,</span><br><span class="line">    <span class="string">&quot;two&quot;</span>: <span class="string">&quot;2.x&quot;</span>,</span><br><span class="line">    <span class="string">&quot;thr&quot;</span>: <span class="string">&quot;3.3.x&quot;</span>,</span><br><span class="line">    <span class="string">&quot;lat&quot;</span>: <span class="string">&quot;latest&quot;</span>,</span><br><span class="line">    <span class="string">&quot;dyl&quot;</span>: <span class="string">&quot;file:../dyl&quot;</span> <span class="comment">// 本地路径</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>满足 <code>range1</code> 或者满足 <code>range2</code>，可以多个范围</p>
+<p>如：<code>&lt;1.0.0 || &gt;=2.3.1 &lt;2.4.5 || &gt;=2.5.2</code>，表示满足这三个范围都可以</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;dependencies&quot;: &#123;</span><br><span class="line">    &quot;foo&quot;: &quot;1.0.0 - 2.9999.9999&quot;,</span><br><span class="line">    &quot;bar&quot;: &quot;&gt;=1.0.2 &lt;2.1.2&quot;,</span><br><span class="line">    &quot;baz&quot;: &quot;&gt;1.0.2 &lt;=2.3.4&quot;,</span><br><span class="line">    &quot;boo&quot;: &quot;2.0.1&quot;,</span><br><span class="line">    &quot;qux&quot;: &quot;&lt;1.0.0 || &gt;=2.3.1 &lt;2.4.5 || &gt;=2.5.2 &lt;3.0.0&quot;,</span><br><span class="line">    &quot;asd&quot;: &quot;http://asdf.com/asdf.tar.gz&quot;,</span><br><span class="line">    &quot;til&quot;: &quot;~1.2&quot;,</span><br><span class="line">    &quot;elf&quot;: &quot;~1.2.3&quot;,</span><br><span class="line">    &quot;two&quot;: &quot;2.x&quot;,</span><br><span class="line">    &quot;thr&quot;: &quot;3.3.x&quot;,</span><br><span class="line">    &quot;lat&quot;: &quot;latest&quot;,</span><br><span class="line">    &quot;dyl&quot;: &quot;file:../dyl&quot; // 本地路径</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="package-lock-json"><a href="#package-lock-json" class="headerlink" title="package-lock.json"></a>package-lock.json</h2><p>当我们执行 <code>npm install</code> 命令时，会自动在项目的根目录创建一个 <code>package-lock.json</code> 文件，该文件可以理解成对结合了逻辑树（package.json里面定义的依赖关系树）和物理树（node_modules文件夹下的结构）的一个快照，里面有明确的各依赖版本号，实际安装的结构，也有逻辑树的结构。</p>
-<p>该文件用于描述依赖树的详细情况，以保证可以重复安装完全相同的依赖项。并允许npm跳过先前安装包的重复元数据解析来优化安装过程。</p>
-<p>我们无法直接还原项目某一时刻的所有依赖项（node_modules），但通过 <code>package.json</code> 和 <code>package-lock.json</code> 文件，可以推导出项目某一时刻的所有依赖项并完全还原。</p>
-<p>要完全按照 <code>package-lock.json</code> 文件里的定义安装依赖项，可以使用 <code>[npm ci](https://docs.npmjs.com/cli/v9/commands/npm-ci)</code> 命令。</p>
+<h2 id="package-lock-json"><a href="#package-lock-json" class="headerlink" title="package-lock.json"></a><code>package-lock.json</code></h2><p>当我们执行 <code>npm install</code> 命令时，会自动在项目的根目录创建一个 <code>package-lock.json</code> 文件，该文件可以理解成结合了逻辑树（<code>package.json</code> 里面定义的依赖关系树）和物理树（<code>node_modules</code> 文件夹下的结构）的一个快照，里面有明确的各依赖版本号，实际安装的结构，也有逻辑树的结构。</p>
+<p>该文件用于描述依赖树的详细情况，以保证可以重复安装完全相同的依赖项。并允许 npm 跳过先前安装包的重复元数据解析来优化安装过程。</p>
+<p>我们无法直接还原项目某一时刻的所有依赖项（<code>node_modules</code>），但通过 <code>package.json</code> 和 <code>package-lock.json</code> 文件，可以推导出项目某一时刻的所有依赖项并完全还原。</p>
+<p>要完全按照 <code>package-lock.json</code> 文件里的定义安装依赖项，可以使用 <a target="_blank" rel="noopener" href="https://docs.npmjs.com/cli/v9/commands/npm-ci"><code>npm ci</code></a> 命令。</p>
 <h1 id="yarn"><a href="#yarn" class="headerlink" title="yarn"></a>yarn</h1><p><code>yarn</code> 与 <code>npm</code> 类似，都是包管理工具。<a target="_blank" rel="noopener" href="https://classic.yarnpkg.com/en/">yarn</a> 中宣传的点是：</p>
 <ul>
-<li>快速：yarn会缓存下载过的每一个包，这样就不用再次下载了。同时会并行执行安装任务，以达到更快的速度。</li>
-<li>安全：yarn会校验每个已安装包的完整性，再执行它的代码。</li>
-<li>可靠：lock锁机制，保证在一个系统上运行的安装在其它任何系统上都能以完全相同的方式运行。</li>
+<li>快速：yarn 会缓存下载过的每一个包，这样就不用再次下载了。同时会并行执行安装任务，以达到更快的速度。</li>
+<li>安全：yarn 会校验每个已安装包的完整性，再执行它的代码。</li>
+<li>可靠：lock 锁机制，保证在一个系统上运行的安装在其它任何系统上都能以完全相同的方式运行。</li>
 </ul>
-<h2 id="yarn-lock"><a href="#yarn-lock" class="headerlink" title="yarn.lock"></a>yarn.lock</h2><p><code>yarn</code> 也有与 <code>npm</code> 类似的lock锁机制，这些信息存放在 <code>yarn.lock</code> 文件下。该文件会把项目下所有依赖项以及依赖项的依赖扁平化的展示出来，对于同包不同版本且规则相容的字段会放在同一级结构中。</p>
-<p>像 <code>npm ci</code> 命令一样使用 <code>yarn</code> ：</p>
+<h2 id="yarn-lock"><a href="#yarn-lock" class="headerlink" title="yarn.lock"></a>yarn.lock</h2><p><code>yarn</code> 也有与 <code>npm</code> 类似的 lock 锁机制，这些信息存放在 <code>yarn.lock</code> 文件下。该文件会把项目下所有依赖项以及依赖项的依赖扁平化的展示出来，对于同包不同版本且规则相容的字段会放在同一级结构中。</p>
+<p>像 <code>npm ci</code> 命令一样使用 <code>yarn</code>：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yarn install --frozen-lockfile</span><br></pre></td></tr></table></figure>
 
 <h1 id="nvm"><a href="#nvm" class="headerlink" title="nvm"></a>nvm</h1><p><a target="_blank" rel="noopener" href="https://github.com/nvm-sh/nvm">nvm</a> (Node Version Manager)，即 <code>node</code> 版本管理工具，可以在同一台设备上安装和切换多个 <code>node</code> 版本，解决 <code>node</code> 各种版本存在不兼容的现象。</p>
-<h2 id="nvm常用命令"><a href="#nvm常用命令" class="headerlink" title="nvm常用命令"></a>nvm常用命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装指定 node 版本</span></span><br><span class="line">$ nvm install &lt;version&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看本地 node 版本</span></span><br><span class="line">$ nvm <span class="built_in">ls</span></span><br><span class="line"><span class="comment"># 或</span></span><br><span class="line">$ nvm list</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看远程 node 版本</span></span><br><span class="line">$ nvm ls-remote</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用指定 node 版本</span></span><br><span class="line">$ nvm use &lt;version&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置默认 node 版本</span></span><br><span class="line">$ nvm <span class="built_in">alias</span> default &lt;version&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 卸载指定 node 版本</span></span><br><span class="line">$ nvm uninstall &lt;version&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="nvm-常用命令"><a href="#nvm-常用命令" class="headerlink" title="nvm 常用命令"></a>nvm 常用命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装指定 node 版本</span></span><br><span class="line">$ nvm install &lt;version&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看本地 node 版本</span></span><br><span class="line">$ nvm <span class="built_in">ls</span></span><br><span class="line"><span class="comment"># 或</span></span><br><span class="line">$ nvm list</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看远程 node 版本</span></span><br><span class="line">$ nvm ls-remote</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用指定 node 版本</span></span><br><span class="line">$ nvm use &lt;version&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置默认 node 版本</span></span><br><span class="line">$ nvm <span class="built_in">alias</span> default &lt;version&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 卸载指定 node 版本</span></span><br><span class="line">$ nvm uninstall &lt;version&gt;</span><br></pre></td></tr></table></figure>
 
-<h1 id="npx"><a href="#npx" class="headerlink" title="npx"></a>npx</h1><p><code>npm</code> 从5.2版本开始，增加了 <code>npx</code> 命令，所以可以直接使用 <code>npx</code> 命令。如果不能使用，可以手动安装一下。</p>
+<h1 id="npx"><a href="#npx" class="headerlink" title="npx"></a>npx</h1><p><code>npm</code> 从 5.2 版本开始，增加了 <code>npx</code> 命令，所以可以直接使用 <code>npx</code> 命令。如果不能使用，可以手动安装一下。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g npx</span><br></pre></td></tr></table></figure>
 
-<h2 id="调用项目安装的模块"><a href="#调用项目安装的模块" class="headerlink" title="调用项目安装的模块"></a>调用项目安装的模块</h2><p>npx 想要解决的主要问题，就是调用项目内部安装的模块。比如，项目内安装了测试工具 <code>Mocha</code> ，一般来说，想要调用它只能在项目脚本和 <code>package.json</code> 的 <code>script</code> 字段里面，如果想在命令行下调用，必须像下面这样。</p>
+<h2 id="调用项目安装的模块"><a href="#调用项目安装的模块" class="headerlink" title="调用项目安装的模块"></a>调用项目安装的模块</h2><p>npx 想要解决的主要问题，就是调用项目内部安装的模块。比如，项目内安装了测试工具 <code>Mocha</code>，一般来说，想要调用它只能在项目脚本和 <code>package.json</code> 的 <code>script</code> 字段里面，如果想在命令行下调用，必须像下面这样。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 项目的根目录下执行</span></span><br><span class="line">$ node-modules/.bin/mocha --version</span><br></pre></td></tr></table></figure>
 
 <p>npx 就是想解决这个问题，让项目内部安装的模块用起来更方便，只要像下面这样调用就行了。</p>
@@ -487,29 +487,29 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npx create-react-app my-react-app</span><br></pre></td></tr></table></figure>
 
 <p>上面代码运行时，npx 将 <code>create-react-app</code> 下载到一个临时目录（只要 npx 后面的模块无法在本地发现，就会下载同名模块），使用以后再删除，以后再使用该命令时重新下载。</p>
-<h2 id="no-install-参数和-ignore-existing-参数"><a href="#no-install-参数和-ignore-existing-参数" class="headerlink" title="--no-install 参数和--ignore-existing 参数"></a><strong><code>--no-install</code> 参数和<code>--ignore-existing</code> 参数</strong></h2><p>如果想让 npx 强制使用本地模块，不下载远程模块，可以使用 <code>—no-install</code> 参数，如果本地不存在该模块，就会报错。</p>
+<h2 id="no-install-参数和-ignore-existing-参数"><a href="#no-install-参数和-ignore-existing-参数" class="headerlink" title="--no-install 参数和 --ignore-existing 参数"></a><strong><code>--no-install</code> 参数和 <code>--ignore-existing</code> 参数</strong></h2><p>如果想让 npx 强制使用本地模块，不下载远程模块，可以使用 <code>--no-install</code> 参数，如果本地不存在该模块，就会报错。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npx --no-install http-server</span><br></pre></td></tr></table></figure>
 
-<p>反过来，如果忽略本地的同名模块，强制安装使用远程模块，可以使用 <code>--ignore-existing</code> 参数。比如，本地已经全局安装了 <code>create-react-app</code> ，但还是想使用远程模块，就用这个参数。</p>
+<p>反过来，如果忽略本地的同名模块，强制安装使用远程模块，可以使用 <code>--ignore-existing</code> 参数。比如，本地已经全局安装了 <code>create-react-app</code>，但还是想使用远程模块，就用这个参数。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npx --ignore-existing create-react-app my-react-app</span><br></pre></td></tr></table></figure>
 
-<h2 id="使用不同版本的-node"><a href="#使用不同版本的-node" class="headerlink" title="使用不同版本的 node"></a>使用不同版本的 node</h2><p>利用 npx 可以下载模块这个特点，可以指定某个版本的 Node 运行脚本。它的窍门就是使用 npm 的 node模块。</p>
+<h2 id="使用不同版本的-node"><a href="#使用不同版本的-node" class="headerlink" title="使用不同版本的 node"></a>使用不同版本的 node</h2><p>利用 npx 可以下载模块这个特点，可以指定某个版本的 Node 运行脚本。它的窍门就是使用 npm 的 node 模块。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npx node@0.12.8 -v</span><br></pre></td></tr></table></figure>
 
 <p>上面命令会使用 0.12.8 版本的 Node 执行脚本。原理是从 npm 下载这个版本的 node，使用后再删掉。</p>
 <p>某些场景下，这个方法用来切换 Node 版本，要比 nvm 那样的版本管理器方便一些。</p>
-<h2 id="指定参数"><a href="#指定参数" class="headerlink" title="指定参数"></a>指定参数</h2><p><code>-p</code> 参数参数用于指定 npx 所要安装的模块，可以在需要安装多个模块的场景时使用。</p>
+<h2 id="指定参数"><a href="#指定参数" class="headerlink" title="指定参数"></a>指定参数</h2><p><code>-p</code> 参数用于指定 npx 所要安装的模块，可以在需要安装多个模块的场景时使用。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npx -p lolcatjs -p cowsay [<span class="built_in">command</span>]</span><br></pre></td></tr></table></figure>
 
-<p>npx部分转载自 <a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2019/02/npx.html">npx 使用教程 - 阮一峰的网络日志</a>。</p>
+<p>npx 部分转载自 <a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2019/02/npx.html">npx 使用教程 - 阮一峰的网络日志</a>。</p>
 <h1 id="pnpm"><a href="#pnpm" class="headerlink" title="pnpm"></a>pnpm</h1><p>当使用 npm 或 Yarn 时，如果你有 100 个项目使用了某个依赖（dependency），就会有 100 份该依赖的副本保存在硬盘上。 而在使用 <a target="_blank" rel="noopener" href="https://pnpm.io/zh/"><code>pnpm</code></a> 时，依赖会被存储在内容可寻址的存储中，所以：</p>
 <ol>
-<li>如果你用到了某依赖项的不同版本，只会将不同版本间有差异的文件添加到仓库。 例如，如果某个包有100个文件，而它的新版本只改变了其中1个文件。那么 <code>pnpm update</code> 时只会向存储中心额外添加1个新文件，而不会因为仅仅一个文件的改变复制整新版本包的内容。</li>
-<li>所有文件都会存储在硬盘上的某一位置。 当软件包被被安装时，包里的文件会硬链接到这一位置，而不会占用额外的磁盘空间。 这允许你跨项目地共享同一版本的依赖。</li>
+<li>如果你用到了某依赖项的不同版本，只会将不同版本间有差异的文件添加到仓库。 例如，如果某个包有 100 个文件，而它的新版本只改变了其中 1 个文件。那么 <code>pnpm update</code> 时只会向存储中心额外添加 1 个新文件，而不会因为仅仅一个文件的改变复制整个新版本包的内容。</li>
+<li>所有文件都会存储在硬盘上的某一位置。 当软件包被安装时，包里的文件会硬链接到这一位置，而不会占用额外的磁盘空间。 这允许你跨项目地共享同一版本的依赖。</li>
 </ol>
 <p>因此，您在磁盘上节省了大量空间，这与项目和依赖项的数量成正比，并且安装速度要快得多！</p>
-<h2 id="创建非扁平化的-node-modules-文件夹"><a href="#创建非扁平化的-node-modules-文件夹" class="headerlink" title="创建非扁平化的 node_modules 文件夹"></a><strong>创建非扁平化的 node_modules 文件夹</strong></h2><p><img src="https://raw.githubusercontent.com/xiekaifei/oss-public/master/image/blog/2022/node-modules-structure-8ab301ddaed3b7530858b233f5b3be57.jpg" alt="node-modules-structure-8ab301ddaed3b7530858b233f5b3be57.jpg"></p>
-<h2 id="Lockfile"><a href="#Lockfile" class="headerlink" title="Lockfile"></a>Lockfile</h2><p>您应该始终提交 <a target="_blank" rel="noopener" href="https://pnpm.io/zh/git#lockfile">Lockfile</a>（ <code>pnpm</code> 生成的 <code>pnpm-lock.yaml</code> 文件）。 这是出于多种原因，主要是：</p>
+<h2 id="创建非扁平化的-node-modules-文件夹"><a href="#创建非扁平化的-node-modules-文件夹" class="headerlink" title="创建非扁平化的 node_modules 文件夹"></a><strong>创建非扁平化的 <code>node_modules</code> 文件夹</strong></h2><p><img src="https://raw.githubusercontent.com/xiekaifei/oss-public/master/image/blog/2022/node-modules-structure-8ab301ddaed3b7530858b233f5b3be57.jpg" alt="node-modules-structure-8ab301ddaed3b7530858b233f5b3be57.jpg"></p>
+<h2 id="Lockfile"><a href="#Lockfile" class="headerlink" title="Lockfile"></a>Lockfile</h2><p>您应该始终提交 <a target="_blank" rel="noopener" href="https://pnpm.io/zh/git#lockfile">Lockfile</a>（<code>pnpm</code> 生成的 <code>pnpm-lock.yaml</code> 文件）。 这是出于多种原因，主要是：</p>
 <ul>
 <li>在 CI 和生产环境中能够更快地完成安装，因为解析依赖的过程可以被跳过。</li>
 <li>开发，测试和生产环境之间强制执行一致的安装和解析方案，这意味着测试和生产中使用的包将与您开发项目时完全相同。</li>
@@ -523,21 +523,21 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag"># 前端</a>
               <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+              <a href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag"># 前端</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2020/js-this.html" rel="prev" title="箭头函数里的this到底指向谁？">
-                  <i class="fa fa-angle-left"></i> 箭头函数里的this到底指向谁？
+                <a href="/2020/js-this.html" rel="prev" title="箭头函数里的 this 到底指向谁？">
+                  <i class="fa fa-angle-left"></i> 箭头函数里的 this 到底指向谁？
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/js-design-patterns.html" rel="next" title="JavaScript设计模式">
-                  JavaScript设计模式 <i class="fa fa-angle-right"></i>
+                <a href="/2023/js-design-patterns.html" rel="next" title="JavaScript 设计模式">
+                  JavaScript 设计模式 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>

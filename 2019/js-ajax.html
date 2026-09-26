@@ -20,15 +20,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"blog.xiekaifei.com","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.29.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"hide","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"base16/tomorrow-night","dark":"base16/tomorrow-night"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="&emsp;&emsp;利用ajax，可以创建异步请求，从而实现在不影响整个页面的情况下，局部更新网页某处的数据。 &emsp;&emsp;异步请求可以应用在多个地方，最常见的就是我们在注册某个网站账号的时候，输入要注册的用户名，当鼠标焦点离开用户名输入表单的时候，如果输入的用户名已经存在于网站内，右侧会给出有相同用户名的提示。试想如果没有该功能，用户就必须在所有信息都填写完毕的情况下，点击”提交">
+    <meta name="description" content="&emsp;&emsp;利用 ajax，可以创建异步请求，从而实现在不影响整个页面的情况下，局部更新网页某处的数据。 &emsp;&emsp;异步请求可以应用在多个地方，最常见的就是我们在注册某个网站账号的时候，输入要注册的用户名，当鼠标焦点离开用户名输入表单的时候，如果输入的用户名已经存在于网站内，右侧会给出有相同用户名的提示。试想如果没有该功能，用户就必须在所有信息都填写完毕的情况下，点击”提">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript创建ajax异步请求">
+<meta property="og:title" content="JavaScript 创建 ajax 异步请求">
 <meta property="og:url" content="https://blog.xiekaifei.com/2019/js-ajax.html">
 <meta property="og:site_name" content="Kaifei&#39;s Blog">
-<meta property="og:description" content="&emsp;&emsp;利用ajax，可以创建异步请求，从而实现在不影响整个页面的情况下，局部更新网页某处的数据。 &emsp;&emsp;异步请求可以应用在多个地方，最常见的就是我们在注册某个网站账号的时候，输入要注册的用户名，当鼠标焦点离开用户名输入表单的时候，如果输入的用户名已经存在于网站内，右侧会给出有相同用户名的提示。试想如果没有该功能，用户就必须在所有信息都填写完毕的情况下，点击”提交">
+<meta property="og:description" content="&emsp;&emsp;利用 ajax，可以创建异步请求，从而实现在不影响整个页面的情况下，局部更新网页某处的数据。 &emsp;&emsp;异步请求可以应用在多个地方，最常见的就是我们在注册某个网站账号的时候，输入要注册的用户名，当鼠标焦点离开用户名输入表单的时候，如果输入的用户名已经存在于网站内，右侧会给出有相同用户名的提示。试想如果没有该功能，用户就必须在所有信息都填写完毕的情况下，点击”提">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-05-06T11:07:38.000Z">
-<meta property="article:modified_time" content="2023-07-02T09:36:34.797Z">
+<meta property="article:modified_time" content="2026-09-26T05:24:45.023Z">
 <meta property="article:author" content="Kaifei Xie">
 <meta property="article:tag" content="JavaScript">
 <meta property="article:tag" content="ajax">
@@ -38,10 +38,10 @@
 <link rel="canonical" href="https://blog.xiekaifei.com/2019/js-ajax.html">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://blog.xiekaifei.com/2019/js-ajax.html","path":"2019/js-ajax.html","title":"JavaScript创建ajax异步请求"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://blog.xiekaifei.com/2019/js-ajax.html","path":"2019/js-ajax.html","title":"JavaScript 创建 ajax 异步请求"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>JavaScript创建ajax异步请求 | Kaifei's Blog</title>
+<title>JavaScript 创建 ajax 异步请求 | Kaifei's Blog</title>
   
 
   <script src="/js/third-party/analytics/baidu-analytics.js" defer></script>
@@ -266,7 +266,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BAXMLHttpReques%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.</span> <span class="nav-text">创建XMLHttpReques对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8onreadystatechange%E7%9B%91%E5%90%AC%E6%98%AF%E5%90%A6%E5%8A%A0%E8%BD%BD%E5%AE%8C%E6%88%90"><span class="nav-number">2.</span> <span class="nav-text">使用onreadystatechange监听是否加载完成</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#readyState"><span class="nav-number">2.1.</span> <span class="nav-text">readyState:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#status"><span class="nav-number">2.2.</span> <span class="nav-text">status:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%8F%91%E9%80%81%E8%AF%B7%E6%B1%82"><span class="nav-number">3.</span> <span class="nav-text">向服务器发送请求</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#open"><span class="nav-number">3.1.</span> <span class="nav-text">open()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#send"><span class="nav-number">3.2.</span> <span class="nav-text">send()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E9%99%85%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B"><span class="nav-number">4.</span> <span class="nav-text">实际使用示例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#responseText"><span class="nav-number">4.1.</span> <span class="nav-text">responseText()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSON-parse"><span class="nav-number">4.2.</span> <span class="nav-text">JSON.parse()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B7%A8%E5%9F%9F"><span class="nav-number">5.</span> <span class="nav-text">跨域</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA-XMLHttpRequest-%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.</span> <span class="nav-text">创建 XMLHttpRequest 对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-onreadystatechange-%E7%9B%91%E5%90%AC%E6%98%AF%E5%90%A6%E5%8A%A0%E8%BD%BD%E5%AE%8C%E6%88%90"><span class="nav-number">2.</span> <span class="nav-text">使用 onreadystatechange 监听是否加载完成</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#readyState"><span class="nav-number">2.1.</span> <span class="nav-text">readyState</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#status"><span class="nav-number">2.2.</span> <span class="nav-text">status</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%8F%91%E9%80%81%E8%AF%B7%E6%B1%82"><span class="nav-number">3.</span> <span class="nav-text">向服务器发送请求</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#open"><span class="nav-number">3.1.</span> <span class="nav-text">open()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#send"><span class="nav-number">3.2.</span> <span class="nav-text">send()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E9%99%85%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B"><span class="nav-number">4.</span> <span class="nav-text">实际使用示例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#responseText"><span class="nav-number">4.1.</span> <span class="nav-text">responseText</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSON-parse"><span class="nav-number">4.2.</span> <span class="nav-text">JSON.parse()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B7%A8%E5%9F%9F"><span class="nav-number">5.</span> <span class="nav-text">跨域</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -337,12 +337,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="JavaScript创建ajax异步请求 | Kaifei's Blog">
+      <meta itemprop="name" content="JavaScript 创建 ajax 异步请求 | Kaifei's Blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          JavaScript创建ajax异步请求
+          JavaScript 创建 ajax 异步请求
         </h1>
 
         <div class="post-meta-container">
@@ -378,23 +378,23 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>&emsp;&emsp;利用ajax，可以创建异步请求，从而实现在不影响整个页面的情况下，局部更新网页某处的数据。</p>
+    <div class="post-body" itemprop="articleBody"><p>&emsp;&emsp;利用 ajax，可以创建异步请求，从而实现在不影响整个页面的情况下，局部更新网页某处的数据。</p>
 <p>&emsp;&emsp;异步请求可以应用在多个地方，最常见的就是我们在注册某个网站账号的时候，输入要注册的用户名，当鼠标焦点离开用户名输入表单的时候，如果输入的用户名已经存在于网站内，右侧会给出有相同用户名的提示。试想如果没有该功能，用户就必须在所有信息都填写完毕的情况下，点击”提交”按钮，才能知道用户名是否可以使用，大大降低效率。</p>
 <span id="more"></span>
 
-<h2 id="创建XMLHttpReques对象"><a href="#创建XMLHttpReques对象" class="headerlink" title="创建XMLHttpReques对象"></a>创建XMLHttpReques对象</h2><p>&emsp;&emsp;先用js来写，第一步用构造函数初始化一个<code>XMLHttpReques</code>对象。</p>
+<h2 id="创建-XMLHttpRequest-对象"><a href="#创建-XMLHttpRequest-对象" class="headerlink" title="创建 XMLHttpRequest 对象"></a>创建 <code>XMLHttpRequest</code> 对象</h2><p>&emsp;&emsp;先用 JavaScript 来写，第一步用构造函数初始化一个 <code>XMLHttpRequest</code> 对象。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> request = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>()</span><br></pre></td></tr></table></figure>
 
-<p>&emsp;&emsp;目前新版本的浏览器基本都支持<code>XMLHttpReques</code>对象，只有像IE5&#x2F;IE6这种老旧的浏览器不支持，需要改用<code>ActiveX</code>对象。当然你也可以在使用<code>XMLHttpReques</code>前来做一个判断，以保证更强的兼容性。</p>
+<p>&emsp;&emsp;目前新版本的浏览器基本都支持 <code>XMLHttpRequest</code> 对象，只有像 IE5&#x2F;IE6 这种老旧的浏览器不支持，需要改用 <code>ActiveX</code> 对象。当然你也可以在使用 <code>XMLHttpRequest</code> 前来做一个判断，以保证更强的兼容性。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> request</span><br><span class="line"><span class="keyword">if</span> (<span class="variable language_">window</span>.<span class="property">XMLHttpRequest</span>) &#123;</span><br><span class="line">  request = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>()</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="comment">// IE5/IE6下使用</span></span><br><span class="line">  request = <span class="keyword">new</span> <span class="title class_">ActiveObject</span>(<span class="string">&#x27;Microsoft.XMLHTTP&#x27;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="使用onreadystatechange监听是否加载完成"><a href="#使用onreadystatechange监听是否加载完成" class="headerlink" title="使用onreadystatechange监听是否加载完成"></a>使用onreadystatechange监听是否加载完成</h2><p>&emsp;&emsp;创建完成后，使用<code>onreadystatechange</code>来监听<code>readyState</code>和<code>status</code>属性的改变。</p>
+<h2 id="使用-onreadystatechange-监听是否加载完成"><a href="#使用-onreadystatechange-监听是否加载完成" class="headerlink" title="使用 onreadystatechange 监听是否加载完成"></a>使用 <code>onreadystatechange</code> 监听是否加载完成</h2><p>&emsp;&emsp;创建完成后，使用 <code>onreadystatechange</code> 来监听 <code>readyState</code> 和 <code>status</code> 属性的改变。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">request.<span class="property">onreadystatechange</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (request.<span class="property">readyState</span> === <span class="number">4</span> &amp;&amp; request.<span class="property">status</span> === <span class="number">200</span>) &#123;</span><br><span class="line">    <span class="comment">// 需要执行的代码</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>&emsp;&emsp;首先来说一下<code>onreadystatechange</code>。这个方法会在<code>readyState</code>属性发生改变时触发<code>readystatechange</code>事件的时候被调用。</p>
-<p>&emsp;&emsp;接着是<code>readyState</code>和<code>status</code>属性。</p>
-<h3 id="readyState"><a href="#readyState" class="headerlink" title="readyState:"></a>readyState:</h3><blockquote>
-<p><strong>XMLHttpRequest.readyState</strong> 属性返回一个 XMLHttpRequest  代理当前所处的状态。一个 XHR 代理总是处于下列状态中的一个：</p>
+<p>&emsp;&emsp;首先来说一下 <code>onreadystatechange</code>。这个方法会在 <code>readyState</code> 属性发生改变时触发 <code>readystatechange</code> 事件的时候被调用。</p>
+<p>&emsp;&emsp;接着是 <code>readyState</code> 和 <code>status</code> 属性。</p>
+<h3 id="readyState"><a href="#readyState" class="headerlink" title="readyState"></a><code>readyState</code></h3><blockquote>
+<p><strong><code>XMLHttpRequest.readyState</code></strong> 属性返回一个 <code>XMLHttpRequest</code> 代理当前所处的状态。一个 XHR 代理总是处于下列状态中的一个：</p>
 <table>
 <thead>
 <tr>
@@ -406,7 +406,7 @@
 <tbody><tr>
 <td><code>0</code></td>
 <td><code>UNSENT</code></td>
-<td>代理被创建，但尚未调用 open() 方法。</td>
+<td>代理被创建，但尚未调用 <code>open()</code> 方法。</td>
 </tr>
 <tr>
 <td><code>1</code></td>
@@ -429,29 +429,29 @@
 <td>下载操作已完成。</td>
 </tr>
 </tbody></table>
-<p>引用自MDN <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest/readyState">XMLHttp​Request​.ready​State</a></p>
+<p>引用自 MDN <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest/readyState">XMLHttp​Request​.ready​State</a></p>
 </blockquote>
-<h3 id="status"><a href="#status" class="headerlink" title="status:"></a>status:</h3><p>&emsp;&emsp;<code>status</code>属性则返回一个响应中的数字状态码，比如”200”代表一个成功的请求。</p>
-<h2 id="向服务器发送请求"><a href="#向服务器发送请求" class="headerlink" title="向服务器发送请求"></a>向服务器发送请求</h2><p>&emsp;&emsp;首先用<code>open()</code>方法来初始化一个请求。</p>
-<h3 id="open"><a href="#open" class="headerlink" title="open()"></a>open()</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">request.<span class="title function_">open</span>(<span class="string">&#x27;GET&#x27;</span>, <span class="string">&#x27;./text.json&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="status"><a href="#status" class="headerlink" title="status"></a><code>status</code></h3><p>&emsp;&emsp;<code>status</code> 属性则返回一个响应中的数字状态码，比如”200”代表一个成功的请求。</p>
+<h2 id="向服务器发送请求"><a href="#向服务器发送请求" class="headerlink" title="向服务器发送请求"></a>向服务器发送请求</h2><p>&emsp;&emsp;首先用 <code>open()</code> 方法来初始化一个请求。</p>
+<h3 id="open"><a href="#open" class="headerlink" title="open()"></a><code>open()</code></h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">request.<span class="title function_">open</span>(<span class="string">&#x27;GET&#x27;</span>, <span class="string">&#x27;./text.json&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
-<p>&emsp;&emsp;<code>open()</code>有三个参数，第一个指定要使用的http方法，如<code>GET</code>方法或者<code>POST</code>方法，第二个参数指定要向其发送请求的url，第三个参数是一个布尔值，表示是否用异步执行操作，默认为ture，表示使用异步执行。</p>
-<h3 id="send"><a href="#send" class="headerlink" title="send()"></a>send()</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">request.<span class="title function_">send</span>()</span><br></pre></td></tr></table></figure>
+<p>&emsp;&emsp;<code>open()</code> 有三个参数，第一个指定要使用的 HTTP 方法，如 <code>GET</code> 方法或者 <code>POST</code> 方法，第二个参数指定要向其发送请求的 URL，第三个参数是一个布尔值，表示是否用异步执行操作，默认为 <code>true</code>，表示使用异步执行。</p>
+<h3 id="send"><a href="#send" class="headerlink" title="send()"></a><code>send()</code></h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">request.<span class="title function_">send</span>()</span><br></pre></td></tr></table></figure>
 
-<p>&emsp;&emsp;<code>send()</code>表示发送请求。</p>
-<h2 id="实际使用示例"><a href="#实际使用示例" class="headerlink" title="实际使用示例"></a>实际使用示例</h2><p>比如同目录下有一个名为”text.json”的json文件：</p>
+<p>&emsp;&emsp;<code>send()</code> 表示发送请求。</p>
+<h2 id="实际使用示例"><a href="#实际使用示例" class="headerlink" title="实际使用示例"></a>实际使用示例</h2><p>比如同目录下有一个名为 <code>text.json</code> 的 JSON 文件：</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;student&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="punctuation">&#123;</span><span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;小明&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;age&quot;</span><span class="punctuation">:</span> <span class="number">12</span><span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">&#123;</span><span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;小红&quot;</span><span class="punctuation">,</span> <span class="attr">&quot;age&quot;</span><span class="punctuation">:</span> <span class="number">13</span><span class="punctuation">&#125;</span></span><br><span class="line">  <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
 
-<p>要实现点击按钮，获取小明的年龄，html代码如下：</p>
+<p>要实现点击按钮，获取小明的年龄，HTML 代码如下：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">id</span>=<span class="string">&quot;btn&quot;</span>&gt;</span>click me<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    小明的年龄为：<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;age&quot;</span> <span class="attr">style</span>=<span class="string">&quot;color: red;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>js代码如下：</p>
+<p>JavaScript 代码如下：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> btn = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;btn&#x27;</span>)</span><br><span class="line"><span class="keyword">var</span> age = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;age&#x27;</span>)</span><br><span class="line"><span class="keyword">var</span> request = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>()</span><br><span class="line"><span class="keyword">var</span> student</span><br><span class="line">request.<span class="title function_">open</span>(<span class="string">&#x27;GET&#x27;</span>, <span class="string">&#x27;./text.json&#x27;</span>)</span><br><span class="line">request.<span class="property">onreadystatechange</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (request.<span class="property">readyState</span> === <span class="number">4</span> &amp;&amp; request.<span class="property">status</span> === <span class="number">200</span>) &#123;</span><br><span class="line">    <span class="comment">// 获取json文件的值，并转换为js对象</span></span><br><span class="line">    student = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(request.<span class="property">responseText</span>).<span class="property">student</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">request.<span class="title function_">send</span>()</span><br><span class="line"></span><br><span class="line">btn.<span class="property">onclick</span> = <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  age.<span class="property">innerHTML</span> = student[<span class="number">0</span>].<span class="property">age</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>&emsp;&emsp;上面的代码还用到了<code>responseText()</code>和<code>JSON.parse()</code>两个方法。</p>
-<h3 id="responseText"><a href="#responseText" class="headerlink" title="responseText()"></a>responseText()</h3><p>&emsp;&emsp;该方法返回从服务器接收到的字符串。</p>
-<h3 id="JSON-parse"><a href="#JSON-parse" class="headerlink" title="JSON.parse()"></a>JSON.parse()</h3><p>&emsp;&emsp;该方法将一个json字符串转换为js对象。还可以添加一个转换结果函数，为该方法的第二个参数，将为对象的每个成员调用该方法。</p>
-<h2 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h2><p>&emsp;&emsp;异步请求json文件，该文件直接使用的话必须与调用文件为同协议、同地址、同端口才能正常实现功能。如跨域使用需要使用其他方法来实现，本文没有提到跨域相关的内容，以后有机会再来谈一谈跨域。</p>
+<p>&emsp;&emsp;上面的代码还用到了 <code>responseText</code> 属性和 <code>JSON.parse()</code> 方法。</p>
+<h3 id="responseText"><a href="#responseText" class="headerlink" title="responseText"></a><code>responseText</code></h3><p>&emsp;&emsp;该属性返回从服务器接收到的字符串。</p>
+<h3 id="JSON-parse"><a href="#JSON-parse" class="headerlink" title="JSON.parse()"></a><code>JSON.parse()</code></h3><p>&emsp;&emsp;该方法将一个 JSON 字符串转换为 JavaScript 对象。还可以添加一个转换结果函数，为该方法的第二个参数，将为对象的每个成员调用该方法。</p>
+<h2 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h2><p>&emsp;&emsp;异步请求 JSON 文件，该文件直接使用的话必须与调用文件为同协议、同地址、同端口才能正常实现功能。如跨域使用需要使用其他方法来实现，本文没有提到跨域相关的内容，以后有机会再来谈一谈跨域。</p>
 
     </div>
 
@@ -469,13 +469,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2019/mac_ssh.html" rel="prev" title="Mac OS下使用自带终端ssh连接服务器">
-                  <i class="fa fa-angle-left"></i> Mac OS下使用自带终端ssh连接服务器
+                <a href="/2019/mac_ssh.html" rel="prev" title="Mac OS 下使用自带终端 ssh 连接服务器">
+                  <i class="fa fa-angle-left"></i> Mac OS 下使用自带终端 ssh 连接服务器
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2019/vim-edit.html" rel="next" title="vim常用编辑快捷键">
-                  vim常用编辑快捷键 <i class="fa fa-angle-right"></i>
+                <a href="/2019/vim-edit.html" rel="next" title="vim 常用编辑快捷键">
+                  vim 常用编辑快捷键 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>

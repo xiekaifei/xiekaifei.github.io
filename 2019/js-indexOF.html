@@ -20,15 +20,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"blog.xiekaifei.com","root":"/","images":"/images","scheme":"Mist","darkmode":true,"version":"8.29.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"hide","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"base16/tomorrow-night","dark":"base16/tomorrow-night"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js" defer></script>
 
-    <meta name="description" content="indexOF()方法&emsp;&emsp;JavaScript的String对象中有一个indexOf()方法，这个方法接收一个指定字符串参数（必须）和查找位置参数（可选）。该方法返回指定字符串在字符串中第一次出现的位置，如果没有出现，则返回”-1”。如果有传查找位置参数，则从传入的位置查起，如果没有传位置参数默认为0，即从字符串的开头查起。 &emsp;&emsp;说完了这个函数的功能，那么">
+    <meta name="description" content="indexOF() 方法&emsp;&emsp;JavaScript 的 String 对象中有一个 indexOf() 方法，这个方法接收一个指定字符串参数（必须）和查找位置参数（可选）。该方法返回指定字符串在字符串中第一次出现的位置，如果没有出现，则返回”-1”。如果有传查找位置参数，则从传入的位置查起，如果没有传位置参数默认为 0，即从字符串的开头查起。 &emsp;&emsp;说完了这个函">
 <meta property="og:type" content="article">
-<meta property="og:title" content="重新封装JavaScript里的String.indexOf()方法">
+<meta property="og:title" content="重新封装 JavaScript 里的 String.indexOf()方法">
 <meta property="og:url" content="https://blog.xiekaifei.com/2019/js-indexOF.html">
 <meta property="og:site_name" content="Kaifei&#39;s Blog">
-<meta property="og:description" content="indexOF()方法&emsp;&emsp;JavaScript的String对象中有一个indexOf()方法，这个方法接收一个指定字符串参数（必须）和查找位置参数（可选）。该方法返回指定字符串在字符串中第一次出现的位置，如果没有出现，则返回”-1”。如果有传查找位置参数，则从传入的位置查起，如果没有传位置参数默认为0，即从字符串的开头查起。 &emsp;&emsp;说完了这个函数的功能，那么">
+<meta property="og:description" content="indexOF() 方法&emsp;&emsp;JavaScript 的 String 对象中有一个 indexOf() 方法，这个方法接收一个指定字符串参数（必须）和查找位置参数（可选）。该方法返回指定字符串在字符串中第一次出现的位置，如果没有出现，则返回”-1”。如果有传查找位置参数，则从传入的位置查起，如果没有传位置参数默认为 0，即从字符串的开头查起。 &emsp;&emsp;说完了这个函">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-10-29T16:55:48.000Z">
-<meta property="article:modified_time" content="2023-07-02T09:37:22.056Z">
+<meta property="article:modified_time" content="2026-09-26T05:24:45.028Z">
 <meta property="article:author" content="Kaifei Xie">
 <meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
@@ -37,10 +37,10 @@
 <link rel="canonical" href="https://blog.xiekaifei.com/2019/js-indexOF.html">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://blog.xiekaifei.com/2019/js-indexOF.html","path":"2019/js-indexOF.html","title":"重新封装JavaScript里的String.indexOf()方法"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://blog.xiekaifei.com/2019/js-indexOF.html","path":"2019/js-indexOF.html","title":"重新封装 JavaScript 里的 String.indexOf()方法"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>重新封装JavaScript里的String.indexOf()方法 | Kaifei's Blog</title>
+<title>重新封装 JavaScript 里的 String.indexOf()方法 | Kaifei's Blog</title>
   
 
   <script src="/js/third-party/analytics/baidu-analytics.js" defer></script>
@@ -265,7 +265,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#indexOF-%E6%96%B9%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">indexOF()方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#strFind-%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">strFind()方法</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#indexOF-%E6%96%B9%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">indexOF() 方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#strFind-%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">strFind() 方法</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -336,12 +336,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="重新封装JavaScript里的String.indexOf()方法 | Kaifei's Blog">
+      <meta itemprop="name" content="重新封装 JavaScript 里的 String.indexOf()方法 | Kaifei's Blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          重新封装JavaScript里的String.indexOf()方法
+          重新封装 JavaScript 里的 String.indexOf()方法
         </h1>
 
         <div class="post-meta-container">
@@ -377,7 +377,7 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h2 id="indexOF-方法"><a href="#indexOF-方法" class="headerlink" title="indexOF()方法"></a>indexOF()方法</h2><p>&emsp;&emsp;JavaScript的String对象中有一个indexOf()方法，这个方法接收一个指定字符串参数（必须）和查找位置参数（可选）。该方法返回指定字符串在字符串中第一次出现的位置，如果没有出现，则返回”-1”。如果有传查找位置参数，则从传入的位置查起，如果没有传位置参数默认为0，即从字符串的开头查起。</p>
+    <div class="post-body" itemprop="articleBody"><h2 id="indexOF-方法"><a href="#indexOF-方法" class="headerlink" title="indexOF() 方法"></a><code>indexOF()</code> 方法</h2><p>&emsp;&emsp;JavaScript 的 <code>String</code> 对象中有一个 <code>indexOf()</code> 方法，这个方法接收一个指定字符串参数（必须）和查找位置参数（可选）。该方法返回指定字符串在字符串中第一次出现的位置，如果没有出现，则返回”-1”。如果有传查找位置参数，则从传入的位置查起，如果没有传位置参数默认为 0，即从字符串的开头查起。</p>
 <p>&emsp;&emsp;说完了这个函数的功能，那么我们如何自己封装一个一样功能的方法呢？</p>
 <span id="more"></span>
 
@@ -389,7 +389,7 @@
 
 
 
-<h2 id="strFind-方法"><a href="#strFind-方法" class="headerlink" title="strFind()方法"></a>strFind()方法</h2><p>&emsp;&emsp;实现了这个方法后我们再来实现一个查询所有位置的方法。实现的功能是：<strong>传入字符串和指定的字符串，返回所有出现位置的数组，未找到时则返回-1</strong>。</p>
+<h2 id="strFind-方法"><a href="#strFind-方法" class="headerlink" title="strFind() 方法"></a><code>strFind()</code> 方法</h2><p>&emsp;&emsp;实现了这个方法后我们再来实现一个查询所有位置的方法。实现的功能是：<strong>传入字符串和指定的字符串，返回所有出现位置的数组，未找到时则返回-1</strong>。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">strFind</span>(<span class="params">str, findStr</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> str === <span class="string">&#x27;string&#x27;</span> &amp;&amp; <span class="keyword">typeof</span> findStr === <span class="string">&#x27;string&#x27;</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> arr = []</span><br><span class="line">    <span class="keyword">let</span> index = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; str.<span class="property">length</span>; i++) &#123;</span><br><span class="line">      <span class="comment">// 调用刚刚封装好的indexOF()方法查询，并将查询结果暂时保存给num参数</span></span><br><span class="line">      <span class="keyword">let</span> num = <span class="title function_">indexOF</span>(str, findStr, index)</span><br><span class="line">      <span class="keyword">if</span> (num &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">        arr.<span class="title function_">push</span>(num)</span><br><span class="line">        index = ++num</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (arr.<span class="property">length</span> &gt; <span class="number">1</span>) &#123;</span><br><span class="line">      <span class="comment">// 返回所有出现的位置的数组</span></span><br><span class="line">      <span class="keyword">return</span> arr</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (arr.<span class="property">length</span> === <span class="number">1</span>) &#123;</span><br><span class="line">      <span class="comment">// 只出现一次的话直接返回位置</span></span><br><span class="line">      <span class="keyword">return</span> arr[<span class="number">0</span>]</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="comment">// 未出现返回-1</span></span><br><span class="line">      <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="title function_">alert</span>(<span class="string">&#x27;function strFind的传入参数格式有误，期待两个字符串参数，请重新传入正确的参数执行查询！&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">undefined</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>&emsp;&emsp;再调用一下：</p>
@@ -412,13 +412,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2019/js-prototype.html" rel="prev" title="JavaScript中的__proto__与prototype">
-                  <i class="fa fa-angle-left"></i> JavaScript中的__proto__与prototype
+                <a href="/2019/js-prototype.html" rel="prev" title="JavaScript 中的 __proto__ 与 prototype">
+                  <i class="fa fa-angle-left"></i> JavaScript 中的 __proto__ 与 prototype
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2019/js-promise.html" rel="next" title="JavaScript里的Promise">
-                  JavaScript里的Promise <i class="fa fa-angle-right"></i>
+                <a href="/2019/js-promise.html" rel="next" title="JavaScript 里的 Promise">
+                  JavaScript 里的 Promise <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
