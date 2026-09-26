@@ -26,10 +26,27 @@
         document.getElementById(id)?.scrollIntoView({block: 'start', behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'});
       });
     }
+    const header = document.querySelector('header.header');
+    const sidebar = document.querySelector('.sidebar');
+    if (header && sidebar) {
+      const updateDrawerOverlap = () => {
+        const sidebarStyle = window.getComputedStyle(sidebar);
+        const headerStyle = window.getComputedStyle(header);
+        const viewportWidth = document.documentElement.clientWidth;
+        const maxWidth = parseFloat(headerStyle.getPropertyValue('--ui-header-max-width'));
+        const gutter = parseFloat(headerStyle.getPropertyValue('--ui-header-gutter'));
+        // Always compare with the original centered bar, even while it is shifted.
+        const originalLeft = (viewportWidth - Math.min(maxWidth, viewportWidth - gutter)) / 2;
+        const overlaps = sidebarStyle.position === 'fixed' && sidebarStyle.display !== 'none'
+          && sidebar.getBoundingClientRect().width > originalLeft;
+        document.body.classList.toggle('ui-drawer-overlaps-header', overlaps);
+      };
+      updateDrawerOverlap();
+      window.addEventListener('resize', updateDrawerOverlap);
+    }
     const glass = window.LiquidGlass;
     if (!glass) return; // Content and native controls work without decorative JS.
     const disposables = [];
-    const header = document.querySelector('header.header');
     const menu = document.querySelector('.main-menu');
     const intro = document.querySelector('.ui-home .hero');
     const article = document.querySelector('.main-inner.post .post-content');

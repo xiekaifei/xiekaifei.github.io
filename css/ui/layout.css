@@ -22,6 +22,8 @@ body.sidebar-active { padding-left: 0; padding-right: 0; }
 }
 ::selection { background: #e6eef9; color: #25272b; }
 header.header {
+  --ui-header-max-width: 1160px;
+  --ui-header-gutter: 48px;
   position: fixed;
   inset: 16px 0 auto;
   z-index: 30;
@@ -30,7 +32,7 @@ header.header {
   align-items: center;
   gap: 8px;
   box-sizing: border-box;
-  width: min(1160px, calc(100% - 48px));
+  width: min(var(--ui-header-max-width), calc(100% - var(--ui-header-gutter)));
   min-height: 72px;
   margin: 0 auto;
   padding: 10px 13px 10px 24px;
@@ -234,17 +236,16 @@ html[data-theme] .search-popup .search-header {
 /* Animate the header's available area without transforming its fixed overlays. */
 @media (min-width: 992px) {
   header.header { transition: left .2s ease-out, width .2s ease-out; }
-  body.sidebar-active header.header {
+  body.sidebar-active.ui-drawer-overlaps-header header.header {
     left: var(--ui-drawer-width, 320px);
-    width: min(1160px, calc(100% - var(--ui-drawer-width, 320px) - 48px));
+    width: min(var(--ui-header-max-width), calc(100% - var(--ui-drawer-width, 320px) - var(--ui-header-gutter)));
   }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
-  body.sidebar-active .site-meta .site-title { font-size: 16px; }
-  body.sidebar-active .header .menu .menu-item a { min-width: 50px; padding: 0 9px; }
+  body.sidebar-active.ui-drawer-overlaps-header .site-meta .site-title { font-size: 16px; }
+  body.sidebar-active.ui-drawer-overlaps-header .header .menu .menu-item a { min-width: 50px; padding: 0 9px; }
 }
 @media (min-width: 1200px) {
-  body.ui-has-toc.sidebar-active header.header { left: 0; width: min(1160px, calc(100% - 48px)); }
   .ui-has-toc .main { display: grid; grid-template-columns: minmax(0,830px) 230px; gap: 60px; width: 1120px; margin: 0 auto; }
   .ui-has-toc .column { display: contents; }
   .ui-has-toc .main-inner.post { grid-column: 1; grid-row: 1; width: 100%; padding-right: 0; }
