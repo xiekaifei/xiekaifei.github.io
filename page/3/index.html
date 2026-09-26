@@ -69,6 +69,11 @@
 
 
 
+<link rel="stylesheet" href="/css/ui/tokens.css?v=ad8ade8676">
+<link rel="stylesheet" href="/css/components/liquid-glass.css?v=3e5e32227f">
+<link rel="stylesheet" href="/css/ui/layout.css?v=165b0e8246">
+<link rel="stylesheet" href="/css/ui/pages.css?v=9adf46b521">
+<link rel="stylesheet" href="/css/ui/demo-pages.css?v=b3d77accac">
 <script data-theme-bootstrap>(() => {
   'use strict';
 
@@ -170,39 +175,37 @@
   <main class="main">
     <div class="column">
       <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-    </div>
-  </div>
-
+  
+  <div class="site-nav-toggle" hidden><button type="button" class="toggle" aria-label="切换导航栏"></button></div>
   <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <i class="logo-line"></i>
-      <h1 class="site-title">Kaifei's Blog</h1>
-      <i class="logo-line"></i>
+    <a href="/" class="brand" rel="start" aria-label="Kaifei's Blog 首页">
+      <img class="ui-brand-mark" src="/images/logo.svg" width="32" height="32" alt="">
+      <span class="site-title">Kaifei's Blog</span>
     </a>
-      <p class="site-subtitle" itemprop="description">blog.xiekaifei.com</p>
   </div>
-
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+    
+      <button class="toggle popup-trigger ui-icon-button" type="button" aria-label="搜索" title="搜索">
+        <i class="fa fa-search fa-fw" aria-hidden="true"></i>
+      </button>
+    
   </div>
 </div>
 
 
-
-<nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
-      </li>
+<nav class="site-nav" aria-label="主导航">
+  <ul class="main-menu menu">
+    
+    <li class="menu-item"><a href="/#home" data-section-link="home">首页</a></li>
+    
+    <li class="menu-item"><a href="/#articles" data-section-link="articles">文章</a></li>
+    
+    <li class="menu-item"><a href="/#tags" data-section-link="tags">标签</a></li>
+    
+    <li class="menu-item"><a href="/#archive" data-section-link="archive">归档</a></li>
+    
+    <li class="menu-item"><a href="/#about" data-section-link="about">关于</a></li>
+    
   </ul>
 </nav>
 
@@ -244,7 +247,6 @@
 
 </header>
         
-  
   <aside class="sidebar">
 
     <div class="sidebar-inner sidebar-overview-active">
@@ -303,283 +305,36 @@
     
   </aside>
 
-
     </div>
 
-    <div class="main-inner index posts-expand">
-
-    
+    <div class="main-inner index ui-demo-page">
 
 
-<div class="post-block">
-  
-  
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://blog.xiekaifei.com/2018/wp-plugin.html">
+<section class="listing-shell"><a class="back-button" href="/#articles">← 返回首页文章</a><p class="eyebrow">ALL STORIES</p><h1>文章与记录</h1><p class="listing-description">第 3 页</p><div class="story-list">
+<a class="story-row post-title-link" href="/2018/wp-plugin.html"><time class="row-date" datetime="2018-09-22">2018.09.22</time><span class="row-main"><strong>更自由的WordPress小工具插件！</strong><small>WordPress</small></span><span class="row-category">其他</span><span class="row-arrow" aria-hidden="true">↗</span></a>
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://raw.githubusercontent.com/xiekaifei/oss-public/master/image/avatar.png">
-      <meta itemprop="name" content="Kaifei Xie">
-    </span>
+<a class="story-row post-title-link" href="/2018/chongqing-morning.html"><time class="row-date" datetime="2018-09-22">2018.09.22</time><span class="row-main"><strong>某天，重庆的早晨</strong><small>生活</small></span><span class="row-category">生活</span><span class="row-arrow" aria-hidden="true">↗</span></a>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kaifei's Blog">
-      <meta itemprop="description" content="Kaifei's Blog">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Kaifei's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/wp-plugin.html" class="post-title-link" itemprop="url">更自由的WordPress小工具插件！</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-09-22 14:20:27" itemprop="dateCreated datePublished" datetime="2018-09-22T14:20:27+08:00">2018-09-22</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%8A%80%E6%9C%AF/%E5%85%B6%E4%BB%96/" itemprop="url" rel="index"><span itemprop="name">其他</span></a>
-        </span>
-    </span>
-
-  
+<a class="story-row post-title-link" href="/2018/hello-blog.html"><time class="row-date" datetime="2018-09-20">2018.09.20</time><span class="row-main"><strong>初建博客</strong><small>生活</small></span><span class="row-category">生活</span><span class="row-arrow" aria-hidden="true">↗</span></a>
 </div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>&emsp;&emsp;最近在编辑博文的时候，发现默认的wordpress主题，文章页面在加了博客边栏小工具后变的很窄，导致有图片的文章会显示的很小，横向的图片更是显示的很难看。于是google了一下，发现有一款名为”Widget Logic”插件可以做到在指定的页面隐藏小工具组件，于是马上下载安装，试了后发现达不到想要的效果。这种插件只能在指定页面隐藏小工具，让其不显示，但并非完全去除，页面的布局还是没有更改，看起来还是很丑。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/wp-plugin.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://blog.xiekaifei.com/2018/chongqing-morning.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://raw.githubusercontent.com/xiekaifei/oss-public/master/image/avatar.png">
-      <meta itemprop="name" content="Kaifei Xie">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kaifei's Blog">
-      <meta itemprop="description" content="Kaifei's Blog">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Kaifei's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/chongqing-morning.html" class="post-title-link" itemprop="url">某天，重庆的早晨</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-09-22 14:04:42" itemprop="dateCreated datePublished" datetime="2018-09-22T14:04:42+08:00">2018-09-22</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%94%9F%E6%B4%BB/" itemprop="url" rel="index"><span itemprop="name">生活</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>&emsp;&emsp;来重庆一周了，今天周末，起了个大早看看这座城市的一角。重庆这边的雨一下就是一周，来重庆的这一周基本每天都有雨，下下停停，基本上都是牛毛细雨，这种程度的小雨我几乎是不打伞的，淋在身上凉凉的还挺舒服。今天早上没有下雨，但还是一直阴天。</p>
-<p>&emsp;&emsp;我租住在一个09年的老小区，小区里很多老人和孩子，环境倒也说的过去。重庆这边的楼房都蛮高，一座连着一座。下楼先拍一张，再去外面转转。</p>
-<img src="https://raw.githubusercontent.com/xiekaifei/oss-public/master/image/blog/2018/20180922IMG_20180922_070135R.jpg" alt="住处楼下">
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2018/chongqing-morning.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://blog.xiekaifei.com/2018/hello-blog.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://raw.githubusercontent.com/xiekaifei/oss-public/master/image/avatar.png">
-      <meta itemprop="name" content="Kaifei Xie">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kaifei's Blog">
-      <meta itemprop="description" content="Kaifei's Blog">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Kaifei's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2018/hello-blog.html" class="post-title-link" itemprop="url">初建博客</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2018-09-20 14:18:25" itemprop="dateCreated datePublished" datetime="2018-09-20T14:18:25+08:00">2018-09-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%94%9F%E6%B4%BB/" itemprop="url" rel="index"><span itemprop="name">生活</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>&emsp;&emsp;之前一直有想搭建一套个人博客系统的想法，正好手里有一台闲置的VPS，经过两天的折腾，在踩了无数个坑后，终于算是把博客初步建立起来。从Linux、Nginx，到MySql、PHP，慢慢体会到了建站的乐趣。以后会不定期更新博文，用来记录一些生活上的事情以及个人学习的过程。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <a class="extend prev" rel="prev" title="上一页" aria-label="上一页" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
   </nav>
+</section>
+
 
 </div>
   </main>
 
   <footer class="footer">
     <div class="footer-inner">
+<a class="ui-footer-brand" href="/"><img src="/images/logo.svg" width="25" height="25" alt="">Kaifei's Blog</a>
+<div class="copyright">
+  
+  © 2018–<span itemprop="copyrightYear">2026</span>
+</div>
 
-  <div class="copyright">
-    &copy; 2018 – 
-    <span itemprop="copyrightYear">2026</span>
-    <span class="with-love">
-      <i class="fa fa-user"></i>
-    </span>
-    <span class="author" itemprop="copyrightHolder">Kaifei Xie</span>
-  </div>
 
     </div>
   </footer>
@@ -599,6 +354,9 @@
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
 </noscript>
+<script src="/js/components/liquid-glass.js?v=81788957ce" defer></script>
+<script src="/js/ui-home.js?v=ff61d76dfb" defer></script>
+<script src="/js/ui-theme.js?v=7649b39e58" defer></script>
 
 </body>
 </html>

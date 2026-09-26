@@ -72,6 +72,11 @@
 
 
 
+<link rel="stylesheet" href="/css/ui/tokens.css?v=ad8ade8676">
+<link rel="stylesheet" href="/css/components/liquid-glass.css?v=3e5e32227f">
+<link rel="stylesheet" href="/css/ui/layout.css?v=165b0e8246">
+<link rel="stylesheet" href="/css/ui/pages.css?v=9adf46b521">
+<link rel="stylesheet" href="/css/ui/demo-pages.css?v=b3d77accac">
 <script data-theme-bootstrap>(() => {
   'use strict';
 
@@ -173,39 +178,37 @@
   <main class="main">
     <div class="column">
       <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-    </div>
-  </div>
-
+  
+  <div class="site-nav-toggle" hidden><button type="button" class="toggle" aria-label="切换导航栏"></button></div>
   <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <i class="logo-line"></i>
-      <p class="site-title">Kaifei's Blog</p>
-      <i class="logo-line"></i>
+    <a href="/" class="brand" rel="start" aria-label="Kaifei's Blog 首页">
+      <img class="ui-brand-mark" src="/images/logo.svg" width="32" height="32" alt="">
+      <span class="site-title">Kaifei's Blog</span>
     </a>
-      <p class="site-subtitle" itemprop="description">blog.xiekaifei.com</p>
   </div>
-
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+    
+      <button class="toggle popup-trigger ui-icon-button" type="button" aria-label="搜索" title="搜索">
+        <i class="fa fa-search fa-fw" aria-hidden="true"></i>
+      </button>
+    
   </div>
 </div>
 
 
-
-<nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
-      </li>
+<nav class="site-nav" aria-label="主导航">
+  <ul class="main-menu menu">
+    
+    <li class="menu-item"><a href="/#home" data-section-link="home">首页</a></li>
+    
+    <li class="menu-item"><a href="/#articles" data-section-link="articles">文章</a></li>
+    
+    <li class="menu-item"><a href="/#tags" data-section-link="tags">标签</a></li>
+    
+    <li class="menu-item"><a href="/#archive" data-section-link="archive">归档</a></li>
+    
+    <li class="menu-item"><a href="/#about" data-section-link="about">关于</a></li>
+    
   </ul>
 </nav>
 
@@ -309,58 +312,26 @@
 
     </div>
 
-    <div class="main-inner page posts-expand">
+    <div class="main-inner ui-demo-page">
 
-
-    
-    
-    
-    <div class="post-block" lang="zh-CN"><header class="post-header">
-
-<h1 class="post-title" itemprop="name headline">分类
-</h1>
-
-<div class="post-meta-container">
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body"><div class="category-all-page">
-  <div class="category-all-title">
-    目前共计 9 个分类
-  </div>
-  <div class="category-all">
-    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a><span class="category-list-count">20</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF/JavaScript/">JavaScript</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF/Node-js/">Node.js</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF/Vue-js/">Vue.js</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF/ajax/">ajax</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF/%E5%85%B6%E4%BB%96/">其他</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF/%E5%B7%A5%E5%85%B7/">工具</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF/%E8%99%9A%E6%8B%9F%E6%9C%BA/">虚拟机</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%9F%E6%B4%BB/">生活</a><span class="category-list-count">3</span></li></ul>
-  </div>
-</div>
-
-      </div>
-      
-      
-      
-    </div>
-
-    
-    
-
+<section class="listing-shell">
+  <a class="back-button" href="/#articles">← 返回首页文章</a><p class="eyebrow">ALL CATEGORIES</p><h1>全部分类</h1><p class="listing-description">共 9 个分类。沿完整路径查找，或输入名称快速筛选。</p>
+  <div class="category-index-tools"><label for="category-search">查找分类</label><input id="category-search" type="search" placeholder="搜索分类名称或路径…" autocomplete="off"><span id="category-index-count" aria-live="polite">9 个分类</span></div>
+  <div class="category-directory"><a class="directory-card" href="/categories/%E7%94%9F%E6%B4%BB/" data-search="生活"><span class="category-path">生活</span><strong>生活</strong><span class="directory-meta">3 篇文章 <span aria-hidden="true">↗</span></span></a><a class="directory-card" href="/categories/%E6%8A%80%E6%9C%AF/" data-search="技术"><span class="category-path">技术</span><strong>技术</strong><span class="directory-meta">20 篇文章 <span aria-hidden="true">↗</span></span></a><a class="directory-card" href="/categories/%E6%8A%80%E6%9C%AF/JavaScript/" data-search="技术 / javascript"><span class="category-path">技术 / JavaScript</span><strong>JavaScript</strong><span class="directory-meta">11 篇文章 <span aria-hidden="true">↗</span></span></a><a class="directory-card" href="/categories/%E6%8A%80%E6%9C%AF/%E5%B7%A5%E5%85%B7/" data-search="技术 / 工具"><span class="category-path">技术 / 工具</span><strong>工具</strong><span class="directory-meta">4 篇文章 <span aria-hidden="true">↗</span></span></a><a class="directory-card" href="/categories/%E6%8A%80%E6%9C%AF/ajax/" data-search="技术 / ajax"><span class="category-path">技术 / ajax</span><strong>ajax</strong><span class="directory-meta">1 篇文章 <span aria-hidden="true">↗</span></span></a><a class="directory-card" href="/categories/%E6%8A%80%E6%9C%AF/Node-js/" data-search="技术 / node.js"><span class="category-path">技术 / Node.js</span><strong>Node.js</strong><span class="directory-meta">1 篇文章 <span aria-hidden="true">↗</span></span></a><a class="directory-card" href="/categories/%E6%8A%80%E6%9C%AF/%E8%99%9A%E6%8B%9F%E6%9C%BA/" data-search="技术 / 虚拟机"><span class="category-path">技术 / 虚拟机</span><strong>虚拟机</strong><span class="directory-meta">1 篇文章 <span aria-hidden="true">↗</span></span></a><a class="directory-card" href="/categories/%E6%8A%80%E6%9C%AF/Vue-js/" data-search="技术 / vue.js"><span class="category-path">技术 / Vue.js</span><strong>Vue.js</strong><span class="directory-meta">1 篇文章 <span aria-hidden="true">↗</span></span></a><a class="directory-card" href="/categories/%E6%8A%80%E6%9C%AF/%E5%85%B6%E4%BB%96/" data-search="技术 / 其他"><span class="category-path">技术 / 其他</span><strong>其他</strong><span class="directory-meta">1 篇文章 <span aria-hidden="true">↗</span></span></a></div>
+  <p class="category-empty" hidden>没有找到分类，试试其他关键词。</p>
+</section>
 
 </div>
   </main>
 
   <footer class="footer">
     <div class="footer-inner">
+<a class="ui-footer-brand" href="/"><img src="/images/logo.svg" width="25" height="25" alt="">Kaifei's Blog</a>
+<div class="copyright">
+  
+  © 2018–<span itemprop="copyrightYear">2026</span>
+</div>
 
-  <div class="copyright">
-    &copy; 2018 – 
-    <span itemprop="copyrightYear">2026</span>
-    <span class="with-love">
-      <i class="fa fa-user"></i>
-    </span>
-    <span class="author" itemprop="copyrightHolder">Kaifei Xie</span>
-  </div>
 
     </div>
   </footer>
@@ -380,6 +351,9 @@
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
 </noscript>
+<script src="/js/components/liquid-glass.js?v=81788957ce" defer></script>
+<script src="/js/ui-home.js?v=ff61d76dfb" defer></script>
+<script src="/js/ui-theme.js?v=7649b39e58" defer></script>
 
 </body>
 </html>

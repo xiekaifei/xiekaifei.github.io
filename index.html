@@ -69,6 +69,11 @@
 
 
 
+<link rel="stylesheet" href="/css/ui/tokens.css?v=ad8ade8676">
+<link rel="stylesheet" href="/css/components/liquid-glass.css?v=3e5e32227f">
+<link rel="stylesheet" href="/css/ui/layout.css?v=165b0e8246">
+<link rel="stylesheet" href="/css/ui/pages.css?v=9adf46b521">
+<link rel="stylesheet" href="/css/ui/demo-pages.css?v=b3d77accac">
 <script data-theme-bootstrap>(() => {
   'use strict';
 
@@ -170,39 +175,37 @@
   <main class="main">
     <div class="column">
       <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-    </div>
-  </div>
-
+  
+  <div class="site-nav-toggle" hidden><button type="button" class="toggle" aria-label="切换导航栏"></button></div>
   <div class="site-meta">
-
-    <a href="/" class="brand" rel="start">
-      <i class="logo-line"></i>
-      <h1 class="site-title">Kaifei's Blog</h1>
-      <i class="logo-line"></i>
+    <a href="/" class="brand" rel="start" aria-label="Kaifei's Blog 首页">
+      <img class="ui-brand-mark" src="/images/logo.svg" width="32" height="32" alt="">
+      <span class="site-title">Kaifei's Blog</span>
     </a>
-      <p class="site-subtitle" itemprop="description">blog.xiekaifei.com</p>
   </div>
-
   <div class="site-nav-right">
-    <div class="toggle popup-trigger" aria-label="搜索" role="button">
-        <i class="fa fa-search fa-fw fa-lg"></i>
-    </div>
+    
+      <button class="toggle popup-trigger ui-icon-button" type="button" aria-label="搜索" title="搜索">
+        <i class="fa fa-search fa-fw" aria-hidden="true"></i>
+      </button>
+    
   </div>
 </div>
 
 
-
-<nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
-        </a>
-      </li>
+<nav class="site-nav" aria-label="主导航">
+  <ul class="main-menu menu">
+    
+    <li class="menu-item"><a href="/#home" data-section-link="home">首页</a></li>
+    
+    <li class="menu-item"><a href="/#articles" data-section-link="articles">文章</a></li>
+    
+    <li class="menu-item"><a href="/#tags" data-section-link="tags">标签</a></li>
+    
+    <li class="menu-item"><a href="/#archive" data-section-link="archive">归档</a></li>
+    
+    <li class="menu-item"><a href="/#about" data-section-link="about">关于</a></li>
+    
   </ul>
 </nav>
 
@@ -244,7 +247,6 @@
 
 </header>
         
-  
   <aside class="sidebar">
 
     <div class="sidebar-inner sidebar-overview-active">
@@ -303,956 +305,143 @@
     
   </aside>
 
-
     </div>
 
-    <div class="main-inner index posts-expand">
-
-    
+    <div class="main-inner index ui-demo-page">
 
 
-<div class="post-block">
-  
-  
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://blog.xiekaifei.com/2023/js-file-type.html">
+<div class="ui-home">
+  <section class="hero" id="home" aria-labelledby="hero-title">
+    <div class="hero-intro"><span class="eyebrow">KAIFEI'S JOURNAL</span><span class="hero-date">EST. 2018</span></div>
+    <h1 id="hero-title">记录，让思考<br><em>变得清晰</em></h1>
+    <p class="hero-description">关于技术和生活的个人笔记。写下问题，也写下寻找答案的过程。</p>
+    <div class="hero-actions"><a href="#articles" class="glass-cta" data-section-link="articles"><span>浏览文章</span><span class="cta-arrow" aria-hidden="true">↗</span></a></div>
+  </section>
+  <section class="archive-section" id="articles" aria-labelledby="articles-title">
+    <div class="archive-header"><div><p class="eyebrow">ALL STORIES / 01</p><h2 id="articles-title">文章与记录</h2></div><p>沿着分类，读一点想法。</p></div>
+    <div class="filters-wrap"><div class="glass-filters" role="group" aria-label="筛选文章">
+      <button type="button" class="glass-item is-selected" data-filter="all" aria-pressed="true" aria-controls="stories-all">全部</button>
+      <button type="button" class="glass-item" data-filter="cuidtNKkID-ujTg5W96XbNrx-" aria-pressed="false" aria-controls="stories-cuidtNKkID-ujTg5W96XbNrx-">JavaScript</button><button type="button" class="glass-item" data-filter="cuidUVTsBOxezwhWxkSbQWAgL" aria-pressed="false" aria-controls="stories-cuidUVTsBOxezwhWxkSbQWAgL">工具</button><button type="button" class="glass-item" data-filter="cuidL10V6KiRQTycP0aKu1bMy" aria-pressed="false" aria-controls="stories-cuidL10V6KiRQTycP0aKu1bMy">生活</button>
+      <a href="/categories/" class="glass-item more-tab">更多<span class="more-tab-arrow" aria-hidden="true">↗</span></a>
+    </div><span class="result-count" aria-live="polite"><span id="visible-count">10</span> / <span id="total-count">23</span></span></div>
+    <div id="stories-all" data-story-panel="all" data-count="23">
+      <div class="story-list">
+<a class="story-row post-title-link" href="/2023/js-file-type.html"><time class="row-date" datetime="2023-06-30">2023.06.30</time><span class="row-main"><strong>JavaScript验证文件格式</strong><small>JavaScript · 设计模式</small></span><span class="row-category">JavaScript</span><span class="row-arrow" aria-hidden="true">↗</span></a>
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://raw.githubusercontent.com/xiekaifei/oss-public/master/image/avatar.png">
-      <meta itemprop="name" content="Kaifei Xie">
-    </span>
+<a class="story-row post-title-link" href="/2023/js-design-patterns.html"><time class="row-date" datetime="2023-06-04">2023.06.04</time><span class="row-main"><strong>JavaScript设计模式</strong><small>JavaScript · 设计模式</small></span><span class="row-category">JavaScript</span><span class="row-arrow" aria-hidden="true">↗</span></a>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kaifei's Blog">
-      <meta itemprop="description" content="Kaifei's Blog">
-    </span>
+<a class="story-row post-title-link" href="/2022/js-package.html"><time class="row-date" datetime="2022-08-02">2022.08.02</time><span class="row-main"><strong>前端包管理工具</strong><small>前端 · JavaScript</small></span><span class="row-category">JavaScript</span><span class="row-arrow" aria-hidden="true">↗</span></a>
 
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Kaifei's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/js-file-type.html" class="post-title-link" itemprop="url">JavaScript验证文件格式</a>
-        </h2>
+<a class="story-row post-title-link" href="/2020/js-this.html"><time class="row-date" datetime="2020-02-24">2020.02.24</time><span class="row-main"><strong>箭头函数里的this到底指向谁？</strong><small>JavaScript · ES6</small></span><span class="row-category">JavaScript</span><span class="row-arrow" aria-hidden="true">↗</span></a>
 
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
+<a class="story-row post-title-link" href="/2020/js-array-order.html"><time class="row-date" datetime="2020-02-20">2020.02.20</time><span class="row-main"><strong>如何将一个JavaScript数组打乱</strong><small>JavaScript</small></span><span class="row-category">JavaScript</span><span class="row-arrow" aria-hidden="true">↗</span></a>
 
-      <time title="创建时间：2023-06-30 17:11:02" itemprop="dateCreated datePublished" datetime="2023-06-30T17:11:02+08:00">2023-06-30</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%8A%80%E6%9C%AF/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
-        </span>
-    </span>
+<a class="story-row post-title-link" href="/2020/node-events.html"><time class="row-date" datetime="2020-02-02">2020.02.02</time><span class="row-main"><strong>Node.js中的events模块</strong><small>JavaScript · Node.js</small></span><span class="row-category">Node.js</span><span class="row-arrow" aria-hidden="true">↗</span></a>
 
-  
+<a class="story-row post-title-link" href="/2019/electron-desc.html"><time class="row-date" datetime="2019-12-26">2019.12.26</time><span class="row-main"><strong>Electron介绍（理论篇）</strong><small>Electron · 前端</small></span><span class="row-category">工具</span><span class="row-arrow" aria-hidden="true">↗</span></a>
+
+<a class="story-row post-title-link" href="/2019/parallels-network.html"><time class="row-date" datetime="2019-12-24">2019.12.24</time><span class="row-main"><strong>Parallels配置虚拟机网络（宿主机ip不固定，虚拟机ip固定）</strong><small>虚拟机 · Parallels</small></span><span class="row-category">虚拟机</span><span class="row-arrow" aria-hidden="true">↗</span></a>
+
+<a class="story-row post-title-link" href="/2019/js-promise.html"><time class="row-date" datetime="2019-12-09">2019.12.09</time><span class="row-main"><strong>JavaScript里的Promise</strong><small>JavaScript · ES6</small></span><span class="row-category">JavaScript</span><span class="row-arrow" aria-hidden="true">↗</span></a>
+
+<a class="story-row post-title-link" href="/2019/js-indexOF.html"><time class="row-date" datetime="2019-10-30">2019.10.30</time><span class="row-main"><strong>重新封装JavaScript里的String.indexOf()方法</strong><small>JavaScript</small></span><span class="row-category">JavaScript</span><span class="row-arrow" aria-hidden="true">↗</span></a>
 </div>
+      <a class="section-more" href="/archives/">更多文章 <span aria-hidden="true">↗</span></a>
+    </div>
+    <div id="stories-cuidtNKkID-ujTg5W96XbNrx-" data-story-panel="cuidtNKkID-ujTg5W96XbNrx-" data-count="11" hidden>
+      <div class="story-list">
+<a class="story-row" href="/2023/js-file-type.html"><time class="row-date" datetime="2023-06-30">2023.06.30</time><span class="row-main"><strong>JavaScript验证文件格式</strong><small>JavaScript · 设计模式</small></span><span class="row-category">JavaScript</span><span class="row-arrow" aria-hidden="true">↗</span></a>
 
-        </div>
-      </header>
+<a class="story-row" href="/2023/js-design-patterns.html"><time class="row-date" datetime="2023-06-04">2023.06.04</time><span class="row-main"><strong>JavaScript设计模式</strong><small>JavaScript · 设计模式</small></span><span class="row-category">JavaScript</span><span class="row-arrow" aria-hidden="true">↗</span></a>
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="一、利用唯一文件类型说明符限制上传文件类型"><a href="#一、利用唯一文件类型说明符限制上传文件类型" class="headerlink" title="一、利用唯一文件类型说明符限制上传文件类型"></a>一、利用唯一文件类型说明符限制上传文件类型</h2><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/input/file#%E5%94%AF%E4%B8%80%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E8%AF%B4%E6%98%8E%E7%AC%A6">唯一文件类型说明符</a>，表示在 file 类型的 input 元素中用户可以选择的文件类型。每个唯一文件类型说明符可以采用下列形式之一：</p>
-<ul>
-<li>一个以英文句号（“.”）开头的合法的不区分大小写的文件名扩展名。例如：<code>.jpg</code>、<code>.pdf</code> 或 <code>.doc</code> 。</li>
-<li>一个不带扩展名的 MIME 类型字符串。</li>
-<li>字符串 <code>audio/*</code>，表示“任何音频文件”。</li>
-<li>字符串 <code>video/*</code>，表示“任何视频文件”。</li>
-<li>字符串 <code>image/*</code>，表示“任何图片文件”。</li>
-</ul>
-<p><code>accept</code> 属性的值是包含一个或多个（用逗号分隔）唯一文件类型说明符的字符串。例如，一个文件选择器需要能被表示成一张图片的内容，包括标准的图片格式和 PDF 文件，大概是这样的：</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2023/js-file-type.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+<a class="story-row" href="/2022/js-package.html"><time class="row-date" datetime="2022-08-02">2022.08.02</time><span class="row-main"><strong>前端包管理工具</strong><small>前端 · JavaScript</small></span><span class="row-category">JavaScript</span><span class="row-arrow" aria-hidden="true">↗</span></a>
+
+<a class="story-row" href="/2020/js-this.html"><time class="row-date" datetime="2020-02-24">2020.02.24</time><span class="row-main"><strong>箭头函数里的this到底指向谁？</strong><small>JavaScript · ES6</small></span><span class="row-category">JavaScript</span><span class="row-arrow" aria-hidden="true">↗</span></a>
+
+<a class="story-row" href="/2020/js-array-order.html"><time class="row-date" datetime="2020-02-20">2020.02.20</time><span class="row-main"><strong>如何将一个JavaScript数组打乱</strong><small>JavaScript</small></span><span class="row-category">JavaScript</span><span class="row-arrow" aria-hidden="true">↗</span></a>
+
+<a class="story-row" href="/2019/js-promise.html"><time class="row-date" datetime="2019-12-09">2019.12.09</time><span class="row-main"><strong>JavaScript里的Promise</strong><small>JavaScript · ES6</small></span><span class="row-category">JavaScript</span><span class="row-arrow" aria-hidden="true">↗</span></a>
+
+<a class="story-row" href="/2019/js-indexOF.html"><time class="row-date" datetime="2019-10-30">2019.10.30</time><span class="row-main"><strong>重新封装JavaScript里的String.indexOf()方法</strong><small>JavaScript</small></span><span class="row-category">JavaScript</span><span class="row-arrow" aria-hidden="true">↗</span></a>
+
+<a class="story-row" href="/2019/js-prototype.html"><time class="row-date" datetime="2019-10-29">2019.10.29</time><span class="row-main"><strong>JavaScript中的__proto__与prototype</strong><small>JavaScript</small></span><span class="row-category">JavaScript</span><span class="row-arrow" aria-hidden="true">↗</span></a>
+
+<a class="story-row" href="/2019/js-copy.html"><time class="row-date" datetime="2019-07-19">2019.07.19</time><span class="row-main"><strong>JavaScript的赋值、浅拷贝和深拷贝</strong><small>JavaScript</small></span><span class="row-category">JavaScript</span><span class="row-arrow" aria-hidden="true">↗</span></a>
+
+<a class="story-row" href="/2018/js-inheritance.html"><time class="row-date" datetime="2018-12-20">2018.12.20</time><span class="row-main"><strong>JavaScript继承</strong><small>JavaScript</small></span><span class="row-category">JavaScript</span><span class="row-arrow" aria-hidden="true">↗</span></a>
+</div>
+      <a class="section-more" href="/categories/%E6%8A%80%E6%9C%AF/JavaScript/">查看全部 11 篇 <span aria-hidden="true">↗</span></a>
+    </div><div id="stories-cuidUVTsBOxezwhWxkSbQWAgL" data-story-panel="cuidUVTsBOxezwhWxkSbQWAgL" data-count="4" hidden>
+      <div class="story-list">
+<a class="story-row" href="/2019/electron-desc.html"><time class="row-date" datetime="2019-12-26">2019.12.26</time><span class="row-main"><strong>Electron介绍（理论篇）</strong><small>Electron · 前端</small></span><span class="row-category">工具</span><span class="row-arrow" aria-hidden="true">↗</span></a>
+
+<a class="story-row" href="/2019/hexo-command.html"><time class="row-date" datetime="2019-07-13">2019.07.13</time><span class="row-main"><strong>Hexo博客系统常用命令</strong><small>Hexo</small></span><span class="row-category">工具</span><span class="row-arrow" aria-hidden="true">↗</span></a>
+
+<a class="story-row" href="/2019/vim-edit.html"><time class="row-date" datetime="2019-07-13">2019.07.13</time><span class="row-main"><strong>vim常用编辑快捷键</strong><small>vi/vim</small></span><span class="row-category">工具</span><span class="row-arrow" aria-hidden="true">↗</span></a>
+
+<a class="story-row" href="/2019/mac_ssh.html"><time class="row-date" datetime="2019-04-05">2019.04.05</time><span class="row-main"><strong>Mac OS下使用自带终端ssh连接服务器</strong><small>Mac OS · ssh</small></span><span class="row-category">工具</span><span class="row-arrow" aria-hidden="true">↗</span></a>
+</div>
+      
+    </div><div id="stories-cuidL10V6KiRQTycP0aKu1bMy" data-story-panel="cuidL10V6KiRQTycP0aKu1bMy" data-count="3" hidden>
+      <div class="story-list">
+<a class="story-row" href="/2019/gohome.html"><time class="row-date" datetime="2019-01-24">2019.01.24</time><span class="row-main"><strong>2019春运回家路</strong><small>春运</small></span><span class="row-category">生活</span><span class="row-arrow" aria-hidden="true">↗</span></a>
+
+<a class="story-row" href="/2018/chongqing-morning.html"><time class="row-date" datetime="2018-09-22">2018.09.22</time><span class="row-main"><strong>某天，重庆的早晨</strong><small>生活</small></span><span class="row-category">生活</span><span class="row-arrow" aria-hidden="true">↗</span></a>
+
+<a class="story-row" href="/2018/hello-blog.html"><time class="row-date" datetime="2018-09-20">2018.09.20</time><span class="row-main"><strong>初建博客</strong><small>生活</small></span><span class="row-category">生活</span><span class="row-arrow" aria-hidden="true">↗</span></a>
+</div>
       
     </div>
+  </section>
+  <section class="tags-section" id="tags" aria-labelledby="tags-title">
+    <div class="archive-header"><div><p class="eyebrow">TOPICS / 02</p><h2 id="tags-title">标签</h2></div><p>从一个关键词，找到另一条阅读路径。</p></div>
+    <div class="tags-panel"><div class="tag-cloud" role="group" aria-label="文章标签">
+      <button type="button" class="tag-chip is-active" data-tag="topic-0" aria-controls="topic-0" aria-pressed="true"><span>JavaScript</span><small>13</small></button><button type="button" class="tag-chip" data-tag="topic-2" aria-controls="topic-2" aria-pressed="false"><span>前端</span><small>02</small></button><button type="button" class="tag-chip" data-tag="topic-1" aria-controls="topic-1" aria-pressed="false"><span>设计模式</span><small>02</small></button><button type="button" class="tag-chip" data-tag="topic-3" aria-controls="topic-3" aria-pressed="false"><span>ES6</span><small>02</small></button><button type="button" class="tag-chip" data-tag="topic-18" aria-controls="topic-18" aria-pressed="false"><span>春运</span><small>01</small></button><button type="button" class="tag-chip" data-tag="topic-4" aria-controls="topic-4" aria-pressed="false"><span>箭头函数</span><small>01</small></button><button type="button" class="tag-chip" data-tag="topic-10" aria-controls="topic-10" aria-pressed="false"><span>网络</span><small>01</small></button><button type="button" class="tag-chip" data-tag="topic-8" aria-controls="topic-8" aria-pressed="false"><span>虚拟机</span><small>01</small></button><button type="button" class="tag-chip" data-tag="topic-14" aria-controls="topic-14" aria-pressed="false"><span>ajax</span><small>01</small></button><button type="button" class="tag-chip" data-tag="topic-7" aria-controls="topic-7" aria-pressed="false"><span>Electron</span><small>01</small></button><button type="button" class="tag-chip" data-tag="topic-12" aria-controls="topic-12" aria-pressed="false"><span>Hexo</span><small>01</small></button><button type="button" class="tag-chip" data-tag="topic-15" aria-controls="topic-15" aria-pressed="false"><span>Mac OS</span><small>01</small></button><button type="button" class="tag-chip" data-tag="topic-6" aria-controls="topic-6" aria-pressed="false"><span>node</span><small>01</small></button><button type="button" class="tag-chip" data-tag="topic-5" aria-controls="topic-5" aria-pressed="false"><span>Node.js</span><small>01</small></button><button type="button" class="tag-chip" data-tag="topic-9" aria-controls="topic-9" aria-pressed="false"><span>Parallels</span><small>01</small></button><button type="button" class="tag-chip" data-tag="topic-11" aria-controls="topic-11" aria-pressed="false"><span>Promise</span><small>01</small></button><button type="button" class="tag-chip" data-tag="topic-16" aria-controls="topic-16" aria-pressed="false"><span>ssh</span><small>01</small></button><button type="button" class="tag-chip" data-tag="topic-13" aria-controls="topic-13" aria-pressed="false"><span>vi/vim</span><small>01</small></button><button type="button" class="tag-chip" data-tag="topic-17" aria-controls="topic-17" aria-pressed="false"><span>Vue.js</span><small>01</small></button><button type="button" class="tag-chip" data-tag="topic-19" aria-controls="topic-19" aria-pressed="false"><span>WordPress</span><small>01</small></button>
+    </div><div class="tag-detail" aria-live="polite">
+      <div id="topic-0" data-tag-panel="topic-0"><p class="eyebrow">SELECTED TOPIC</p><h3>JavaScript</h3><p>共 13 篇文章</p><div class="tag-posts"><a class="compact-post" href="/2023/js-file-type.html"><span>JavaScript验证文件格式</span></a><a class="compact-post" href="/2023/js-design-patterns.html"><span>JavaScript设计模式</span></a><a class="compact-post" href="/2022/js-package.html"><span>前端包管理工具</span></a></div><small>还有 10 篇，可通过搜索查看。</small></div><div id="topic-2" data-tag-panel="topic-2" hidden><p class="eyebrow">SELECTED TOPIC</p><h3>前端</h3><p>共 2 篇文章</p><div class="tag-posts"><a class="compact-post" href="/2022/js-package.html"><span>前端包管理工具</span></a><a class="compact-post" href="/2019/electron-desc.html"><span>Electron介绍（理论篇）</span></a></div></div><div id="topic-1" data-tag-panel="topic-1" hidden><p class="eyebrow">SELECTED TOPIC</p><h3>设计模式</h3><p>共 2 篇文章</p><div class="tag-posts"><a class="compact-post" href="/2023/js-file-type.html"><span>JavaScript验证文件格式</span></a><a class="compact-post" href="/2023/js-design-patterns.html"><span>JavaScript设计模式</span></a></div></div><div id="topic-3" data-tag-panel="topic-3" hidden><p class="eyebrow">SELECTED TOPIC</p><h3>ES6</h3><p>共 2 篇文章</p><div class="tag-posts"><a class="compact-post" href="/2020/js-this.html"><span>箭头函数里的this到底指向谁？</span></a><a class="compact-post" href="/2019/js-promise.html"><span>JavaScript里的Promise</span></a></div></div><div id="topic-18" data-tag-panel="topic-18" hidden><p class="eyebrow">SELECTED TOPIC</p><h3>春运</h3><p>共 1 篇文章</p><div class="tag-posts"><a class="compact-post" href="/2019/gohome.html"><span>2019春运回家路</span></a></div></div><div id="topic-4" data-tag-panel="topic-4" hidden><p class="eyebrow">SELECTED TOPIC</p><h3>箭头函数</h3><p>共 1 篇文章</p><div class="tag-posts"><a class="compact-post" href="/2020/js-this.html"><span>箭头函数里的this到底指向谁？</span></a></div></div><div id="topic-10" data-tag-panel="topic-10" hidden><p class="eyebrow">SELECTED TOPIC</p><h3>网络</h3><p>共 1 篇文章</p><div class="tag-posts"><a class="compact-post" href="/2019/parallels-network.html"><span>Parallels配置虚拟机网络（宿主机ip不固定，虚拟机ip固定）</span></a></div></div><div id="topic-8" data-tag-panel="topic-8" hidden><p class="eyebrow">SELECTED TOPIC</p><h3>虚拟机</h3><p>共 1 篇文章</p><div class="tag-posts"><a class="compact-post" href="/2019/parallels-network.html"><span>Parallels配置虚拟机网络（宿主机ip不固定，虚拟机ip固定）</span></a></div></div><div id="topic-14" data-tag-panel="topic-14" hidden><p class="eyebrow">SELECTED TOPIC</p><h3>ajax</h3><p>共 1 篇文章</p><div class="tag-posts"><a class="compact-post" href="/2019/js-ajax.html"><span>JavaScript创建ajax异步请求</span></a></div></div><div id="topic-7" data-tag-panel="topic-7" hidden><p class="eyebrow">SELECTED TOPIC</p><h3>Electron</h3><p>共 1 篇文章</p><div class="tag-posts"><a class="compact-post" href="/2019/electron-desc.html"><span>Electron介绍（理论篇）</span></a></div></div><div id="topic-12" data-tag-panel="topic-12" hidden><p class="eyebrow">SELECTED TOPIC</p><h3>Hexo</h3><p>共 1 篇文章</p><div class="tag-posts"><a class="compact-post" href="/2019/hexo-command.html"><span>Hexo博客系统常用命令</span></a></div></div><div id="topic-15" data-tag-panel="topic-15" hidden><p class="eyebrow">SELECTED TOPIC</p><h3>Mac OS</h3><p>共 1 篇文章</p><div class="tag-posts"><a class="compact-post" href="/2019/mac_ssh.html"><span>Mac OS下使用自带终端ssh连接服务器</span></a></div></div><div id="topic-6" data-tag-panel="topic-6" hidden><p class="eyebrow">SELECTED TOPIC</p><h3>node</h3><p>共 1 篇文章</p><div class="tag-posts"><a class="compact-post" href="/2020/node-events.html"><span>Node.js中的events模块</span></a></div></div><div id="topic-5" data-tag-panel="topic-5" hidden><p class="eyebrow">SELECTED TOPIC</p><h3>Node.js</h3><p>共 1 篇文章</p><div class="tag-posts"><a class="compact-post" href="/2020/node-events.html"><span>Node.js中的events模块</span></a></div></div><div id="topic-9" data-tag-panel="topic-9" hidden><p class="eyebrow">SELECTED TOPIC</p><h3>Parallels</h3><p>共 1 篇文章</p><div class="tag-posts"><a class="compact-post" href="/2019/parallels-network.html"><span>Parallels配置虚拟机网络（宿主机ip不固定，虚拟机ip固定）</span></a></div></div><div id="topic-11" data-tag-panel="topic-11" hidden><p class="eyebrow">SELECTED TOPIC</p><h3>Promise</h3><p>共 1 篇文章</p><div class="tag-posts"><a class="compact-post" href="/2019/js-promise.html"><span>JavaScript里的Promise</span></a></div></div><div id="topic-16" data-tag-panel="topic-16" hidden><p class="eyebrow">SELECTED TOPIC</p><h3>ssh</h3><p>共 1 篇文章</p><div class="tag-posts"><a class="compact-post" href="/2019/mac_ssh.html"><span>Mac OS下使用自带终端ssh连接服务器</span></a></div></div><div id="topic-13" data-tag-panel="topic-13" hidden><p class="eyebrow">SELECTED TOPIC</p><h3>vi/vim</h3><p>共 1 篇文章</p><div class="tag-posts"><a class="compact-post" href="/2019/vim-edit.html"><span>vim常用编辑快捷键</span></a></div></div><div id="topic-17" data-tag-panel="topic-17" hidden><p class="eyebrow">SELECTED TOPIC</p><h3>Vue.js</h3><p>共 1 篇文章</p><div class="tag-posts"><a class="compact-post" href="/2019/vue.js-lifecycle.html"><span>Vue.js实例的生命周期</span></a></div></div><div id="topic-19" data-tag-panel="topic-19" hidden><p class="eyebrow">SELECTED TOPIC</p><h3>WordPress</h3><p>共 1 篇文章</p><div class="tag-posts"><a class="compact-post" href="/2018/wp-plugin.html"><span>更自由的WordPress小工具插件！</span></a></div></div>
+    </div></div>
+  </section>
+  <section class="archive-preview" id="archive" aria-labelledby="archive-title">
+    <div class="archive-header"><div><p class="eyebrow">CHRONICLE / 03</p><h2 id="archive-title">归档</h2></div><p>最近十篇，按时间排列。</p></div>
+    <div class="archive-preview-list">
+<a class="archive-entry" href="/2023/js-file-type.html"><span class="archive-index">01</span><strong>JavaScript验证文件格式</strong><span class="archive-category">JavaScript</span><time datetime="2023-06-30">2023.06.30</time><span class="archive-arrow" aria-hidden="true">↗</span></a>
 
-    
-    
-    
+<a class="archive-entry" href="/2023/js-design-patterns.html"><span class="archive-index">02</span><strong>JavaScript设计模式</strong><span class="archive-category">JavaScript</span><time datetime="2023-06-04">2023.06.04</time><span class="archive-arrow" aria-hidden="true">↗</span></a>
 
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
+<a class="archive-entry" href="/2022/js-package.html"><span class="archive-index">03</span><strong>前端包管理工具</strong><span class="archive-category">JavaScript</span><time datetime="2022-08-02">2022.08.02</time><span class="archive-arrow" aria-hidden="true">↗</span></a>
+
+<a class="archive-entry" href="/2020/js-this.html"><span class="archive-index">04</span><strong>箭头函数里的this到底指向谁？</strong><span class="archive-category">JavaScript</span><time datetime="2020-02-24">2020.02.24</time><span class="archive-arrow" aria-hidden="true">↗</span></a>
+
+<a class="archive-entry" href="/2020/js-array-order.html"><span class="archive-index">05</span><strong>如何将一个JavaScript数组打乱</strong><span class="archive-category">JavaScript</span><time datetime="2020-02-20">2020.02.20</time><span class="archive-arrow" aria-hidden="true">↗</span></a>
+
+<a class="archive-entry" href="/2020/node-events.html"><span class="archive-index">06</span><strong>Node.js中的events模块</strong><span class="archive-category">Node.js</span><time datetime="2020-02-02">2020.02.02</time><span class="archive-arrow" aria-hidden="true">↗</span></a>
+
+<a class="archive-entry" href="/2019/electron-desc.html"><span class="archive-index">07</span><strong>Electron介绍（理论篇）</strong><span class="archive-category">工具</span><time datetime="2019-12-26">2019.12.26</time><span class="archive-arrow" aria-hidden="true">↗</span></a>
+
+<a class="archive-entry" href="/2019/parallels-network.html"><span class="archive-index">08</span><strong>Parallels配置虚拟机网络（宿主机ip不固定，虚拟机ip固定）</strong><span class="archive-category">虚拟机</span><time datetime="2019-12-24">2019.12.24</time><span class="archive-arrow" aria-hidden="true">↗</span></a>
+
+<a class="archive-entry" href="/2019/js-promise.html"><span class="archive-index">09</span><strong>JavaScript里的Promise</strong><span class="archive-category">JavaScript</span><time datetime="2019-12-09">2019.12.09</time><span class="archive-arrow" aria-hidden="true">↗</span></a>
+
+<a class="archive-entry" href="/2019/js-indexOF.html"><span class="archive-index">10</span><strong>重新封装JavaScript里的String.indexOf()方法</strong><span class="archive-category">JavaScript</span><time datetime="2019-10-30">2019.10.30</time><span class="archive-arrow" aria-hidden="true">↗</span></a>
+</div>
+    <a class="section-more" href="/archives/">查看完整归档 <span aria-hidden="true">↗</span></a>
+  </section>
+  <section class="about-section" id="about" aria-labelledby="about-title"><p class="eyebrow">A LITTLE ABOUT ME / 04</p><div class="about-content"><h2 id="about-title">你好，<br>我是 Kaifei</h2><div><p>喜欢把问题拆开，也喜欢把生活重新拼起来。这里收集技术笔记与日常观察，希望你能在某一行文字里找到一点有用的东西。</p><a href="mailto:xkf@xiekaifei.com" class="text-action">聊聊想法 <span aria-hidden="true">↗</span></a></div></div></section>
 </div>
 
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://blog.xiekaifei.com/2023/js-design-patterns.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://raw.githubusercontent.com/xiekaifei/oss-public/master/image/avatar.png">
-      <meta itemprop="name" content="Kaifei Xie">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kaifei's Blog">
-      <meta itemprop="description" content="Kaifei's Blog">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Kaifei's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/js-design-patterns.html" class="post-title-link" itemprop="url">JavaScript设计模式</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2023-06-04 22:26:12" itemprop="dateCreated datePublished" datetime="2023-06-04T22:26:12+08:00">2023-06-04</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%8A%80%E6%9C%AF/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="JavaScript的23种设计模式"><a href="#JavaScript的23种设计模式" class="headerlink" title="JavaScript的23种设计模式"></a>JavaScript的23种设计模式</h1><table>
-<thead>
-<tr>
-<th>范围&#x2F;目的</th>
-<th>创建型模式</th>
-<th>结构型模式</th>
-<th>行为型模式</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>类模式</td>
-<td>工厂方法</td>
-<td>（类）适配器</td>
-<td>模板方法 解释器</td>
-</tr>
-<tr>
-<td>对象模式</td>
-<td>单例 原型 抽象工厂 建造者</td>
-<td>代理 （对象）适配器 桥接 装饰 外观 享元 组合</td>
-<td>策略 命令 职责链 状态 观察者 中介者 迭代器 访问者 备忘录</td>
-</tr>
-</tbody></table>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2023/js-design-patterns.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://blog.xiekaifei.com/2022/js-package.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://raw.githubusercontent.com/xiekaifei/oss-public/master/image/avatar.png">
-      <meta itemprop="name" content="Kaifei Xie">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kaifei's Blog">
-      <meta itemprop="description" content="Kaifei's Blog">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Kaifei's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/js-package.html" class="post-title-link" itemprop="url">前端包管理工具</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2022-08-02 17:34:15" itemprop="dateCreated datePublished" datetime="2022-08-02T17:34:15+08:00">2022-08-02</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%8A%80%E6%9C%AF/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>包的英语单词：Package，针对编程来说，更具象的名字叫「软件包」。代表了一组特定功能的源码集合。软件包可以是一个单独的源码文件，也可以是一个包含很多文件和目录的文件夹。具体如何呈现，就要看这个软件包提供了什么样的功能。</p>
-<p>软件包就是有人对一些具有重复性的功能问题做出了针对性的解决方案。我们在软件开发的过程中有了相应的功能需求时，除了自己写，也可以选择直接使用这些有功能针对性的软件包。这除了可以节省自己大量的精力和时间，也能让自己少踩一些坑。</p>
-<p>在软件开发过程中<strong>使用包不是必须的，但却是一项最佳的工程化实践。</strong></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/js-package.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://blog.xiekaifei.com/2020/js-this.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://raw.githubusercontent.com/xiekaifei/oss-public/master/image/avatar.png">
-      <meta itemprop="name" content="Kaifei Xie">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kaifei's Blog">
-      <meta itemprop="description" content="Kaifei's Blog">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Kaifei's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/js-this.html" class="post-title-link" itemprop="url">箭头函数里的this到底指向谁？</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-02-24 22:15:20" itemprop="dateCreated datePublished" datetime="2020-02-24T22:15:20+08:00">2020-02-24</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%8A%80%E6%9C%AF/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>&emsp;&emsp;关于箭头函数里的this这个问题一直很模糊，之前看了很多教程虽然知道了其行为，但是具体实现规则一直不太清晰。今天为了彻底搞懂这个问题，查了很多资料，感觉查到的很多例子不是很能清晰的描述这种行为。所以今天特地自己写一遍文章来说明一下。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/js-this.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://blog.xiekaifei.com/2020/js-array-order.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://raw.githubusercontent.com/xiekaifei/oss-public/master/image/avatar.png">
-      <meta itemprop="name" content="Kaifei Xie">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kaifei's Blog">
-      <meta itemprop="description" content="Kaifei's Blog">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Kaifei's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/js-array-order.html" class="post-title-link" itemprop="url">如何将一个JavaScript数组打乱</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-02-20 16:13:07" itemprop="dateCreated datePublished" datetime="2020-02-20T16:13:07+08:00">2020-02-20</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%8A%80%E6%9C%AF/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>&emsp;&emsp;如何将一个js数组的顺序打乱并且又能做到完全随机打乱呢？今天在网上看到了这样一个算法，觉得思路很不错，写上来记录一下。</p>
-<p>&emsp;&emsp;比如我们有这样一个数组：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/js-array-order.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://blog.xiekaifei.com/2020/node-events.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://raw.githubusercontent.com/xiekaifei/oss-public/master/image/avatar.png">
-      <meta itemprop="name" content="Kaifei Xie">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kaifei's Blog">
-      <meta itemprop="description" content="Kaifei's Blog">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Kaifei's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/node-events.html" class="post-title-link" itemprop="url">Node.js中的events模块</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-02-02 23:05:24" itemprop="dateCreated datePublished" datetime="2020-02-02T23:05:24+08:00">2020-02-02</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%8A%80%E6%9C%AF/Node-js/" itemprop="url" rel="index"><span itemprop="name">Node.js</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>&emsp;&emsp;在Node.js（以下简称node）中，有一个events模块，中文名称是“事件触发器”。node的一大特点就是事件驱动。在node里，很多行为都会触发相应的事件，而所有能触发事件的对象都是events模块类的实例，它们都有添加事件的能力。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/node-events.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://blog.xiekaifei.com/2019/electron-desc.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://raw.githubusercontent.com/xiekaifei/oss-public/master/image/avatar.png">
-      <meta itemprop="name" content="Kaifei Xie">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kaifei's Blog">
-      <meta itemprop="description" content="Kaifei's Blog">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Kaifei's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/electron-desc.html" class="post-title-link" itemprop="url">Electron介绍（理论篇）</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-12-26 09:23:36" itemprop="dateCreated datePublished" datetime="2019-12-26T09:23:36+08:00">2019-12-26</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%8A%80%E6%9C%AF/%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index"><span itemprop="name">工具</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>&emsp;&emsp;Electron是一个能让你使用前端技术（JavaScript, HTML, CSS和Node.js）构建跨平台的桌面应用的框架。最初被GitHub开发，2013年4月11日以Atom Shell为名起步，2014年5月16日开源，2015年4月17日改名为Electron。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/electron-desc.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://blog.xiekaifei.com/2019/parallels-network.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://raw.githubusercontent.com/xiekaifei/oss-public/master/image/avatar.png">
-      <meta itemprop="name" content="Kaifei Xie">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kaifei's Blog">
-      <meta itemprop="description" content="Kaifei's Blog">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Kaifei's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/parallels-network.html" class="post-title-link" itemprop="url">Parallels配置虚拟机网络（宿主机ip不固定，虚拟机ip固定）</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-12-24 09:40:28" itemprop="dateCreated datePublished" datetime="2019-12-24T09:40:28+08:00">2019-12-24</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%8A%80%E6%9C%AF/%E8%99%9A%E6%8B%9F%E6%9C%BA/" itemprop="url" rel="index"><span itemprop="name">虚拟机</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>&emsp;&emsp;最近我在Parallels里安装了一台ubuntu的虚拟机，因为平常都是用宿主机ssh远程到虚拟机上使用的，所以在配置虚拟机网络这一块就首先选择了桥接模式。Parallels里的桥接模式下，<strong>虚拟机可以和宿主机通信，可以和与宿主机同一局域网内且同一网段的其它设备通信，多个虚拟机之间也可以相互通信，也可以连接互联网</strong>，等于为虚拟机新分配了一个局域网地址，一般正常使用的话，我都是采用这种模式。但是这种模式下有一个问题，因为我用的是笔记本电脑，经常是在家和公司之间或者其它地方使用。这样当我的笔记本（宿主机）网络环境变了以后，我的虚拟机ip地址也会改变。虽然可以在虚拟机内设置固定ip，但宿主机的网段一旦改变，之前虚拟机设置的固定ip如果和宿主机不处于同一网段下的话，还是无法实现通信。举个栗子：</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/parallels-network.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://blog.xiekaifei.com/2019/js-promise.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://raw.githubusercontent.com/xiekaifei/oss-public/master/image/avatar.png">
-      <meta itemprop="name" content="Kaifei Xie">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kaifei's Blog">
-      <meta itemprop="description" content="Kaifei's Blog">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Kaifei's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/js-promise.html" class="post-title-link" itemprop="url">JavaScript里的Promise</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-12-09 11:17:58" itemprop="dateCreated datePublished" datetime="2019-12-09T11:17:58+08:00">2019-12-09</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%8A%80%E6%9C%AF/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>&emsp;&emsp;JavaScript在ES6版本中新增了<code>Promise</code>对象。</p>
-<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p><code>Promise</code> 对象是一个代理对象（代理一个值），被代理的值在Promise对象创建时可能是未知的。它允许你为异步操作的成功和失败分别绑定相应的处理方法（handlers）。</p>
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/js-promise.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://blog.xiekaifei.com/2019/js-indexOF.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://raw.githubusercontent.com/xiekaifei/oss-public/master/image/avatar.png">
-      <meta itemprop="name" content="Kaifei Xie">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kaifei's Blog">
-      <meta itemprop="description" content="Kaifei's Blog">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content=" | Kaifei's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2019/js-indexOF.html" class="post-title-link" itemprop="url">重新封装JavaScript里的String.indexOf()方法</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2019-10-30 00:55:48" itemprop="dateCreated datePublished" datetime="2019-10-30T00:55:48+08:00">2019-10-30</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%8A%80%E6%9C%AF/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="indexOF-方法"><a href="#indexOF-方法" class="headerlink" title="indexOF()方法"></a>indexOF()方法</h2><p>&emsp;&emsp;JavaScript的String对象中有一个indexOf()方法，这个方法接收一个指定字符串参数（必须）和查找位置参数（可选）。该方法返回指定字符串在字符串中第一次出现的位置，如果没有出现，则返回”-1”。如果有传查找位置参数，则从传入的位置查起，如果没有传位置参数默认为0，即从字符串的开头查起。</p>
-<p>&emsp;&emsp;说完了这个函数的功能，那么我们如何自己封装一个一样功能的方法呢？</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/js-indexOF.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
 
 </div>
   </main>
 
   <footer class="footer">
     <div class="footer-inner">
+<a class="ui-footer-brand" href="/"><img src="/images/logo.svg" width="25" height="25" alt="">Kaifei's Blog</a>
+<div class="copyright">
+  
+  © 2018–<span itemprop="copyrightYear">2026</span>
+</div>
 
-  <div class="copyright">
-    &copy; 2018 – 
-    <span itemprop="copyrightYear">2026</span>
-    <span class="with-love">
-      <i class="fa fa-user"></i>
-    </span>
-    <span class="author" itemprop="copyrightHolder">Kaifei Xie</span>
-  </div>
 
     </div>
   </footer>
@@ -1272,6 +461,9 @@
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
 </noscript>
+<script src="/js/components/liquid-glass.js?v=81788957ce" defer></script>
+<script src="/js/ui-home.js?v=ff61d76dfb" defer></script>
+<script src="/js/ui-theme.js?v=7649b39e58" defer></script>
 
 </body>
 </html>

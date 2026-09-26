@@ -1155,7 +1155,7 @@ pre code {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #ff86ff;
+  background: #0f4958;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -3045,6 +3045,9 @@ header.header {
   .theme-switch .theme-switch-panel {
     transform: none;
   }
+}
+:root {
+  --ui-drawer-width: 320px;
 }
 .footer-inner {
   text-align: center;
